@@ -1,0 +1,780 @@
+%% ppppass' personal macro package
+%
+%% def.sty
+%
+%% Copyright 2017 pppppass
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+%
+% The Current Maintainer of this work is pppppass
+% (lzh2016p@pku.edu.cn).
+%
+% Lists of contents of this work and modification information can be
+% found in
+%   def.manifest.md
+% and an introduction is included as well.
+%
+% This file cannot be typeset directly. It is recommended to typeset
+% with LuaLaTeX.
+
+% Identification
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{def}[2017/11/21 ppppass' personal macro package]
+
+% Option declarations
+\DeclareOption{cancel}{\def\pppppassdef@cancel{\relax}}
+\DeclareOption{ulem}{\def\pppppassdef@ulem{\relax}}
+\DeclareOption{esint}{\def\pppppassdef@esint{\relax}}
+\DeclareOption{esvect}{\def\pppppassdef@esvect{\relax}}
+\DeclareOption{tensor}{\def\pppppassdef@tensor{\relax}}
+\DeclareOption{mathrsfs}{\def\pppppassdef@mathrsfs{\relax}}
+\DeclareOption{upgreek}{\def\pppppassdef@upgreek{\relax}}
+\DeclareOption{yhaccent}{\def\pppppassdef@yhaccent{\relax}}
+\DeclareOption{cmrgreekup}{\def\pppppassdef@cmrgreekup{\relax}}
+\DeclareOption{safebm}{\def\pppppassdef@safebm{\relax}}
+\DeclareOption{si}{\def\pppppassdef@si{\relax}}
+\DeclareOption{algorithm}{\def\pppppassdef@algorithm{\relax}}
+\DeclareOption{listings}{\def\pppppassdef@listings{\relax}}
+\DeclareOption{longtable}{\def\pppppassdef@longtable{\relax}}
+\DeclareOption{chemfig}{\def\pppppassdef@chemfig{\relax}}
+\DeclareOption{tikz}{\def\pppppassdef@tikz{\relax}}
+\DeclareOption{cd}{\def\pppppassdef@cd{\relax}}
+\DeclareOption{paper}{\def\pppppassdef@paper{\relax}}
+\DeclareOption{english}{\def\pppppassdef@english{\relax}}
+\DeclareOption{secnumbered}{\def\pppppassdef@secnumbered{\relax}}
+
+% Process options
+\ProcessOptions\relax
+
+% Basic packages
+\RequirePackage{etoolbox}
+\RequirePackage{amsmath}
+\RequirePackage{amsfonts}
+\RequirePackage{amssymb}
+\RequirePackage{amsxtra}
+\RequirePackage{mathtools}
+
+\setcounter{MaxMatrixCols}{30}
+
+% Font and symbol packages
+\ifdefined\pppppassdef@cancel%
+\RequirePackage{cancel}%
+\fi
+\ifdefined\pppppassdef@ulem%
+\RequirePackage[normalem]{ulem}%
+\fi
+\ifdefined\pppppassdef@esint%
+\RequirePackage{esint}%
+\fi
+\ifdefined\pppppassdef@esvect%
+\RequirePackage{esvect}%
+\fi
+\ifdefined\pppppassdef@tensor%
+\RequirePackage{tensor}%
+\fi
+\ifdefined\pppppassdef@mathrsfs%
+\RequirePackage{mathrsfs}%
+\fi
+\ifdefined\pppppassdef@upgreek%
+\RequirePackage[Symbolsmallscale]{upgreek}%
+\fi
+
+% Math accents in yhmath
+\ifdefined\pppppassdef@yhaccent%
+\DeclareSymbolFont{largesymbolsyhmath}{OMX}{yhex}{m}{n}%
+\DeclareMathAccent{\widetilde}{\mathord}{largesymbolsyhmath}{"65}%
+\DeclareMathAccent{\widehat}{\mathord}{largesymbolsyhmath}{"62}%
+\DeclareMathAccent{\widetriangle}{\mathord}{largesymbolsyhmath}{"E6}%
+\DeclareMathAccent{\wideparen}{\mathord}{largesymbolsyhmath}{"F3}%
+\fi
+
+% Upright greek letters from CB Greek fonts
+\ifdefined\pppppassdef@cmrgreekup%
+\RequirePackage[LGR,T1]{fontenc}%
+\DeclareSymbolFont{greekupcbgreek}{LGR}{cmr}{m}{n}%
+\SetSymbolFont{greekupcbgreek}{bold}{LGR}{cmr}{m}{n}%
+\DeclareMathSymbol{\alphaup}{\mathord}{greekupcbgreek}{97}%
+\DeclareMathSymbol{\betaup}{\mathord}{greekupcbgreek}{98}%
+\DeclareMathSymbol{\gammaup}{\mathord}{greekupcbgreek}{103}%
+\DeclareMathSymbol{\deltaup}{\mathord}{greekupcbgreek}{100}%
+\DeclareMathSymbol{\epsilonup}{\mathord}{greekupcbgreek}{101}%
+\DeclareMathSymbol{\zetaup}{\mathord}{greekupcbgreek}{122}%
+\DeclareMathSymbol{\etaup}{\mathord}{greekupcbgreek}{104}%
+\DeclareMathSymbol{\thetaup}{\mathord}{greekupcbgreek}{106}%
+\DeclareMathSymbol{\iotaup}{\mathord}{greekupcbgreek}{105}%
+\DeclareMathSymbol{\kappaup}{\mathord}{greekupcbgreek}{107}%
+\DeclareMathSymbol{\lambdaup}{\mathord}{greekupcbgreek}{108}%
+\DeclareMathSymbol{\muup}{\mathord}{greekupcbgreek}{109}%
+\DeclareMathSymbol{\nuup}{\mathord}{greekupcbgreek}{110}%
+\DeclareMathSymbol{\xiup}{\mathord}{greekupcbgreek}{120}%
+\DeclareMathSymbol{\piup}{\mathord}{greekupcbgreek}{112}%
+\DeclareMathSymbol{\rhoup}{\mathord}{greekupcbgreek}{114}%
+\DeclareMathSymbol{\sigmaup}{\mathord}{greekupcbgreek}{115}%
+\DeclareMathSymbol{\tauup}{\mathord}{greekupcbgreek}{116}%
+\DeclareMathSymbol{\upsilonup}{\mathord}{greekupcbgreek}{117}%
+\DeclareMathSymbol{\phiup}{\mathord}{greekupcbgreek}{102}%
+\DeclareMathSymbol{\chiup}{\mathord}{greekupcbgreek}{113}%
+\DeclareMathSymbol{\psiup}{\mathord}{greekupcbgreek}{121}%
+\DeclareMathSymbol{\omegaup}{\mathord}{greekupcbgreek}{119}%
+\fi
+
+% Preserve symbol fonts
+% Note that this results in low speed, and bm package is always
+% introduced
+\ifdefined\pppppassdef@safebm%
+\newcommand\hmmax{0}%
+\newcommand\bmmax{0}%
+\fi
+\RequirePackage{bm}
+
+% SI units
+% Note that the \si command in siunitx is renamed to be \Si
+\ifdefined\pppppassdef@si%
+\RequirePackage{siunitx}%
+\let\Si\si%
+\let\si\relax%
+\sisetup{%
+input-symbols=\pi\spi\piup\dots\cdots,%
+}%
+\fi
+
+% Environments
+\ifdefined\pppppassdef@algorithm%
+\RequirePackage{algorithm2e}%
+\fi
+\ifdefined\pppppassdef@listings%
+\RequirePackage{listings}%
+\lstset{%
+basicstyle=\ttfamily,%
+keywordstyle=\ttfamily\color{blue!75!black},%
+commentstyle=\ttfamily\color{green!75!black},%
+stringstyle=\ttfamily\color{red!75!black},
+flexiblecolumns%
+}%
+\fi
+\ifdefined\pppppassdef@longtable%
+\RequirePackage{longtable}%
+\fi
+\ifdefined\pppppassdef@chemfig%
+\RequirePackage{chemfig}%
+\fi
+\ifdefined\pppppassdef@tikz%
+\RequirePackage{tikz}%
+\fi
+\ifdefined\pppppassdef@cd%
+\RequirePackage{tikz-cd}%
+\fi
+
+% Miscellaneous packages
+\RequirePackage{hyperref}
+\RequirePackage[multidot]{grffile}
+\RequirePackage{cprotect}
+\RequirePackage{chngcntr}
+\RequirePackage{pdfpages}
+
+% Sets
+\newcommand{\Aset}{\mathbb{A}}
+\newcommand{\Bset}{\mathbb{B}}
+\newcommand{\Cset}{\mathbb{C}}
+\newcommand{\Dset}{\mathbb{D}}
+\newcommand{\Eset}{\mathbb{E}}
+\newcommand{\Fset}{\mathbb{F}}
+\newcommand{\Gset}{\mathbb{G}}
+\newcommand{\Hset}{\mathbb{H}}
+\newcommand{\Iset}{\mathbb{I}}
+\newcommand{\Jset}{\mathbb{J}}
+\newcommand{\Kset}{\mathbb{K}}
+\newcommand{\Lset}{\mathbb{L}}
+\newcommand{\Mset}{\mathbb{M}}
+\newcommand{\Nset}{\mathbb{N}}
+\newcommand{\Oset}{\mathbb{O}}
+\newcommand{\Pset}{\mathbb{P}}
+\newcommand{\Qset}{\mathbb{Q}}
+\newcommand{\Rset}{\mathbb{R}}
+\newcommand{\Sset}{\mathbb{S}}
+\newcommand{\Tset}{\mathbb{T}}
+\newcommand{\Uset}{\mathbb{U}}
+\newcommand{\Vset}{\mathbb{V}}
+\newcommand{\Wset}{\mathbb{W}}
+\newcommand{\Xset}{\mathbb{X}}
+\newcommand{\Yset}{\mathbb{Y}}
+\newcommand{\Zset}{\mathbb{Z}}
+
+% Arrows
+\newcommand{\srar}{\rightarrow}
+\newcommand{\srrar}{\rightrightarrows}
+\newcommand{\slar}{\leftarrow}
+\newcommand{\sllar}{\leftleftarrows}
+\newcommand{\sdar}{\leftrightarrow}
+\newcommand{\srlar}{\rightleftarrows}
+\newcommand{\slrar}{\leftrightarrows}
+\newcommand{\drar}{\Rightarrow}
+\newcommand{\dlar}{\Leftarrow}
+\newcommand{\ddar}{\Leftrightarrow}
+\newcommand{\nsrar}{\nrightarrow}
+\newcommand{\nslar}{\nleftarrow}
+\newcommand{\nsdar}{\nleftrightarrow}
+\newcommand{\ndrar}{\nRightarrow}
+\newcommand{\ndlar}{\nLeftarrow}
+\newcommand{\nddar}{\nLeftrightarrow}
+
+% Single upright letters
+\newcommand{\rmua}{\mathrm{A}}
+\newcommand{\rmub}{\mathrm{B}}
+\newcommand{\rmuc}{\mathrm{C}}
+\newcommand{\rmud}{\mathrm{D}}
+\newcommand{\rmue}{\mathrm{E}}
+\newcommand{\rmuf}{\mathrm{F}}
+\newcommand{\rmug}{\mathrm{G}}
+\newcommand{\rmuh}{\mathrm{H}}
+\newcommand{\rmui}{\mathrm{I}}
+\newcommand{\rmuj}{\mathrm{J}}
+\newcommand{\rmuk}{\mathrm{K}}
+\newcommand{\rmul}{\mathrm{L}}
+\newcommand{\rmum}{\mathrm{M}}
+\newcommand{\rmun}{\mathrm{N}}
+\newcommand{\rmuo}{\mathrm{O}}
+\newcommand{\rmup}{\mathrm{P}}
+\newcommand{\rmuq}{\mathrm{Q}}
+\newcommand{\rmur}{\mathrm{R}}
+\newcommand{\rmus}{\mathrm{S}}
+\newcommand{\rmut}{\mathrm{T}}
+\newcommand{\rmuu}{\mathrm{U}}
+\newcommand{\rmuv}{\mathrm{V}}
+\newcommand{\rmuw}{\mathrm{W}}
+\newcommand{\rmux}{\mathrm{X}}
+\newcommand{\rmuy}{\mathrm{Y}}
+\newcommand{\rmuz}{\mathrm{Z}}
+\newcommand{\rmla}{\mathrm{a}}
+\newcommand{\rmlb}{\mathrm{b}}
+\newcommand{\rmlc}{\mathrm{c}}
+\newcommand{\rmld}{\mathrm{d}}
+\newcommand{\rmle}{\mathrm{e}}
+\newcommand{\rmlf}{\mathrm{f}}
+\newcommand{\rmlg}{\mathrm{g}}
+\newcommand{\rmlh}{\mathrm{h}}
+\newcommand{\rmli}{\mathrm{i}}
+\newcommand{\rmlj}{\mathrm{j}}
+\newcommand{\rmlk}{\mathrm{k}}
+\newcommand{\rmll}{\mathrm{l}}
+\newcommand{\rmlm}{\mathrm{m}}
+\newcommand{\rmln}{\mathrm{n}}
+\newcommand{\rmlo}{\mathrm{o}}
+\newcommand{\rmlp}{\mathrm{p}}
+\newcommand{\rmlq}{\mathrm{q}}
+\newcommand{\rmlr}{\mathrm{r}}
+\newcommand{\rmls}{\mathrm{s}}
+\newcommand{\rmlt}{\mathrm{t}}
+\newcommand{\rmlu}{\mathrm{u}}
+\newcommand{\rmlv}{\mathrm{v}}
+\newcommand{\rmlw}{\mathrm{w}}
+\newcommand{\rmlx}{\mathrm{x}}
+\newcommand{\rmly}{\mathrm{y}}
+\newcommand{\rmlz}{\mathrm{z}}
+
+% Note that all bracket commands have been renamed from *bra to *br
+
+% Brackets
+\newcommand{\rbr}[1]{\left( #1 \right)}
+\newcommand{\sbr}[1]{\left[ #1 \right]}
+\newcommand{\cbr}[1]{\left\{ #1 \right\}}
+\newcommand{\pbr}[1]{\left< #1 \right>}
+\newcommand{\fbr}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\gbr}[1]{\left\lceil #1 \right\rceil}
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\norm}[1]{\left\| #1 \right\|}
+\newcommand{\rsbr}[1]{\left( #1 \right]}
+\newcommand{\srbr}[1]{\left[ #1 \right)}
+\newcommand{\nvbr}[1]{\left. #1 \right\rvert}
+\newcommand{\mvert}{\middle\vert}
+\newcommand{\bfrac}[2]{\left. #1 \middle/ #2 \right.}
+
+% Supplementary brackets
+\newcommand{\crbr}[1]{\mathbin{}\rbra{#1}}
+\newcommand{\csbr}[1]{\mathbin{}\sbra{#1}}
+\newcommand{\ccbr}[1]{\mathbin{}\cbra{#1}}
+\newcommand{\cpbr}[1]{\mathbin{}\pbra{#1}}
+
+% Texts in math mode
+\newcommand{\mtx}[1]{\mathrel{\text{{#1}}}}
+
+% Forced upright brackets
+% Note that this is especially useful in kaiti paragraphs
+\newcommand{\nrbr}[1]{{\normalfont(}{#1}{\normalfont)}}
+\newcommand{\nsbr}[1]{{\normalfont[}{#1}{\normalfont]}}
+\newcommand{\ncbr}[1]{{\normalfont\{}{#1}{\normalfont\}}}
+\newcommand{\npbr}[1]{{\normalfont<}{#1}{\normalfont>}}
+
+% Matrix brackets
+\newcommand{\mnbr}[1]{{\begin{matrix} #1 \end{matrix}}}
+\newcommand{\mrbr}[1]{{\begin{pmatrix} #1 \end{pmatrix}}}
+\newcommand{\msbr}[1]{{\begin{bmatrix} #1 \end{bmatrix}}}
+\newcommand{\mcbr}[1]{{\begin{Bmatrix} #1 \end{Bmatrix}}}
+\newcommand{\mabr}[1]{{\begin{vmatrix} #1 \end{vmatrix}}}
+\newcommand{\mmbr}[1]{{\begin{Vmatrix} #1 \end{Vmatrix}}}
+\newcommand{\mpbr}[1]{{\left<\begin{matrix} #1 \end{matrix}\right>}}
+
+% Bra-Kets in physics
+\newcommand{\bra}[1]{\left< #1 \right\vert}
+\newcommand{\ket}[1]{\left\vert #1 \right>}
+\newcommand{\braket}[2]{\left< #1 \middle\vert #2 \right>}
+\newcommand{\bramket}[3]{\left< #1 \middle\vert #2 \middle\vert #3 \right>}
+
+% Arrays
+\newcommand{\narr}[2]{{\begin{array}{#1} #2 \end{array}}}
+\newcommand{\sarr}[2]{{\begin{subarray}{#1} #2 \end{subarray}}}
+
+% Differential operators
+\newcommand{\sd}[1][]{\mathop{\mathrm{d}^{#1} \!}}
+\newcommand{\pd}[1][]{\mathop{\partial^{#1} \!}}
+
+% Miscellaneous commands
+\newcommand{\degree}{^{\circ}}
+\newcommand{\se}{\mathrm{e}}
+\newcommand{\si}{\mathrm{i}}
+\newcommand{\sqed}{\hfill$\Box$}
+\newcommand{\mendash}{\text{--}}
+\ifdefined\pppppassdef@cmrgreekup%
+\newcommand{\spi}{\piup}%
+\else%
+\ifdefined\uppi%
+\newcommand{\spi}{\uppi}%
+\else%
+\newcommand{\spi}{\pi}%
+\fi%
+\fi
+
+% Quote marks
+\newcommand{\sqm}[1]{`#1'}
+\newcommand{\dqm}[1]{``#1''}
+
+% Deprecated
+%\newcommand{\makedate}[1]{{%
+%\raggedleft\itshape{#1}\par%
+%}}
+%\newcommand{\makepart}[2]{%
+%\newpage%
+%\part{#1}%
+%\makedate{#2}%
+%}
+%\newcommand{\makesection}[2]{%
+%\newpage%
+%\section{#1}%
+%\makedate{#2}%
+%}
+%\newcommand{\makebibliography}[1]{%
+%\newpage%
+%\bibliography{#1}%
+%}
+%
+%\newcommand{\makefigure}[4][]{%
+%	\begin{figure}[htbp]
+%\centering
+%\includegraphics[#1]{#2}
+%\caption{#3}
+%\label{#4}
+%	\end{figure}%
+%}
+%\newcommand{\maketable}[4]{%
+%	\begin{table}[htbp]
+%	\centering
+%	\caption{#3}
+%	\label{#4}
+%		\begin{tabular}{#1}
+%#2
+%		\end{tabular}
+%	\end{table}%
+%}
+%\newcommand{\makelongtable}[4]{%
+%		\begin{longtable}{#1}
+%\caption{#3}
+%\label{#4}
+%#2
+%		\end{longtable}
+%}
+
+% Math operators
+\DeclareMathOperator{\arccot}{\mathrm{arccot}}
+\DeclareMathOperator{\arsinh}{\mathrm{arsinh}}
+\DeclareMathOperator{\arcosh}{\mathrm{arcosh}}
+\DeclareMathOperator{\artanh}{\mathrm{artanh}}
+\DeclareMathOperator{\arcoth}{\mathrm{arcoth}}
+\DeclareMathOperator{\opchar}{\mathrm{char}}
+\DeclareMathOperator{\opsgn}{\mathrm{sgn}}
+\DeclareMathOperator{\oprank}{\mathrm{rank}}
+\DeclareMathOperator{\optr}{\mathrm{tr}}
+\DeclareMathOperator{\oprow}{\mathrm{row}}
+\DeclareMathOperator{\opcol}{\mathrm{col}}
+\DeclareMathOperator{\opker}{\mathrm{ker}}
+\DeclareMathOperator{\opnul}{\mathrm{nul}}
+\DeclareMathOperator{\opcodim}{\mathrm{codim}}
+\DeclareMathOperator{\oproot}{\mathrm{root}}
+\DeclareMathOperator{\opdiag}{\mathrm{diag}}
+\DeclareMathOperator{\opdist}{\mathrm{dist}}
+\DeclareMathOperator{\opmed}{\mathrm{med}}
+\DeclareMathOperator{\oprad}{\mathrm{rad}}
+\DeclareMathOperator{\lcm}{\mathrm{lcm}}
+\DeclareMathOperator{\erf}{\mathrm{erf}}
+\DeclareMathOperator{\opvar}{\mathrm{var}}
+\DeclareMathOperator{\opcovar}{\mathrm{covar}}
+\DeclareMathOperator{\opgrad}{\mathrm{grad}}
+\DeclareMathOperator{\opdiv}{\mathrm{div}}
+\DeclareMathOperator{\oprot}{\mathrm{rot}}
+\DeclareMathOperator{\opdom}{\mathrm{dom}}
+\DeclareMathOperator{\opconv}{\mathrm{conv}}
+\DeclareMathOperator{\opepi}{\mathrm{epi}}
+\DeclareMathOperator*{\opspan}{\mathrm{span}}
+\DeclareMathOperator*{\argmax}{\arg\,\max}
+\DeclareMathOperator*{\argmin}{\arg\,\min}
+\DeclareMathOperator{\opim}{\mathrm{Im}}
+\DeclareMathOperator{\opisom}{\mathrm{Isom}}
+\DeclareMathOperator{\opaff}{\mathrm{Aff}}
+\DeclareMathOperator{\opproj}{\mathrm{Proj}}
+\DeclareMathOperator{\opperm}{\mathrm{Perm}}
+\DeclareMathOperator{\opsym}{\mathrm{Sym}}
+\DeclareMathOperator{\opstab}{\mathrm{Stab}}
+\DeclareMathOperator{\ophom}{\mathrm{Hom}}
+\DeclareMathOperator{\opadj}{\mathrm{Adj}}
+\DeclareMathOperator{\opalt}{\mathrm{Alt}}
+\DeclareMathOperator{\opshuf}{\mathrm{Shuf}}
+\DeclareMathOperator{\oppoly}{\mathrm{Poly}}
+\DeclareMathOperator{\ophomeo}{\mathrm{Homeo}}
+\DeclareMathOperator{\opfix}{\mathrm{Fix}}
+\DeclareMathOperator{\oporb}{\mathrm{Orb}}
+\DeclareMathOperator{\optrans}{\mathrm{Trans}}
+\DeclareMathOperator{\opaut}{\mathrm{Aut}}
+\DeclareMathOperator{\opord}{\mathrm{Ord}}
+\DeclareMathOperator{\opstar}{\mathrm{Star}}
+\DeclareMathOperator{\opgal}{\mathrm{Gal}}
+\DeclareMathOperator{\opint}{\mathrm{Int}}
+\DeclareMathOperator{\opcpv}{\text{P. V. }}
+\DeclareMathOperator{\opform}{\mathrm{Form}}
+\DeclareMathOperator{\ope}{\mathrm{E}}
+
+% Huge operators
+% There are e (#2 = #3 to #4), b (#2 below and #3 above),
+% i (#2 in #3), l (#2 below) sub-types
+\newcommand{\sume}[5][]{\sum#1_{ {#2} = {#3} }^{#4}{#5}}
+\newcommand{\sumb}[4][]{\sum#1_{#2}^{#3}{#4}}
+\newcommand{\sumi}[4][]{\sum#1_{ {#2} \in {#3} }{#4}}
+\newcommand{\suml}[3][]{\sum#1_{#2}{#3}}
+\newcommand{\prode}[5][]{\prod#1_{ {#2} = {#3} }^{#4}{#5}}
+\newcommand{\prodb}[4][]{\prod#1_{#2}^{#3}{#4}}
+\newcommand{\prodi}[4][]{\prod#1_{ {#2} \in {#3} }{#4}}
+\newcommand{\prodl}[3][]{\prod#1_{#2}{#3}}
+\newcommand{\cape}[5][]{\bigcap#1_{ {#2} = {#3} }^{#4}{#5}}
+\newcommand{\capb}[4][]{\bigcap#1_{#2}^{#3}{#4}}
+\newcommand{\capi}[4][]{\bigcap#1_{ {#2} \in {#3} }{#4}}
+\newcommand{\capl}[3][]{\bigcap#1_{#2}{#3}}
+\newcommand{\cupe}[5][]{\bigcup#1_{ {#2} = {#3} }^{#4}{#5}}
+\newcommand{\cupb}[4][]{\bigcup#1_{#2}^{#3}{#4}}
+\newcommand{\cupi}[4][]{\bigcup#1_{ {#2} \in {#3} }{#4}}
+\newcommand{\cupl}[3][]{\bigcup#1_{#2}{#3}}
+\newcommand{\sqcupe}[5][]{\bigsqcup#1_{ {#2} = {#3} }^{#4}{#5}}
+\newcommand{\sqcupb}[4][]{\bigsqcup#1_{#2}^{#3}{#4}}
+\newcommand{\sqcupi}[4][]{\bigsqcup#1_{ {#2} \in {#3} }{#4}}
+\newcommand{\sqcupl}[3][]{\bigsqcup#1_{#2}{#3}}
+\newcommand{\wedgee}[5][]{\bigwedge#1_{ {#2} = {#3} }^{#4}{#5}}
+\newcommand{\wedgeb}[4][]{\bigwedge#1_{#2}^{#3}{#4}}
+\newcommand{\wedgei}[4][]{\bigwedge#1_{ {#2} \in {#3} }{#4}}
+\newcommand{\wedgel}[3][]{\bigwedge#1_{#2}{#3}}
+\newcommand{\veee}[5][]{\bigvee#1_{ {#2} = {#3} }^{#4}{#5}}
+\newcommand{\veeb}[4][]{\bigvee#1_{#2}^{#3}{#4}}
+\newcommand{\veei}[4][]{\bigvee#1_{ {#2} \in {#3} }{#4}}
+\newcommand{\veel}[3][]{\bigvee#1_{#2}{#3}}
+\newcommand{\spane}[5][]{\opspan#1_{ {#2} = {#3} }^{#4}{#5}}
+\newcommand{\spanb}[4][]{\opspan#1_{#2}^{#3}{#4}}
+\newcommand{\spani}[4][]{\opspan#1_{ {#2} \in {#3} }{#4}}
+\newcommand{\spanl}[3][]{\opspan#1_{#2}{#3}}
+\newcommand{\supe}[5][]{\sup#1_{ {#2} = {#3} }^{#4}{#5}}
+\newcommand{\supb}[4][]{\sup#1_{#2}^{#3}{#4}}
+\newcommand{\supi}[4][]{\sup#1_{ {#2} \in {#3} }{#4}}
+\newcommand{\supl}[3][]{\sup#1_{#2}{#3}}
+\newcommand{\infe}[5][]{\inf#1_{ {#2} = {#3} }^{#4}{#5}}
+\newcommand{\infb}[4][]{\inf#1_{#2}^{#3}{#4}}
+\newcommand{\infi}[4][]{\inf#1_{ {#2} \in {#3} }{#4}}
+\newcommand{\infl}[3][]{\inf#1_{#2}{#3}}
+\newcommand{\maxe}[5][]{\max#1_{ {#2} = {#3} }^{#4}{#5}}
+\newcommand{\maxb}[4][]{\max#1_{#2}^{#3}{#4}}
+\newcommand{\maxi}[4][]{\max#1_{ {#2} \in {#3} }{#4}}
+\newcommand{\maxl}[3][]{\max#1_{#2}{#3}}
+\newcommand{\mine}[5][]{\min#1_{ {#2} = {#3} }^{#4}{#5}}
+\newcommand{\minb}[4][]{\min#1_{#2}^{#3}{#4}}
+\newcommand{\mini}[4][]{\min#1_{ {#2} \in {#3} }{#4}}
+\newcommand{\minl}[3][]{\min#1_{#2}{#3}}
+\newcommand{\gcde}[5][]{\gcd#1_{ {#2} = {#3} }^{#4}{#5}}
+\newcommand{\gcdb}[4][]{\gcd#1_{#2}^{#3}{#4}}
+\newcommand{\gcdi}[4][]{\gcd#1_{ {#2} \in {#3} }{#4}}
+\newcommand{\gcdl}[3][]{\gcd#1_{#2}{#3}}
+\newcommand{\lcme}[5][]{\lcm#1_{ {#2} = {#3} }^{#4}{#5}}
+\newcommand{\lcmb}[4][]{\lcm#1_{#2}^{#3}{#4}}
+\newcommand{\lcmi}[4][]{\lcm#1_{ {#2} \in {#3} }{#4}}
+\newcommand{\lcml}[3][]{\lcm#1_{#2}{#3}}
+\newcommand{\opluse}[5][]{\bigoplus#1_{ {#2} = {#3} }^{#4}{#5}}
+\newcommand{\oplusb}[4][]{\bigoplus#1_{#2}^{#3}{#4}}
+\newcommand{\oplusi}[4][]{\bigoplus#1_{ {#2} \in {#3} }{#4}}
+\newcommand{\oplusl}[3][]{\bigoplus#1_{#2}{#3}}
+\newcommand{\otimese}[5][]{\bigotimes#1_{ {#2} = {#3} }^{#4}{#5}}
+\newcommand{\otimesb}[4][]{\bigotimes#1_{#2}^{#3}{#4}}
+\newcommand{\otimesi}[4][]{\bigotimes#1_{ {#2} \in {#3} }{#4}}
+\newcommand{\otimesl}[3][]{\bigotimes#1_{#2}{#3}}
+
+% Limit operators
+% There are r (#2 -> #3), b (#2 below and #3 above),
+% l (#2 below) sub-types
+\newcommand{\limr}[4][]{\lim#1_{ {#2} \srar {#3} }{#4}}
+\newcommand{\limb}[4][]{\lim#1_{#2}^{#3}{#4}}
+\newcommand{\liml}[3][]{\lim#1_{#2}{#3}}
+\newcommand{\limor}[4][]{\varlimsup#1_{ {#2} \srar {#3} }{#4}}
+\newcommand{\limob}[4][]{\varlimsup#1_{#2}^{#3}{#4}}
+\newcommand{\limol}[3][]{\varlimsup#1_{#2}{#3}}
+\newcommand{\limur}[4][]{\varliminf#1_{ {#2} \srar {#3} }{#4}}
+\newcommand{\limub}[4][]{\varliminf#1_{#2}^{#3}{#4}}
+\newcommand{\limul}[3][]{\varliminf#1_{#2}{#3}}
+\newcommand{\limsupr}[4][]{\limsup#1_{ {#2} \srar {#3} }{#4}}
+\newcommand{\limsupb}[4][]{\limsup#1_{#2}^{#3}{#4}}
+\newcommand{\limsupl}[3][]{\limsup#1_{#2}{#3}}
+\newcommand{\liminfr}[4][]{\liminf#1_{ {#2} \srar {#3} }{#4}}
+\newcommand{\liminfb}[4][]{\liminf#1_{#2}^{#3}{#4}}
+\newcommand{\liminfl}[3][]{\liminf#1_{#2}{#3}}
+
+% Integration operators
+% There are b (from #2 to #3), l (#2 below) and
+% n (nothing) sub-types
+\newcommand{\intb}[4][]{\int#1_{#2}^{#3}{#4}}
+\newcommand{\intl}[3][]{\int#1_{#2}{#3}}
+\newcommand{\intn}[2][]{\int#1{#2}}
+\newcommand{\intob}[4][]{\overline{\int#1_{#2}^{#3}}{#4}}
+\newcommand{\intol}[3][]{\overline{\int#1_{#2}}{#3}}
+\newcommand{\inton}[2][]{\overline{\int#1}{#2}}
+\newcommand{\intub}[4][]{\underline{\int#1_{#2}^{#3}}{#4}}
+\newcommand{\intul}[3][]{\underline{\int#1_{#2}}{#3}}
+\newcommand{\intun}[2][]{\underline{\int#1}{#2}}
+\newcommand{\iintb}[4][]{\iint#1_{#2}^{#3}{#4}}
+\newcommand{\iintl}[3][]{\iint#1_{#2}{#3}}
+\newcommand{\iintn}[2][]{\iint#1{#2}}
+\newcommand{\iintob}[4][]{\overline{\iint#1_{#2}^{#3}}{#4}}
+\newcommand{\iintol}[3][]{\overline{\iint#1_{#2}}{#3}}
+\newcommand{\iinton}[2][]{\overline{\iint#1}{#2}}
+\newcommand{\iintub}[4][]{\underline{\iint#1_{#2}^{#3}}{#4}}
+\newcommand{\iintul}[3][]{\underline{\iint#1_{#2}}{#3}}
+\newcommand{\iintun}[2][]{\underline{\iint#1}{#2}}
+\newcommand{\iiintb}[4][]{\iiint#1_{#2}^{#3}{#4}}
+\newcommand{\iiintl}[3][]{\iiint#1_{#2}{#3}}
+\newcommand{\iiintn}[2][]{\iiint#1{#2}}
+\newcommand{\iiintob}[4][]{\overline{\iiint#1_{#2}^{#3}}{#4}}
+\newcommand{\iiintol}[3][]{\overline{\iiint#1_{#2}}{#3}}
+\newcommand{\iiinton}[2][]{\overline{\iiint#1}{#2}}
+\newcommand{\iiintub}[4][]{\underline{\iiint#1_{#2}^{#3}}{#4}}
+\newcommand{\iiintul}[3][]{\underline{\iiint#1_{#2}}{#3}}
+\newcommand{\iiintun}[2][]{\underline{\iiint#1}{#2}}
+\ifdefined\pppppassdef@esint%
+\newcommand{\ointb}[4][]{\oint#1_{#2}^{#3}{#4}}%
+\newcommand{\ointl}[3][]{\oint#1_{#2}{#3}}%
+\newcommand{\ointn}[2][]{\oint#1{#2}}%
+\newcommand{\ointob}[4][]{\overline{\oint#1_{#2}^{#3}}{#4}}%
+\newcommand{\ointol}[3][]{\overline{\oint#1_{#2}}{#3}}%
+\newcommand{\ointon}[2][]{\overline{\oint#1}{#2}}%
+\newcommand{\ointub}[4][]{\underline{\oint#1_{#2}^{#3}}{#4}}%
+\newcommand{\ointul}[3][]{\underline{\oint#1_{#2}}{#3}}%
+\newcommand{\ointun}[2][]{\underline{\oint#1}{#2}}%
+\newcommand{\oiintb}[4][]{\oiint#1_{#2}^{#3}{#4}}%
+\newcommand{\oiintl}[3][]{\oiint#1_{#2}{#3}}%
+\newcommand{\oiintn}[2][]{\oiint#1{#2}}%
+\newcommand{\oiintob}[4][]{\overline{\oiint#1_{#2}^{#3}}{#4}}%
+\newcommand{\oiintol}[3][]{\overline{\oiint#1_{#2}}{#3}}%
+\newcommand{\oiinton}[2][]{\overline{\oiint#1}{#2}}%
+\newcommand{\oiintub}[4][]{\underline{\oiint#1_{#2}^{#3}}{#4}}%
+\newcommand{\oiintul}[3][]{\underline{\oiint#1_{#2}}{#3}}%
+\newcommand{\oiintun}[2][]{\underline{\oiint#1}{#2}}%
+\newcommand{\oiiintb}[4][]{\oiiint#1_{#2}^{#3}{#4}}%
+\newcommand{\oiiintl}[3][]{\oiiint#1_{#2}{#3}}%
+\newcommand{\oiiintn}[2][]{\oiiint#1{#2}}%
+\newcommand{\oiiintob}[4][]{\overline{\oiiint#1_{#2}^{#3}}{#4}}%
+\newcommand{\oiiintol}[3][]{\overline{\oiiint#1_{#2}}{#3}}%
+\newcommand{\oiiinton}[2][]{\overline{\oiiint#1}{#2}}%
+\newcommand{\oiiintub}[4][]{\underline{\oiiint#1_{#2}^{#3}}{#4}}%
+\newcommand{\oiiintul}[3][]{\underline{\oiiint#1_{#2}}{#3}}%
+\newcommand{\oiiintun}[2][]{\underline{\oiiint#1}{#2}}%
+\fi
+
+% Phantom-style blanks
+% Note that this is useful in aligned environment to typeset linear
+% systems
+\newcommand{\ptrel}[1]{\mathrel{\phantom{#1}}}
+\newcommand{\ptbin}[1]{\mathbin{\phantom{#1}}}
+\newcommand{\ptop}[1]{\mathop{\phantom{#1}}}
+
+% Theorem and enumerate environments for papers
+\ifdefined\pppppassdef@paper%
+\RequirePackage{ntheorem}%
+\RequirePackage{enumitem}%
+%
+% Localization words
+\ifdefined\pppppassdef@english%
+\newcommand{\thmdefinitionnamethm}{Definition}%
+\newcommand{\thmconceptnamethm}{Concept}%
+\newcommand{\thmnotationnamethm}{Notation}%
+\newcommand{\thmpropertynamethm}{Property}%
+\newcommand{\thmexamplenamethm}{Example}%
+\newcommand{\thmquestionnamethm}{Question}%
+\newcommand{\thmtheoremnamethm}{Theorem}%
+\newcommand{\thmlemmanamethm}{Lemma}%
+\newcommand{\thmcorollarynamethm}{Corollary}%
+\newcommand{\thmalgorithmnamethm}{Algorithm}%
+\newcommand{\thmproofnamethm}{Proof}%
+\newcommand{\thmanswernamethm}{Answer}%
+\newcommand{\thmremarknamethm}{Remark}%
+\newcommand{\thmabstractnamethm}{Abstract}%
+\newcommand{\thmusagenamethm}{Usage}%
+\else%
+\newcommand{\thmdefinitionnamethm}{定义}%
+\newcommand{\thmconceptnamethm}{概念}%
+\newcommand{\thmnotationnamethm}{记号}%
+\newcommand{\thmpropertynamethm}{性质}%
+\newcommand{\thmexamplenamethm}{例子}%
+\newcommand{\thmquestionnamethm}{问题}%
+\newcommand{\thmtheoremnamethm}{定理}%
+\newcommand{\thmlemmanamethm}{引理}%
+\newcommand{\thmcorollarynamethm}{推论}%
+\newcommand{\thmalgorithmnamethm}{算法}%
+\newcommand{\thmproofnamethm}{证明}%
+\newcommand{\thmanswernamethm}{解答}%
+\newcommand{\thmremarknamethm}{注}%
+\newcommand{\thmabstractnamethm}{摘要}%
+\newcommand{\thmusagenamethm}{用法}%
+\fi%
+%
+% Hierarchically indent lists
+\newenvironment{partlist}[1][]%
+	{\begin{enumerate}[itemsep=0pt, label=(\arabic*), wide, labelindent=\parindent, listparindent=\parindent, #1]}%
+	{\end{enumerate}}%
+\newenvironment{partpartlist}[1][]%
+	{\begin{enumerate}[itemsep=0pt, label=(\roman*), wide, labelindent=2\parindent, listparindent=2\parindent, #1]}%
+	{\end{enumerate}}%
+\newenvironment{partpartpartlist}[1][]%
+	{\begin{enumerate}[itemsep=0pt, label=\alph*., wide, labelindent=3\parindent, listparindent=3\parindent, #1]}%
+	{\end{enumerate}}%
+%
+% New theorem styles
+\newtheoremstyle{nonameplain}%
+	{\item[\theorem@headerfont\hskip\labelsep{##2}\theorem@separator]}%
+	{\item[\theorem@headerfont\hskip \labelsep{##2}\ (##3)\theorem@separator]}%
+\newtheoremstyle{nonameindent}%
+	{\item[\theorem@headerfont\hskip\labelsep\hspace{\parindent}##2\theorem@separator]}%
+	{\item[\theorem@headerfont\hskip \labelsep\hspace{\parindent}##2\ (##3)\theorem@separator]}%
+\newtheoremstyle{nonumberindent}%
+	{\item[\theorem@headerfont\hskip\labelsep\hspace{\parindent}##1\theorem@separator]}%
+	{\item[\theorem@headerfont\hskip \labelsep\hspace{\parindent}##1\ (##3)\theorem@separator]}%
+%
+% Theorem-like environments
+{%
+	\theoremstyle{plain}%
+	\theorembodyfont{\normalfont}%
+	\newtheorem{thmdefinition}{\hspace{\parindent}\thmdefinitionnamethm}%
+}%
+{%
+	\theoremstyle{plain}%
+	\theorembodyfont{\normalfont}%
+	\newtheorem{thmconcept}{\hspace{\parindent}\thmconceptnamethm}%
+}%
+{%
+	\theoremstyle{plain}%
+	\theorembodyfont{\normalfont}%
+	\newtheorem{thmnotation}{\hspace{\parindent}\thmnotationnamethm}%
+}%
+{%
+	\theoremstyle{plain}%
+	\theorembodyfont{\normalfont}%
+	\newtheorem{thmproperty}{\hspace{\parindent}\thmpropertynamethm}%
+}%
+{%
+	\theoremstyle{plain}%
+	\theorembodyfont{\normalfont}%
+	\newtheorem{thmexample}{\hspace{\parindent}\thmexamplenamethm}%
+}%
+{%
+	\theoremstyle{plain}%
+	\theorembodyfont{\normalfont}%
+	\newtheorem{thmquestion}{\hspace{\parindent}\thmquestionnamethm}%
+}%
+{%
+	\theoremstyle{plain}%
+	\theorembodyfont{\normalfont}%
+	\newtheorem{thmtheorem}{\hspace{\parindent}\thmtheoremnamethm}%
+}%
+{%
+	\theoremstyle{plain}%
+	\theorembodyfont{\normalfont}%
+	\newtheorem{thmlemma}{\hspace{\parindent}\thmlemmanamethm}%
+}%
+{%
+	\theoremstyle{plain}%
+	\theorembodyfont{\normalfont}%
+	\newtheorem{thmcorollary}{\hspace{\parindent}\thmcorollarynamethm}%
+}%
+{%
+	\theoremstyle{plain}%
+	\theorembodyfont{\normalfont}%
+	\newtheorem{thmalgorithm}{\hspace{\parindent}\thmalgorithmnamethm}%
+}%
+{%
+	\theoremstyle{nonumberplain}%
+	\theorembodyfont{\normalfont}%
+	\newtheorem{thmproof}{\hspace{\parindent}\thmproofnamethm}%
+}%
+{%
+	\theoremstyle{nonumberplain}%
+	\theorembodyfont{\normalfont}%
+	\newtheorem{thmanswer}{\hspace{\parindent}\thmanswernamethm}%
+}%
+{%
+	\theoremstyle{nonumberplain}%
+	\theorembodyfont{\normalfont\itshape}%
+	\newtheorem{thmremark}{\hspace{\parindent}\thmremarknamethm}%
+}%
+{%
+	\theoremstyle{nonumberplain}%
+	\theorembodyfont{\normalfont}%
+	\newtheorem{thmabstract}{\hspace{\parindent}\thmabstractnamethm}%
+}%
+{%
+	\theoremstyle{nonumberplain}%
+	\theorembodyfont{\normalfont}%
+	\newtheorem{thmusage}{\hspace{\parindent}\thmusagenamethm}%
+}%
+%
+% Set counter style
+\ifdefined\pppppassdef@secnumbered\then%
+\numberwithin{thmdefinition}{section}%
+\numberwithin{thmconcept}{section}%
+\numberwithin{thmnotation}{section}%
+\numberwithin{thmproperty}{section}%
+\numberwithin{thmexample}{section}%
+\numberwithin{thmquestion}{section}%
+\numberwithin{thmtheorem}{section}%
+\numberwithin{thmlemma}{section}%
+\numberwithin{thmcorollary}{section}%
+\numberwithin{thmalgorithm}{section}%
+\numberwithin{thmproof}{section}%
+\numberwithin{thmanswer}{section}%
+\numberwithin{thmremark}{section}%
+\numberwithin{thmabstract}{section}%
+\numberwithin{thmusage}{section}%
+\fi%
+\fi
+
+% Set counter style
+\ifdefined\pppppassdef@secnumbered\then%
+\numberwithin{equation}{section}%
+\numberwithin{figure}{section}%
+\numberwithin{table}{section}%
+\fi
