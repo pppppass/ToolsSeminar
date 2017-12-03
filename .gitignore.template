@@ -15,6 +15,7 @@
 *.synctex.gz
 *.toc
 *.vrb
+*.thm
 
 # Other temporary files
 *.log
