@@ -20,6 +20,7 @@
 # Other temporary files
 *.log
 nppBackup/
+__pycache__/
 
 # Binary files
 *.pdf
