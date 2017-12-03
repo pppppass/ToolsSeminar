@@ -25,6 +25,8 @@ The schedule of the seminar is planned as the following.
 Some remarks:
 - The time of seminar is not completely determined yet. It will be
 discussed and determined in the beginning of the next semester.
+- Extra topics are fully optional. And it is welcomed to add more extra
+topics, e.g. Tensorflow, database and so on.
 
 Before the material due, person responsible for the topic should:
 - Upload, or say push, a source file of a slide of outline. (An article
