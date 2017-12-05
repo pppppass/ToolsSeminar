@@ -1,0 +1,26 @@
+# Backup files of vim
+*~
+
+# .gitignore itself
+.gitignore
+
+# LaTeX temporary files
+*.aux
+*.bcf
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex
+*.synctex.gz
+*.toc
+*.vrb
+*.thm
+
+# Other temporary files
+*.log
+nppBackup/
+__pycache__/
+
+# Binary files
+*.pdf

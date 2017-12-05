@@ -1,0 +1,129 @@
+% !TeX encoding = UTF-8 Unicode
+% !TeX program = LuaLaTeX
+% !TeX spellcheck = LaTeX
+
+% Author : pppppass
+% Description : Outline: Git and GitHub -- Seminar on Selected Tools Week 0
+
+\documentclass[english, nochinese]{pkuslide}
+
+\usepackage{def}
+
+\title{Outline: Git and GitHub}
+\subtitle{Seminar on Selected Tools Week 0}
+
+\author{pppppass}
+\date{\today}
+
+\subject{Outline: Git and GitHub -- Seminar on Selected Tools Week 0}
+\keywords{}
+
+	\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\tableofcontents[subsectionstyle=show]
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}
+\sectionpage
+\end{frame}
+
+\begin{frame}{Introduction}
+\begin{itemize}
+\item Git is a distributed version control system. \\
+(``Distributed is the new centralized'')
+\item Famous GitHub and Bitbucket are based on Git.
+\item GitHub is a version control hosting services. \\
+(And some kind of social networking service is also included)
+\end{itemize}
+\end{frame}
+
+\section{Usage of Git}
+
+\begin{frame}
+\sectionpage
+\end{frame}
+
+\begin{frame}[fragile]{Basic concepts}
+\begin{enumerate}
+\item Working directory, staging area and git repository
+\item Pointer \verb"HEAD"
+\item Branches, branch \verb"master"
+\item Remote repositories
+\end{enumerate}
+In Git, history \alert{cannot} be completed erased.
+\end{frame}
+
+\begin{frame}[fragile]{Repository manipulation}
+\begin{enumerate}
+\item Initialize: \verb"git init"
+\item Check status: \verb"git status"
+\item History: \verb"git log" and \verb"git reflog" (commit log)
+\item Differentiate: \verb"git diff"
+\item From working directory to staging area: \verb"git add"
+\item From staging area to repository: \verb"git commit"
+\item Clean staging area: \verb"git reset"
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Remote repositories}
+\begin{enumerate}
+\item Clone: \verb"git clone" (especially from GitHub)
+\item Add remote repo: \verb"git remote add"
+\item Synchronize \verb"git push" and \verb"git pull"
+\item Track remote branch: \verb"git branch --set-upstream-to" and \verb"git push --set-upstream"
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Branch manipulation}
+Branch merging strategies:
+\begin{enumerate}
+\item Fast-forward
+\item Recursive
+\item Conflic
+\end{enumerate}
+
+Branch manipulation commands:
+\begin{enumerate}
+\item Create and remove branch: \verb"git branch"
+\item Move among branches: \verb"git checkout"
+\item Merge a branch: \verb"git merge"
+\end{enumerate}
+\end{frame}
+
+\section{Usage of GitHub}
+
+\begin{frame}
+\sectionpage
+\end{frame}
+
+\begin{frame}{Basic concepts}
+Open source contributions are encouraged, \\
+but take care for licenses and rights
+\begin{enumerate}
+\item Public repository and private repository
+\item Fork
+\item Issues
+\item Pull requests and merge requests
+\item Stars
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Further topics}
+\begin{enumerate}
+\item Projects
+\item Wiki
+\item Gist
+\item Releases
+\item Social network service: following and followers
+\item Licenses
+\end{enumerate}
+\end{frame}
+
+	\end{document}
