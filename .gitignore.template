@@ -25,7 +25,10 @@ __pycache__/
 # Binary files
 *.pdf
 
-#the following are appended for MacOS users: copyright@ https://github.com/github/gitignore/blob/master/Global/macOS.gitignore
+# The following are appended for MacOS users
+# Modified from https://github.com/github/gitignore/blob/master/Global/macOS.gitignore
+# License: CC0-1.0
+
 # General
 .DS_Store
 .AppleDouble
