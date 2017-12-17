@@ -27,7 +27,7 @@
 
 % Identification
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{def}[2017/11/21 ppppass' personal macro package]
+\ProvidesPackage{def}[2017/12/16 ppppass' personal macro package]
 
 % Option declarations
 \DeclareOption{cancel}{\def\pppppassdef@cancel{\relax}}
@@ -142,7 +142,8 @@
 \let\Si\si%
 \let\si\relax%
 \sisetup{%
-input-symbols=\pi\spi\piup\dots\cdots,%
+input-symbols = \pi\spi\piup\dots\cdots,%
+binary-units = true,%
 }%
 \fi
 
@@ -298,10 +299,10 @@ flexiblecolumns%
 \newcommand{\bfrac}[2]{\left. #1 \middle/ #2 \right.}
 
 % Supplementary brackets
-\newcommand{\crbr}[1]{\mathbin{}\rbra{#1}}
-\newcommand{\csbr}[1]{\mathbin{}\sbra{#1}}
-\newcommand{\ccbr}[1]{\mathbin{}\cbra{#1}}
-\newcommand{\cpbr}[1]{\mathbin{}\pbra{#1}}
+\newcommand{\crbr}[1]{\mathbin{}\rbr{#1}}
+\newcommand{\csbr}[1]{\mathbin{}\sbr{#1}}
+\newcommand{\ccbr}[1]{\mathbin{}\cbr{#1}}
+\newcommand{\cpbr}[1]{\mathbin{}\pbr{#1}}
 
 % Texts in math mode
 \newcommand{\mtx}[1]{\mathrel{\text{{#1}}}}
