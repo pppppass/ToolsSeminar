@@ -22,12 +22,12 @@
 %   pkupaper.manifest.md
 % and an introduction is included as well.
 %
-% This file cannot be typeset directly. It is recommended to typeset
-% with LuaLaTeX.
+% This file cannot be typeset directly. When using this file
+% by \documentclass{...}, it is recommended to typeset with LuaLaTeX.
 
 % Identification
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{pkupaper}[2017/11/15 PKU-style paper class]
+\ProvidesClass{pkupaper}[2017/12/15 PKU-style paper class]
 
 % Declaration of options
 \DeclareOption{english}{\def\pkupaper@english{\relax}}
