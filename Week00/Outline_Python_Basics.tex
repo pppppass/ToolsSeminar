@@ -1,0 +1,228 @@
+% !TeX encoding = UTF-8 Unicode
+% !TeX program = LuaLaTeX
+% !TeX spellcheck = LaTeX
+
+% Author : pppppass
+% Description : Outline: Python Basics -- Seminar on Selected Tools Week 0
+
+\documentclass[english, nochinese]{pkuslide}
+
+\usepackage{def}
+
+\title{Outline: Python Basics}
+\subtitle{Seminar on Selected Tools Week 0}
+
+\author{pppppass}
+\date{\today}
+
+\subject{Outline: Python Basics -- Seminar on Selected Tools Week 0}
+\keywords{Python}
+
+	\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\tableofcontents[subsectionstyle=show]
+\end{frame}
+
+\section{Basic topics}
+
+\begin{frame}
+\sectionpage
+\end{frame}
+
+\subsection{Introduction}
+
+\begin{frame}{Key properties of Python}
+\begin{enumerate}
+\item Indentation based
+\item Very-high-level
+\item Interpreted: interactivate, dynamic but slow
+\item Object-oriented: ``Everything is an object''
+\item Partial functional programming support
+\item Flexible and versatile: plenty of syntactic sugar
+\item Glue language: easy to communicate with programs in other language
+\item Easy to hook built-in utilities
+\item Powerful libraries and strong community
+\end{enumerate}
+\end{frame}
+
+\subsection{Data structures}
+
+\begin{frame}{Data structures}
+\begin{enumerate}
+\item Numbers
+\item Strings and bytes
+\item Tuples
+\item List
+\item Dictionary
+\item Set
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Basic operations}
+\begin{enumerate}
+\item Methods as attributes and objects
+\item Pack and unpack
+\item Keyword \verb"del": remove reference
+\item Iteratable as sequence
+\end{enumerate}
+\end{frame}
+
+\subsection{Flow control}
+
+\begin{frame}[fragile]{Flow control statements}
+\begin{enumerate}
+\item Clause \verb"if"-\verb"elif"-\verb"else"
+\item Clause (\verb"for", \verb"in")-\verb"else": range-based loop
+\item Clause \verb"break", \verb"continue", \verb"pass"
+\item Clause \verb"with"-\verb"as": automatic clean up
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Exception handling}
+\begin{enumerate}
+\item Clause \verb"try"-\verb"except"-\verb"else"-\verb"finally"
+\item Keyword \verb"raise"
+\item Class \verb"Exception": inheritance-based exception handling
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Functions}
+\begin{enumerate}
+\item Keyword \verb"def"
+\item Positional arguments and keyword arguments
+\item Arbitrary argument lists: dynamic argument processing
+\item Documentation strings: in-line helps and \verb"help()"
+\end{enumerate}
+\end{frame}
+
+\section{Further topics}
+
+\begin{frame}
+\sectionpage
+\end{frame}
+
+\subsection{Object-oriented Programming}
+
+\begin{frame}
+\sectionpage
+\end{frame}
+
+\begin{frame}[fragile]{Classes}
+\begin{enumerate}
+\item Keyword \verb"class"
+\item Method \verb"__init__()"
+\item Class objects
+\item Instance objects
+\item Method objects
+\item Class variables and instance variables
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Modules}
+\begin{enumerate}
+\item Keyword \verb"import", \verb"from" and \verb"as"
+\item Attribute \verb"__name__"
+\item Function \verb"dir()" and \verb"help()"
+\end{enumerate}
+\end{frame}
+
+\subsection{Functional Programming}
+
+\begin{frame}[fragile]{Functional programming utilities}
+\begin{enumerate}
+\item Lambda expressions
+\item Iterables and iterators: lazy evalutaion by \verb"iter()" and \verb"next()", implemented by \verb"__iter__()" and \verb"__next__()"
+\item Generator, \verb"yield"
+\item Comprehensions: list, dict, set and generator
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Iterables manipulating functions}
+\begin{enumerate}
+\item Function \verb"items()"
+\item Function \verb"enumerate()"
+\item Function \verb"zip()"
+\item Function \verb"reversed()"
+\item Function \verb"sorted()"
+\end{enumerate}
+\end{frame}
+
+\section{Miscellaneous topics}
+
+\begin{frame}
+\sectionpage
+\end{frame}
+
+\begin{frame}[fragile]{Input and Output}
+\begin{enumerate}
+\item Method \verb"format" of class \verb"str", or \verb"printf"-style \verb"%"
+\item Function \verb"open()" and \verb"close()"
+\item Method \verb"read()" and \verb"write()"
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Dunder names}
+Dunder methods, or special methods, are a series of methods meant to be called by Python.
+\begin{enumerate}
+\item Module related: \verb"__name__", \verb"__version__"
+\item Type cast: \verb"__str__", \verb"__int__", \verb"__float__"
+\item Formatting: \verb"__repr__", \verb"__format__", \verb"__bytes__"
+\item Emulating callables: \verb"__call__"
+\item Iteration: \verb"__iter__", \verb"__next__"
+\item Operators: \verb"__le__", \verb"__lt__", \verb"__add__"
+\end{enumerate}
+\end{frame}
+
+\section{Related resources}
+
+\begin{frame}
+\sectionpage
+\end{frame}
+
+\subsection{Coding style guidlines}
+
+\begin{frame}[fragile]{PEPs}
+\begin{enumerate}
+\item Python Enhancement Proposals
+\item PEP 8: Style Guide for Python Code
+\item PEP 7: Style Guide for C Code
+\item PEP 20: The Zen of Python
+\item Try \verb"import this" in interactive mode
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Two key ideas of PEP 8}
+\begin{enumerate}
+\item Readability counts
+\item Consistency
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Guidelines in PEP 8}
+\begin{enumerate}
+\item Use 4 space per indentation level
+\item Maximum line length of 79 characters
+\item Blank lines
+\item UTF-8 encoding
+\item Whitespaces
+\item Naming conventions
+\end{enumerate}
+\end{frame}
+
+\subsection{Related tool chains}
+
+\begin{frame}[fragile]{Related tool chains}
+\begin{enumerate}
+\item Anaconda: a package and environment manager of Python
+\item Package \verb"venv": a virtual environment manager
+\item Program \texttt{pip} and PyPI: python package manager
+\item Jupyter notebook: Web interactive Python application, especially live code demostration and visualization
+\end{enumerate}
+\end{frame}
+
+	\end{document}

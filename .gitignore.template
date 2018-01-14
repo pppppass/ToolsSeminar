@@ -1,0 +1,58 @@
+# Backup files of vim
+*~
+
+# .gitignore itself
+.gitignore
+
+# LaTeX temporary files
+*.aux
+*.bcf
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex
+*.synctex.gz
+*.toc
+*.vrb
+*.thm
+
+# Other temporary files
+*.log
+nppBackup/
+__pycache__/
+
+# Binary files
+*.pdf
+
+# The following are appended for MacOS users
+# Modified from https://github.com/github/gitignore/blob/master/Global/macOS.gitignore
+# License: CC0-1.0
+
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk

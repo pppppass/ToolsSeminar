@@ -1,0 +1,217 @@
+% !TeX encoding = UTF-8 Unicode
+% !TeX program = LuaLaTeX
+% !TeX spellcheck = LaTeX
+
+% Author : pppppass
+% Description : Outline: LaTeX -- Seminar on Selected Tools Week 0
+
+\documentclass[english, nochinese]{pkuslide}
+
+\usepackage{def}
+
+\title{Outline: \LaTeX}
+\subtitle{Seminar on Selected Tools Week 0}
+
+\author{pppppass}
+\date{\today}
+
+\subject{Outline: LaTeX -- Seminar on Selected Tools Week 0}
+\keywords{}
+
+	\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\tableofcontents[subsectionstyle=show]
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}
+\sectionpage
+\end{frame}
+
+\subsection{\TeX and \LaTeX}
+
+\begin{frame}{What is \TeX and \LaTeX?}
+\begin{enumerate}
+\item \TeX{} is a typesetting system originally designed by Donald Knuth.
+\item \LaTeX{} is a typesetting system based on \TeX{} designed \\
+originally designed by Lesile Lamport.
+\item Basic idea of \TeX{} and \LaTeX{}: ``What you think is what you get'', \\ distinguished from ``What you see is what you get''
+\item Programming mechanism of \TeX{} and \LaTeX{} is based on macros.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Why to use \LaTeX?}
+\begin{enumerate}
+\item Beautiful and elegant layout and fonts
+\item Full and explicit control of details
+\item Very easy to handle structured materials \\
+e.g. papers, books, notes
+\item De facto standard for mathematics, physics and computer science
+\item Widely used math modes for mathematical formulas \\
+e.g. Markdown, websites and even daily communication
+\item A great number of packages, and an activate community
+\end{enumerate}
+
+When not to use \LaTeX{}: the material is highly unstructured
+\end{frame}
+
+\subsection{Basic concepts}
+
+\begin{frame}{Basic concepts}
+\begin{enumerate}
+\item \TeX engines and \TeX formats
+\item Commands (control sequences) and arguments
+\item Whitespaces
+\item Envorinments and groups
+\item Math modes: inline and displayed
+\item Packages and document classes
+\item Floats: figures and tables
+\item Bibliography tools
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Basic structure of a document}
+\begin{enumerate}
+\item Command \verb"\documentclass{...}":
+\verb"article", \verb"ctexart" and \verb"beamer"
+\item Preamble: definitions and \verb"\usepackage{...}"s
+\item Begin a document environment: \verb"\begin{document}"
+\item Top matters: \verb"\title{...}", \verb"\author{...}" and \verb"\date{...}"
+\item Section: \verb"\section{...}" and so on
+\item Paragraphs separated by a single blank line
+\item End a document environment: \verb"\end{document}"
+\end{enumerate}
+\end{frame}
+
+\section{Basic typesetting}
+
+\begin{frame}
+\sectionpage
+\end{frame}
+
+\subsection{Text mode}
+
+\begin{frame}[fragile]{Text formatting}
+\begin{enumerate}
+\item Special characters: \verb"\&", \verb"\_", \verb"\S"
+\item Whitespace: \verb"\ ", \verb"\!", \verb"\phantom{...}" and \verb"\hspace{...}"
+\item Paragraphs: \verb"\\", \verb"\par" and two blank lines
+\item Orthogonal coordinates of fonts: \\
+English: \verb"\ttfamily", \verb"\bfseries", \verb"\textrm{...}", \verb"\textit{...}" \\
+Chinese: \verb"\kaishu", \verb"\heiti"
+\item Emphasize: \verb"\emph{...}"
+\item Font size: \verb"\tiny", \verb"\small", \verb"\large", \verb"\Large", \verb"\LARGE"
+\item Align: \verb"\centering", \verb"\raggedright"
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Basic environments}
+\begin{enumerate}
+\item Quotes: \verb"quote"
+\item Lists: \verb"enumerate", \verb"itemize" and package \verb"enumitem"
+\item Theorems: \verb"\newtheorem" and package \verb"ntheorem"
+\item Verbatim: \verb"\verb'...'"
+\item Program lists: \verb"lstlisting" and package \verb"listings"
+\end{enumerate}
+\end{frame}
+
+\subsection{Math mode}
+
+\begin{frame}[fragile]{Formula formatting}
+\begin{enumerate}
+\item Use \verb"$" for inline formulas \\
+and envorinment \verb"equation" for displayed ones
+\item Symbols
+\item Formula structures
+\item Environments
+\item Package \verb"amsmath"
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Mathematical symbols}
+\begin{enumerate}
+\item Types: normal texts, operators, binary operators, relations accents
+\item Fonts: \verb"\mathrm{...}", \verb"\mathbf{...}"
+\item Normal symbols: \verb"\exists", \verb"\forall"
+\item Operators: \verb"\log", \verb"\sin"
+\item Binary operators: \verb"+", \verb"\setminus", \verb"\otimes"
+\item Relations: \verb"\le", \verb"\equiv", \verb"\approx"
+\item Whitespace: \verb"\,", \verb"\!" \\
+frequently used: \verb"\mathop{\mathrm{d}\!} x"
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Formula structures}
+\begin{enumerate}
+\item Subscript and superscript: \verb"_" and \verb"^"
+\item Fraction and binominals: \verb"\frac{...}{...}", \verb"\binom{...}{...}"
+\item Roots and radicals: \verb"\sqrt{...}"
+\item Huge operators: \verb"\sum", \verb"\product", \verb"\bigoplus"
+\item Delimiters: \verb"\left", \verb"\right", and brakets like \verb"\lfloor"
+\item Matrices: environment \verb"matrix", \verb"bmatrix" and package \verb"amsmath"
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Mathematical environments}
+\begin{enumerate}
+\item Basic equations: enviromnet \verb"equation"
+\item Matrices: environment \verb"matrix", \verb"bmatrix"
+\item If-cases: environment \verb"cases"
+\item Gathered equations: environment \verb"gather"
+\item Aligned equations: environment \verb"align"
+\item Formulas in formulas: environment \verb"split", \verb"gathered" and \verb"aligned"
+\end{enumerate}
+\end{frame}
+
+\section{Further topics}
+
+\begin{frame}
+\sectionpage
+\end{frame}
+
+\begin{frame}[fragile]{Bibliography}
+\begin{enumerate}
+\item BibTeX
+\item Footnote: \verb"\footnote{...}"
+\item Cite: \verb"\cite{...}"
+\item Display: \verb"\printbibliography"
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Floats}
+\begin{enumerate}
+\item Environment \verb"figure"
+\item Environment \verb"table"
+\item Package \verb"graphicx"
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Tables}
+\begin{enumerate}
+\item Environment \verb"tabular" and \verb"array"
+\item Column formats: e.g. \verb"|c|rrrlr|"
+\item Align: \verb"&" and \verb"\\"
+\item Row lines: \verb"\hline"
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Other useful packages}
+\begin{enumerate}
+\item Layout: \verb"geometry"
+\item Longer table: \verb"longtable"
+\item Multiple integrals: \verb"esint"
+\item Calligraphy: \verb"mathrsfs"
+\item Algorithms: \verb"algorithm2e" or \verb"algorithm"
+\item Hyper-links: \verb"hyperref"
+\item Include .pdf files: \verb"pdfpages"
+\item Thesis: \verb"pkuthss", \verb"thuthesis"
+\end{enumerate}
+\end{frame}
+
+	\end{document}
