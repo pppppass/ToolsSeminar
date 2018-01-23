@@ -1,5 +1,6 @@
-# Backup files of vim
+# Backup files
 *~
+*.bak
 
 # .gitignore itself
 .gitignore
@@ -12,6 +13,7 @@
 *.run.xml
 *.snm
 *.synctex
+*.synctex(busy)
 *.synctex.gz
 *.toc
 *.vrb
@@ -22,6 +24,7 @@
 nppBackup
 __pycache__
 .vscode
+*.tmp
 
 # Binary files
 *.pdf

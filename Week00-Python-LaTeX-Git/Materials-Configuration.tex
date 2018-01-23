@@ -3,27 +3,25 @@
 % !TeX spellcheck = en_US
 
 % Author : pppppass
-% Description : Matetials: Configuration --- Seminar on Selected Tools Week 0 --- Python, LaTeX and Git
+% Description : Materials: Configuration --- Seminar on Selected Tools Week 0 --- Python, LaTeX and Git
 
 \documentclass[english]{../TeXTemplate/pkupaper}
 
 \usepackage[paper]{../TeXTemplate/def}
 
-\usepackage{lipsum}
-
 \newcommand{\cuniversity}{}
-\newcommand{\cthesisname}{Matetials: Configuration --- Seminar on Selected Tools Week 0 --- Python, LaTeX and Git}
-\newcommand{\titlemark}{Matetials: Configuration}
+\newcommand{\cthesisname}{Materials: Configuration --- Seminar on Selected Tools Week 0 --- Python, LaTeX and Git}
+\newcommand{\titlemark}{Materials: Configuration}
 
 \title{\titlemark}
 \author{pppppass}
-\date{\today}
+\date{January 22, 2018}
 
 \begin{document}
 
 \maketitle
 
-This article provides some suggestions on system and environment-related issues and everything is \textbf{optional}. The information is updated on January 21, 2018.
+The information is updated on January 21, 2018.
 
 \section{Environments}
 
@@ -67,11 +65,13 @@ For Linux and Mac OS users, nothing is needed but just opening a terminal.
 
 A Chinese introduction to Linux command lines is shown \href{https://linux.cn/article-6160-1.html}{here}. NIH also provides a course \href{https://hpc.nih.gov/training/handouts/Linux_NIH_2017.pdf}{\emph{Introduction to Linux}} to tell basic GNU and Linux concepts. The first 32 pages is adequate for a start in Linux.
 
-SSH and Vim, which are two important tools, are always included in Unix-like environments. If not, you may install it through your package manager.
+SSH, Vim and Make, which are three important tools, are always included in Unix-like environments. If not, you may install it through your package manager.
 
 To perform remote login, a SSH key is needed to be generated. This is described in Xuefeng Liao's \emph{Git tutorial} in the section \href{https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001374385852170d9c7adf13c30429b9660d0eb689dd43a000}{\emph{Remote repositories}}, as well as in \emph{Git official tutorial} in section 4.3 \href{https://git-scm.com/book/en/v2/Git-on-the-Server-Generating-Your-SSH-Public-Key}{\emph{Git on the Server --- Generating Your SSH Public Key}}. If you want to permit remote logins into your system, a SSH service is also required, which is described \href{http://www.linuxidc.com/Linux/2010-02/24349.htm}{here}. The command \verb"ssh-add" creates a daemon of related keys and frees people from repeating input the passphrase, which is described \href{http://blog.csdn.net/vizts/article/details/47043695}{here} and \href{https://www.cnblogs.com/kex1n/p/5229493.html}{here}.
 
 A famous \href{https://stackoverflow.com/questions/11828270/how-to-exit-the-vim-editor}{post} in Stack Overflow describes how to exit the Vim editor, which puzzles thousands of sophisticated programmers. Complete introduction to Vim are given by \href{http://www.jianshu.com/p/bcbe916f97e1}{this post} and \href{https://blog.interlinked.org/tutorials/vim_tutorial.html}{this website}.
+
+Make is a automatic build tool, which turn complicated build commands into a simple command \verb"make". Tutorials on Make can be easily found on the Internet, among which \href{http://www.ruanyifeng.com/blog/2015/02/make.html}{Yifeng Ruan's \emph{Tutorial on Make}} and \href{https://en.wikipedia.org/wiki/Make_(software)}{\emph{Make (software)} on Wikipedia} give useful information.
 
 \section{Anaconda}
 
