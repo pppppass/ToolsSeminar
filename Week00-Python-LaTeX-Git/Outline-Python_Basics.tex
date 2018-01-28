@@ -1,24 +1,24 @@
-% !TeX encoding = UTF-8 Unicode
+% !TeX encoding = UTF-8
 % !TeX program = LuaLaTeX
-% !TeX spellcheck = LaTeX
+% !TeX spellcheck = en_US
 
 % Author : pppppass
-% Description : Outline: Python Basics -- Seminar on Selected Tools Week 0
+% Description : Outline: Python Basics --- Seminar on Selected Tools Week 0 --- Python, LaTeX and Git
 
-\documentclass[english, nochinese]{pkuslide}
+\documentclass[english, nochinese]{../TeXTemplate/pkuslide}
 
-\usepackage{def}
+\usepackage{../TeXTemplate/def}
 
 \title{Outline: Python Basics}
-\subtitle{Seminar on Selected Tools Week 0}
+\subtitle{Seminar on Selected Tools Week 0 --- Python, \texorpdfstring{\LaTeX}{LaTeX} and Git}
 
 \author{pppppass}
-\date{\today}
+\date{January 22, 2018}
 
-\subject{Outline: Python Basics -- Seminar on Selected Tools Week 0}
+\subject{Outline: Python Basics --- Seminar on Selected Tools Week 0 --- Python, \texorpdfstring{\LaTeX}{LaTeX} and Git}
 \keywords{Python}
 
-	\begin{document}
+\begin{document}
 
 \begin{frame}
 \titlepage
@@ -40,7 +40,7 @@
 \begin{enumerate}
 \item Indentation based
 \item Very-high-level
-\item Interpreted: interactivate, dynamic but slow
+\item Interpreted: interactive, dynamic but slow
 \item Object-oriented: ``Everything is an object''
 \item Partial functional programming support
 \item Flexible and versatile: plenty of syntactic sugar
@@ -68,7 +68,7 @@
 \item Methods as attributes and objects
 \item Pack and unpack
 \item Keyword \verb"del": remove reference
-\item Iteratable as sequence
+\item Iterable as sequence
 \end{enumerate}
 \end{frame}
 
@@ -136,7 +136,7 @@
 \begin{frame}[fragile]{Functional programming utilities}
 \begin{enumerate}
 \item Lambda expressions
-\item Iterables and iterators: lazy evalutaion by \verb"iter()" and \verb"next()", implemented by \verb"__iter__()" and \verb"__next__()"
+\item Iterables and iterators: lazy evaluation by \verb"iter()" and \verb"next()", implemented by \verb"__iter__()" and \verb"__next__()"
 \item Generator, \verb"yield"
 \item Comprehensions: list, dict, set and generator
 \end{enumerate}
@@ -173,7 +173,7 @@ Dunder methods, or special methods, are a series of methods meant to be called b
 \item Type cast: \verb"__str__", \verb"__int__", \verb"__float__"
 \item Formatting: \verb"__repr__", \verb"__format__", \verb"__bytes__"
 \item Emulating callables: \verb"__call__"
-\item Iteration: \verb"__iter__", \verb"__next__"
+\item Emulating iterables: \verb"__iter__", \verb"__next__"
 \item Operators: \verb"__le__", \verb"__lt__", \verb"__add__"
 \end{enumerate}
 \end{frame}
@@ -209,20 +209,20 @@ Dunder methods, or special methods, are a series of methods meant to be called b
 \item Maximum line length of 79 characters
 \item Blank lines
 \item UTF-8 encoding
-\item Whitespaces
+\item White spaces
 \item Naming conventions
 \end{enumerate}
 \end{frame}
 
-\subsection{Related tool chains}
+\subsection{Related tools}
 
 \begin{frame}[fragile]{Related tool chains}
 \begin{enumerate}
 \item Anaconda: a package and environment manager of Python
 \item Package \verb"venv": a virtual environment manager
 \item Program \texttt{pip} and PyPI: python package manager
-\item Jupyter notebook: Web interactive Python application, especially live code demostration and visualization
+\item Jupyter notebook: Web interactive Python application, especially live code demonstration and visualization
 \end{enumerate}
 \end{frame}
 
-	\end{document}
+\end{document}

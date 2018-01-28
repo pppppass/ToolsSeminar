@@ -1,0 +1,50 @@
+% !TeX encoding = UTF-8
+% !TeX program = LuaLaTeX
+% !TeX spellcheck = en_US
+
+% Author : pppppass
+% Description : Python Assignment --- Least Square Regression
+
+\documentclass[english, nochinese]{../../TeXTemplate/pkupaper}
+
+\usepackage[paper, listings]{../../TeXTemplate/def}
+
+\newcommand{\cuniversity}{}
+\newcommand{\cthesisname}{Python Assignment: Least Square Regression}
+\newcommand{\titlemark}{Python Assignment: Least Square Regression}
+
+\title{\titlemark}
+\author{pppppass}
+\date{January 23, 2018}
+
+\begin{document}
+
+\maketitle
+
+\section{Description}
+
+Encapsulate codes of gradient method to a least square regression into a class \verb"Trainer".
+
+Let $ \rbr{ x_i, y_i } \in \Rset^2 $ where $ i = 1, 2, \cdots, n $. The least square regression problem is to find $a$ and $b$ such that
+\begin{equation}
+F \rbr{ a, b } = \frac{1}{2} \sume{i}{1}{n}{\rbr{ y_i - a - b x_i }^2}
+\end{equation}
+reaches its minimum. An na\"ive way to this problem is gradient method. That is, we fix some $a^{\rbr{0}}$ and $b^{\rbr{0}}$ first, and then update them by
+\begin{gather}
+a^{\rbr{ i + 1 }} = a^{\rbr{i}} - \eta \frac{ \pd F }{ \pd a }, \\
+b^{\rbr{ i + 1 }} = b^{\rbr{i}} - \eta \frac{ \pd F }{ \pd b }.
+\end{gather}
+
+\section{Requirement}
+
+The file \verb"dataset.py" provides function \verb"generate_config", which generates some data, and the file \verb"utils.py" provides training-related functions \verb"loss_func" and \verb"train_func". Encapsulate these two function into a class \verb"Trainer" in the file \verb"trainer.py", which have a method \verb"go(n=1000)" for training and printing intermediate results where \verb"n" specifies the number of iterations, and \verb"result()" for printing final results. The standard output format can be retrieved by \verb"make key".
+
+The file \verb"interface.py" contains the interface to be tested, you may turn to this file to find out how the \verb"Trainer" class is used.
+
+\section{Usage of tools}
+
+To make use of the utilities, install NumPy first. This can be done by using Anaconda (recommended) or \verb"pip".
+
+You may use Make to perform automatic test. Command \verb"make run" runs the script with \verb"trainer.py", and command \verb"make key" runs the script with \verb"key.py" substituting \verb"trainer.py", giving the standard result. Command \verb"make test" tests your \verb"trainer.py".
+
+\end{document}

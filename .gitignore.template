@@ -1,5 +1,6 @@
-# Backup files of vim
+# Backup files
 *~
+*.bak
 
 # .gitignore itself
 .gitignore
@@ -12,6 +13,7 @@
 *.run.xml
 *.snm
 *.synctex
+*.synctex(busy)
 *.synctex.gz
 *.toc
 *.vrb
@@ -19,8 +21,10 @@
 
 # Other temporary files
 *.log
-nppBackup/
-__pycache__/
+nppBackup
+__pycache__
+.vscode
+*.tmp
 
 # Binary files
 *.pdf
@@ -36,7 +40,6 @@ __pycache__/
 
 # Icon must end with two \r
 Icon
-
 
 # Thumbnails
 ._*

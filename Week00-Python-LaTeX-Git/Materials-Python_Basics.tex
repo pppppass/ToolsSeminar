@@ -1,0 +1,52 @@
+% !TeX encoding = UTF-8
+% !TeX program = LuaLaTeX
+% !TeX spellcheck = en_US
+
+% Author : pppppass
+% Description : Materials: Python Basics --- Seminar on Selected Tools Week 0 --- Python, LaTeX and Git
+
+\documentclass[english]{../TeXTemplate/pkupaper}
+
+\usepackage[paper]{../TeXTemplate/def}
+
+\newcommand{\cuniversity}{}
+\newcommand{\cthesisname}{Materials: Python Basics --- Seminar on Selected Tools Week 0 --- Python, \texorpdfstring{\LaTeX}{LaTeX} and Git}
+\newcommand{\titlemark}{Materials: Python Basics}
+
+\title{\titlemark}
+\author{pppppass}
+\date{January 22, 2018}
+
+\begin{document}
+
+\maketitle
+
+The information is updated on January 22, 2018.
+
+\section{Installation and configuration}
+
+There are Python distributions of Windows version, but it is not recommend because it takes time to get around the differences between Windows and Unix-like systems, including line feed (\verb"\n" in Linux but \verb"\n\r" in Windows), path separator (\verb"/" in Linux and \verb"\" in Windows) and so on. Additionally, some packages like NumPy and PyTorch does not work well in Windows.
+
+Python is included in many Linux distributions, but use Anaconda is preferred, in order to create virtual environments and avoid version conflicts.
+
+\section{Resources}
+
+If you are familiar with C++ or some other object-oriented language, \href official{https://docs.python.org/3.6/tutorial/index.html}{\emph{Python Tutorial}} should be sufficient as a tutorial. Details in Section 6.4, Section 9.5.1, Section 10--13, Section 15--16 may be skipped. The outline is based on this tutorial. As a official tutorial, it provides basic ideas of Python and is strongly recommended.
+
+However, if you cannot stand so much English, {Xuefeng Liao's \href{https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000}{\emph{Python Tutorial}} is also recommended. This tutorial covers more topics than the official Python Tutorial, among which some parts are too detailed as a introductory tutorial instead of a manual and beginners should omit them. The sections before IO Programming inclusive should be adequate.
+
+It is strongly recommend to read through \href{https://www.python.org/dev/peps/pep-0020/}{\emph{PEP 20 -- The Zen of Python}} to get familiar with the ideas of Python. Note that \href{https://www.python.org/dev/peps/pep-0008/}{\emph{PEP 8 -- Style Guide for Python Code}} is also a standard documentation about Python code styles. As component of a project, this guide are detailed, so pay attention not to be trapped in details. Note that PyCharm and some other IDEs have PEP8 code formatting support.
+
+For detailed questions and bugs, \href{https://stackoverflow.com/}{Stack Overflow} is a great website to turn to, which is a community for programmers and many Q\&A can be found. It's is suggested to search Stack Overflow first if bugs come into place. Recommendation about materials and packages can also be found there, and some question about environments may help at some point.
+
+\section{Assignment}
+
+The assignment is listed below.
+
+\begin{partlist}
+\item \textbf{(Required)} Permutation: use a generator function to generate all the $n$-permutations. Files are in \verb"Assignment/Python-Permutation".
+\item \textbf{(Optional)} Least Square Regression: encapsulate codes of gradient method to a least square regression into a class \verb"Trainer". Files are in \verb"Assignment/Python-LeastSquare".
+\item \textbf{(Optional)} $K$-Means: implement $K$-Means algorithm to a specific $2$-dimensional dataset. Files are in \verb"Assignment/Python-KMeans".
+\end{partlist}
+
+\end{document}
