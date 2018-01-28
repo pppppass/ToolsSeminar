@@ -1,0 +1,38 @@
+% !TeX encoding = UTF-8
+% !TeX program = LuaLaTeX
+% !TeX spellcheck = en_US
+
+% Author : pppppass
+% Description : Python Assignment --- K-Means
+
+\documentclass[english, nochinese]{../../TeXTemplate/pkupaper}
+
+\usepackage[paper, listings]{../../TeXTemplate/def}
+
+\newcommand{\cuniversity}{}
+\newcommand{\cthesisname}{Python Assignment: \texorpdfstring{$K$}{K}-Means}
+\newcommand{\titlemark}{Python Assignment: \texorpdfstring{$K$}{K}-Means}
+
+\title{\titlemark}
+\author{pppppass}
+\date{January 22, 2018}
+
+\begin{document}
+
+\maketitle
+
+\section{Description}
+
+Implement $K$-Means algorithm to a specific $2$-dimensional dataset.
+
+\section{Requirement}
+
+Implement a function \verb"k_means" in \verb"k_means.py". The function should accept \verb"k" as the value of $k$, \verb"data" as data, \verb"cid" as the index of initial center points of the two clusters, and \verb"rep" as the number of iterations. The argument \verb"data" is a list of $2$-element lists representing coordinates of points, and \verb"cid" is given as a list of integers.
+
+The file \verb"interface.py" contains the interface to be tested.
+
+\section{Usage of tools}
+
+You may use Make to perform automatic test. Command \verb"make run" runs the script with \verb"k_means.py", and command \verb"make key" runs the script with \verb"key.py" substituting \verb"k_means.py", giving the desired result. Command \verb"make test" tests your \verb"k_means.py".
+
+\end{document}

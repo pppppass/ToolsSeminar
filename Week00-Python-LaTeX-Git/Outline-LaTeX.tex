@@ -1,24 +1,24 @@
-% !TeX encoding = UTF-8 Unicode
+% !TeX encoding = UTF-8
 % !TeX program = LuaLaTeX
-% !TeX spellcheck = LaTeX
+% !TeX spellcheck = en_US
 
 % Author : pppppass
-% Description : Outline: LaTeX -- Seminar on Selected Tools Week 0
+% Description : Outline: LaTeX --- Seminar on Selected Tools Week 0 --- Python, LaTeX and Git
 
-\documentclass[english, nochinese]{pkuslide}
+\documentclass[english, nochinese]{../TeXTemplate/pkuslide}
 
-\usepackage{def}
+\usepackage{../TeXTemplate/def}
 
-\title{Outline: \LaTeX}
-\subtitle{Seminar on Selected Tools Week 0}
+\title{Outline: \texorpdfstring{\LaTeX}{LaTeX}}
+\subtitle{Seminar on Selected Tools Week 0 --- Python, \texorpdfstring{\LaTeX}{LaTeX} and Git}
 
 \author{pppppass}
-\date{\today}
+\date{January 23, 2018}
 
-\subject{Outline: LaTeX -- Seminar on Selected Tools Week 0}
+\subject{Outline: \texorpdfstring{\LaTeX}{LaTeX} --- Seminar on Selected Tools Week 0 --- Python, \texorpdfstring{\LaTeX}{LaTeX} and Git}
 \keywords{}
 
-	\begin{document}
+\begin{document}
 
 \begin{frame}
 \titlepage
@@ -34,9 +34,9 @@
 \sectionpage
 \end{frame}
 
-\subsection{\TeX and \LaTeX}
+\subsection{\TeX{} and \LaTeX}
 
-\begin{frame}{What is \TeX and \LaTeX?}
+\begin{frame}{What is \TeX{} and \LaTeX?}
 \begin{enumerate}
 \item \TeX{} is a typesetting system originally designed by Donald Knuth.
 \item \LaTeX{} is a typesetting system based on \TeX{} designed \\
@@ -65,7 +65,7 @@ When not to use \LaTeX{}: the material is highly unstructured
 
 \begin{frame}{Basic concepts}
 \begin{enumerate}
-\item \TeX engines and \TeX formats
+\item \TeX{} engines and \TeX{} formats
 \item Commands (control sequences) and arguments
 \item Whitespaces
 \item Envorinments and groups
@@ -101,6 +101,7 @@ When not to use \LaTeX{}: the material is highly unstructured
 \begin{enumerate}
 \item Special characters: \verb"\&", \verb"\_", \verb"\S"
 \item Whitespace: \verb"\ ", \verb"\!", \verb"\phantom{...}" and \verb"\hspace{...}"
+Use two blank lines to initiate a new paragraph
 \item Paragraphs: \verb"\\", \verb"\par" and two blank lines
 \item Orthogonal coordinates of fonts: \\
 English: \verb"\ttfamily", \verb"\bfseries", \verb"\textrm{...}", \verb"\textit{...}" \\
@@ -181,6 +182,7 @@ frequently used: \verb"\mathop{\mathrm{d}\!} x"
 \item Footnote: \verb"\footnote{...}"
 \item Cite: \verb"\cite{...}"
 \item Display: \verb"\printbibliography"
+\item BibLaTeX is also available
 \end{enumerate}
 \end{frame}
 
@@ -214,4 +216,4 @@ frequently used: \verb"\mathop{\mathrm{d}\!} x"
 \end{enumerate}
 \end{frame}
 
-	\end{document}
+\end{document}

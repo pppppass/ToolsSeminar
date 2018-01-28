@@ -1,0 +1,83 @@
+% !TeX encoding = UTF-8
+% !TeX program = LuaLaTeX
+% !TeX spellcheck = en_US
+
+% Author : pppppass
+% Description : Materials: Git and GitHub --- Seminar on Selected Tools Week 0  --- Python, LaTeX and Git
+
+\documentclass[english]{../TeXTemplate/pkupaper}
+
+\usepackage[paper]{../TeXTemplate/def}
+
+\newcommand{\cuniversity}{}
+\newcommand{\cthesisname}{Materials: Git and GitHub -- Seminar on Selected Tools Week 0 --- Python, \texorpdfstring{\LaTeX}{LaTeX} and Git}
+\newcommand{\titlemark}{Materials: Git and GitHub}
+
+\title{\titlemark}
+\author{pppppass}
+\date{January 23, 2018}
+
+\begin{document}
+
+\maketitle
+
+The information is updated on January 23, 2018.
+
+\section{Installation and configuration}
+
+For windows, there're \href{https://git-for-windows.github.io/}{Git for Windows} and it's fully functional. However, UNIX-like terminal emulation in Windows is also a choice, like \href{http://www.msys2.org/}{MSYS2} and \href{https://www.cygwin.com/}{Cygwin}.
+
+For Linux, git can always be retrived from the distribution repository. For example, \verb"apt" can be used for Ubuntu.
+
+For macOS, \href{https://git-scm.com/book/en/v2/Getting-Started-Installing-Git}{this page} offers a detailed guide.
+
+GitHub is fully accessible through \href{https://github.com/}{GitHub}.
+
+There are graphical interfaces for GitHub, like \href{https://desktop.github.com/}{GitHub Desktop}. Some integrated editors and IDEs also have utilities related to Git.
+
+\section{Resources}
+
+Xuefeng Liao's \href{https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/}{\emph{Git Tutorial}} is recommended for beginners in Git and GitHub. The outline is based on this tutorial.
+
+Git officially offers the book \href{https://git-scm.com/book/en/v2}{\emph{Pro Git}}, which is also a great tutorial for Git and GitHub. Note that \verb".pdf" format and Chinese version are also provided. This tutorial covers more topics than Xuefeng Liao's tutorial, and therefore first 5 sections are enough.
+
+GitHub itself provides a training kit for Git and GitHub, in which one may refer to \href{https://services.github.com/on-demand/}{\emph{On Demand Train}} and \href{https://services.github.com/on-demand/resources/learning-path/}{\emph{Learning Path}}. The corresponding Git repository is \href{https://github.com/github/training-kit}{this one}.
+
+Further information can be found in \href{https://git-scm.com/doc}{Git's official document}, where a \href{https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf}{cheat sheet} of Git commands are provided.
+
+GitHub itself provides a \href{https://guides.github.com/activities/hello-world/}{brief introduction} to GitHub. Note that \href{https://guides.github.com/}{\emph{GitHub Guides}} covers more topics which you may find helpful at some point.
+
+\section{Assignment}
+
+The assignment is listed below.
+
+\begin{partlist}
+\item \textbf{(Required)} Assignment Repository: initialize a Git repository for assignments, add your assignments and commit your changes.
+\item \textbf{(Required)} Assignment on GitHub: register a GitHub account, upload your repository of assignments on GitHub, and keep pushing your commits.
+\item \textbf{(Required for those responsible for topics)} Upload Topics Materials: use Git and GitHub to upload your materials about topics. Requirements is listed in Question \ref{Ques:TopReq}.
+\end{partlist}
+
+\begin{thmquestion} \label{Ques:TopReq}
+Finish the following taks:
+\begin{partlist}
+\item Fork the seminar repository.
+\item Clone the forked seminar repository.
+\item Make commits to the forked seminar repository to add your outlines, materials and assignments.
+\item Make pull request to the original repository. You may directly merge the pull request if you have the privilege.
+\item Set an issue on the original seminar repository to collect suggestions.
+\end{partlist}
+\end{thmquestion}
+
+\subsection{Remarks}
+
+\textbf{The name of repository have been changed into \texttt{ToolsSeminar}, please rename your forked repository. The structure of the repository has also been changed, please pull the commits to your local repository.}
+
+\textbf{Once you are familiar enough with GitHub, contact pppppass for collaborator access of the seminar repository, which will give your access to merge pull requests in order to upload materials. However, please never accept pull requests by others.}
+
+The file \verb".gitignore.template" is a template for \verb".gitignore" file. You may use \verb"cp .gitignore.template .gitignore" to create your own .gitignore file. Adding new entries to the template is welcomed.
+
+Further information about \verb".gitignore" can be found in Xuefeng Liao's \href{https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013758404317281e54b6f5375640abbb11e67be4cd49e0000}{\emph{Git Tutorial}} and \href{https://git-scm.com/docs/gitignore}{Git's reference}. GitHub provides a \href{https://github.com/github/gitignore}{repository} for several \verb".gitignore" templates.
+
+This repository uses the submodule \verb"TeXTemplate". To clone the whole repository, you may first clone the repository as usual (\verb"git clone git@github.com:pppppass/ToolsSeminar"), and then execute \verb"git submodule init" and \verb"git submodule update". To update the \verb"TeXTemplate", use \verb"git submodule update", especially when pulling.
+
+\end{document}

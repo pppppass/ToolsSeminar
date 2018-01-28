@@ -1,0 +1,95 @@
+% !TeX encoding = UTF-8
+% !TeX program = LuaLaTeX
+% !TeX spellcheck = en_US
+
+% Author : pppppass
+% Description : Materials: LaTeX --- Seminar on Selected Tools Week 0 --- Python, LaTeX and Git
+
+\documentclass[english]{../TeXTemplate/pkupaper}
+
+\usepackage[paper]{../TeXTemplate/def}
+
+\newcommand{\cuniversity}{}
+\newcommand{\cthesisname}{Materials: \texorpdfstring{\LaTeX}{LaTeX} --- Seminar on Selected Tools Week 0 --- Python, \texorpdfstring{\LaTeX}{LaTeX} and Git}
+\newcommand{\titlemark}{Materials: \texorpdfstring{\LaTeX}{LaTeX}}
+
+\title{\titlemark}
+\author{pppppass}
+\date{January 23, 2018}
+
+\begin{document}
+
+\maketitle
+
+The information is updated on January 23, 2018.
+ 
+\section{Installation and configuration}
+
+For \TeX{} distribution, \href{http://www.tug.org/texlive/}{\TeX{} Live} is an official comprehensive TeX distribution system, which provides system-specific supports.
+
+For Windows and Linux, reading through \href{http://www.tug.org/texlive/acquire-netinstall.html}{installing \TeX{} Live over the Internet} is recommended. A (non-necessary) introduction to \TeX{} Live on Windows is provided \href{http://www.tug.org/texlive/windows.html}{here}. If you are going to install \TeX{} Live on Linux, please read \href{http://www.tug.org/texlive/quickinstall.html}{this page} first, which gives detailed guidance. Installing on your home directory (\verb"/home/someone/texlive/2017" to be exact) instead of default \verb"/usr/local/texlive/2017" is recommended in case of authority issues.
+
+For macOS, please install \href{http://www.tug.org/mactex/}{MacTeX}, which is specially adapted to macOS and includes \TeX{} Live.
+
+Installation information can also be found in \emph{\LaTeX 入门}.
+
+Note that there are also alternatives for installation, like \href{http://www.ctex.org/CTeX}{CTeX}, which a suite specialized to Chinese and can be downloaded \href{http://www.ctex.org/CTeXDownload}{here}. However, CTeX is somehow out-of-date now and have no advantages due to the development of XeTeX and LuaTeX.
+
+Some Linux systems provides packages of \TeX{} Live in their software repository, but installing in this way may leads to a loss in integrity. That is, some packages and the documents provided by \TeX{} Live may be missing.
+
+\section{Resources}
+
+The book \href{https://item.jd.com/11258469.html}{\emph{\LaTeX 入门}} is a useful book for anyone using \LaTeX. Not only is the book a complete tutorial, it also works as an index to frequently used packages. Only chapter 1 is suggested for the first reading, while other chapters, which are filled with details, may be used as a manual. The outline slide is based on this book.
+
+The Wikibook \href{https://en.wikibooks.org/wiki/LaTeX}{\emph{\LaTeX}} is featured on Wikibooks, providing a brief introduction to \LaTeX. There are partial Chinese translation.
+
+Note that \TeX{} Live itself includes a documentation system, which can be accessed by the command \verb"texdoc <name>".
+
+The famous \href{https://www.ctan.org/tex-archive/info/lshort/english/}{\emph{The not so Short Introduction to \LaTeX}} is an introduction of moderate length. There is also a \href{ https://www.ctan.org/tex-archive/info/lshort/chinese}{Chinese translation}. It can be directly accessed by \verb"texdoc lshort" and \verb"texdoc lshort-chinese".
+
+By utilize \verb"texdoc", one may access document of packages and document classes. For example, executing \verb"texdoc ctex" on a terminal, the documentation of the package \verb"ctex" shows up.
+
+Some other important reference can be accessed by \verb"texdoc". \href{https://www.ctan.org/tex-archive/info/symbols/comprehensive/}{\emph{The Comprehensive \LaTeX{} Symbol List}} can be accessed by \verb"texdoc comprehensive", which lists many symbols. \href{https://www.ctan.org/pkg/maths-symbols}{\emph{Summary of Mathmatical Symbols available in \LaTeX}} can be accessed by \verb"texdoc symbols", which is a compact summary of \LaTeX{} symbols. Further information of \TeX{} Live can be found by \verb"texdoc texlive".
+
+For websites, \href{https://tex.stackexchange.com/}{TeX StackExchange} is a community for \TeX{} and \LaTeX{} users, which is very helpful for hard \TeX{} and \LaTeX{} questions and practical tricks.
+
+\section{Assignment}
+
+The assignment is listed below.
+
+\begin{partlist}
+\item \textbf{(Optional)} Article exercise: finish the example described in Section 1.2 in \emph{\LaTeX 入门}.
+\item \textbf{(Required)} Article template: compose your own template for papers. Requirement is given in Question \ref{Ques:ArtTemp}.
+\item \textbf{(Optional)} Beamer exercise: finish the example described in Section 6.1 in \emph{\LaTeX 入门}.
+\item \textbf{(Optional)} Beamer template: compose your own beamer template for slides. Requirement is given in Question \ref{Ques:BeaTemp}
+\item \textbf{(Optional)} Package: pack your paper template and slide template into a package. Requirement is given in Question \ref{Ques:Pack}.
+\end{partlist}
+
+\begin{thmquestion} \label{Ques:ArtTemp}
+Compose your own template for papers. Such a template should include these components:
+\begin{partlist}
+\item Chinese support: use document class \verb"ctexart".
+\item Layout configuration: use package \verb"geometry".
+\item Theorem-like environments: use package \verb"ntheorem" with configuration.
+\item List-like environments: use package \verb"enumitem" with configuration.
+\item Program list environments: use package \verb"listings" with configuration.
+\item Formula support: use package \verb"amsmath".
+\end{partlist}
+Make use of such template by \verb"\include{...}".
+\end{thmquestion}
+
+\begin{thmquestion} \label{Ques:BeaTemp}
+Compose your own beamer template for slides. Such a template should include these components:
+\begin{partlist}
+\item Inner themes.
+\item Outer themes.
+\item Color themes. It is recommend to configure your own colors.
+\item Font themes. Use sans serif fonts for normal texts and font theme \verb"professionalfonts" for mathematical formulas.
+\end{partlist}
+\end{thmquestion}
+
+\begin{thmquestion} \label{Ques:Pack}
+Pack your paper template and slide template into a package. Such package should be composed of \verb".cls" (document class) files and and \verb".sty" (style) files. Utilize this package by using \verb"\documentclass{...}" and \verb"\usepackage{...}" directly.
+\end{thmquestion}
+
+\end{document}

@@ -1,0 +1,125 @@
+% !TeX encoding = UTF-8
+% !TeX program = LuaLaTeX
+% !TeX spellcheck = en_US
+
+% Author : pppppass
+% Description : Materials: Configuration --- Seminar on Selected Tools Week 0 --- Python, LaTeX and Git
+
+\documentclass[english]{../TeXTemplate/pkupaper}
+
+\usepackage[paper]{../TeXTemplate/def}
+
+\newcommand{\cuniversity}{}
+\newcommand{\cthesisname}{Materials: Configuration --- Seminar on Selected Tools Week 0 --- Python, LaTeX and Git}
+\newcommand{\titlemark}{Materials: Configuration}
+
+\title{\titlemark}
+\author{pppppass}
+\date{January 22, 2018}
+
+\begin{document}
+
+\maketitle
+
+The information is updated on January 21, 2018.
+
+\section{Environments}
+
+It is suggested to use a Unix-like environment when programming even if you have a Windows system. Reasons includes:
+\begin{partlist}
+\item There are differences between Unix-like environments and Windows, including line feed (\verb"\n" in Linux but \verb"\n\r" in Windows), path separator (\verb"/" in Linux and \verb"\" in Windows) and so on.
+\item Some packages either do not work well or are hard to configure in Windows, especially large deep learning packages TensorFlow and PyTorch. On the contrary, there are thorough tutorials on configuration in Ubuntu (and maybe macOS).
+\item Tool chains are broken up in Windows. That is, Git, TeX Live, Python (or say Anaconda), MSYS2 (or PuTTY) all provide different environments in Windows, where an unified tool is provided in Linux environments.
+\item Getting accustomed to shells and terminals benefits because you may login to remote servers at some point.
+\end{partlist}
+
+However, there are no absolutely correct or easy way to setup a Unix-like environment for Windows users. Several known approaches to such environments for Windows users are listed below, together with the disadvantages.
+\begin{partlist}
+\item Buy an Apple computer with macOS. (Expensive)
+\item Switch to a Linux system. (Time-expensive with backups to be made)
+\item Set up a dual system. (Probably unstable, with corruptions related to the dual system have happened before)
+\item Install a virtual machine, and use the graphical interface. (Slow, especially the graphical interface, while giving up the graphical interface and only making use of terminals (something like \verb"tty2") is also a choice)
+\item Use a terminal emulator in Windows. (Not fully functional)
+\item Install a virtual machine and use a SSH client (such as PuTTY) to perform remote login into the virtual machine. (No programming support in windows)
+\item Install a virtual machine and use a terminal emulator in Windows to perform remote login into the virtual machine. (Troublesome with a huge tool chain)
+\item Use Ubuntu directly in Windows 10 from Microsoft Store. (Not popular)
+\end{partlist}
+
+For a virtual machine, \href{https://www.virtualbox.org/}{VirtualBox} is recommended, which is a free virtual machine program by Oracle. Note that \href{https://www.vmware.com/}{VMWare} is another famours virtual machine software, but there are license issues. Additionally, VirtualBox provides better support for Linux systems, while VMWare is better for Windows systems or heavy tasks.
+
+Downloads of VirtualBox can be found \href{https://www.virtualbox.org/wiki/Downloads}{this page}. Documentation can be found \href{https://www.virtualbox.org/wiki/Documentation}{here}, where a \verb".pdf" User Manual is provided.
+
+For Linux distributions, \href{https://www.ubuntu.com/desktop}{Ubuntu for desktops} is a ready-to-use operating system for new-comers to Linux. Ubuntu 16.04.3 LTS is more stable but somehow backward, while Ubuntu 17.10 is on the contrary. By the way, \href{https://www.archlinux.org/}{Arch Linux} is another Linux distribution with high flexibility, full wiki support and a wonderful rolling update mechanism, but its installation needs some knowledge about operating system, and is not recommended to beginners.
+
+Downloads of Ubuntu can be found \href{https://www.ubuntu.com/download/desktop}{here}. There are easy-to-understand instructions during installation.
+
+Installation guide of Ubuntu on VirtualBox can be easily retrieved through search engine, and an example installation guide in Chinese is provided \href{http://www.linuxidc.com/Linux/2016-08/134580.htm}{here}. (Note that some advanced settings, after section 4.2 inclusive, are fully optional)
+
+Ubuntu officially provides a tutorial \href{https://tutorials.ubuntu.com/tutorial/tutorial-ubuntu-on-windows}{\emph{Install Ubuntu on Windows 10}}.
+
+For a terminal emulator in Windows, \href{http://www.msys2.org/}{MSYS2} and \href{https://www.cygwin.com/}{Cygwin} are two choices, which both provide some Linux utilities in Windows environment. (I (pppppass) have adopted MSYS2 and have no knowledge about Cygwin)
+
+Downloads of MSYS2 can be found \href{http://www.msys2.org/}{here} and a small installation guide is also included. Further tutorials can also be found on Internet.
+
+For Linux and Mac OS users, nothing is needed but just opening a terminal.
+
+A Chinese introduction to Linux command lines is shown \href{https://linux.cn/article-6160-1.html}{here}. NIH also provides a course \href{https://hpc.nih.gov/training/handouts/Linux_NIH_2017.pdf}{\emph{Introduction to Linux}} to tell basic GNU and Linux concepts. The first 32 pages is adequate for a start in Linux.
+
+SSH, Vim and Make, which are three important tools, are always included in Unix-like environments. If not, you may install it through your package manager.
+
+To perform remote login, a SSH key is needed to be generated. This is described in Xuefeng Liao's \emph{Git tutorial} in the section \href{https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001374385852170d9c7adf13c30429b9660d0eb689dd43a000}{\emph{Remote repositories}}, as well as in \emph{Git official tutorial} in section 4.3 \href{https://git-scm.com/book/en/v2/Git-on-the-Server-Generating-Your-SSH-Public-Key}{\emph{Git on the Server --- Generating Your SSH Public Key}}. If you want to permit remote logins into your system, a SSH service is also required, which is described \href{http://www.linuxidc.com/Linux/2010-02/24349.htm}{here}. The command \verb"ssh-add" creates a daemon of related keys and frees people from repeating input the passphrase, which is described \href{http://blog.csdn.net/vizts/article/details/47043695}{here} and \href{https://www.cnblogs.com/kex1n/p/5229493.html}{here}.
+
+A famous \href{https://stackoverflow.com/questions/11828270/how-to-exit-the-vim-editor}{post} in Stack Overflow describes how to exit the Vim editor, which puzzles thousands of sophisticated programmers. Complete introduction to Vim are given by \href{http://www.jianshu.com/p/bcbe916f97e1}{this post} and \href{https://blog.interlinked.org/tutorials/vim_tutorial.html}{this website}.
+
+Make is a automatic build tool, which turn complicated build commands into a simple command \verb"make". Tutorials on Make can be easily found on the Internet, among which \href{http://www.ruanyifeng.com/blog/2015/02/make.html}{Yifeng Ruan's \emph{Tutorial on Make}} and \href{https://en.wikipedia.org/wiki/Make_(software)}{\emph{Make (software)} on Wikipedia} give useful information.
+
+\section{Anaconda}
+
+It is strongly recommended to install and use Anaconda in a Unix-like environment, which organizes different environments among versions of packages, and free people from version conflicts.
+
+Anaconda can be directly downloaded from \href{https://www.anaconda.com/download/}{official website}. During the installation, not to add the path of Anaconda into \verb"~/.bashrc" is preferred, in order to avoid overriding Python utilities in the original system. However, in this way, you have to explicitly use \verb"source some/path/to/anaconda/bin/activate" to activate the Anaconda.
+
+A great introduction to the usage of Anaconda is given in \href{https://conda.io/docs/user-guide/index.html}{Anaconda's User Guide}. The section \href{https://conda.io/docs/user-guide/getting-started.html}{\emph{Getting started}} shows basic usage of the command \verb"conda", and the section \href{https://conda.io/docs/user-guide/cheatsheet.html}{\emph{Cheet sheet}} gives a list of \verb"conda" commands. A Chinese guide to Anaconda is given in \href{http://www.jianshu.com/p/169403f7e40c}{this post}.
+
+You may turn to \href{https://anaconda.org/}{Anaconda Cloud} to search for non-standard package, e.g. MOSEK, Gurobi, CVXPY and many more.
+
+\section{Jupyter Notebook}
+
+It is strongly recommended to install and use Jupyter Notebook in Anaconda, which provides an interactive notebook environment base on web pages. Jupyter Notebook is widely used in tutorials, where live codes and visualization are important.
+
+In Anaconda, you can install jupyter notebook by \verb"conda install jupyter". Before installation, please check the Anaconda environment you are in to avoid version conflicts.
+
+You may consult \href{https://jupyter.readthedocs.io/en/latest/running.html}{\emph{Running the Notebook}} to run a Jupyter Notebook. For public access, you may generate a config file as shown in \href{https://jupyter-notebook.readthedocs.io/en/stable/config_overview.html}{\emph{Configuration Overview}}, and then set password as \href{https://jupyter-notebook.readthedocs.io/en/stable/public_server.html}{\emph{Running a Notebook Server}}. Using SSL for encryption takes some time and is not much necessary is you run the Notebook in local network.
+
+An offical tutorial of Jupyter Notebook \href{https://jupyter.readthedocs.io/en/latest/content-quickstart.html}{\emph{Jupyter Notebook Quickstart}} is also provided. Only the \emph{Running the Notebook} section is in necessity. A brief tutorial on remote access of Jupyter Notebook in Chinese is provided in \href{http://blog.csdn.net/bitboy_star/article/details/51427306}{this post}.
+
+A complete introduction to IPython and Jupyter Notebook is given \href{http://blog.csdn.net/mzpmzk/article/details/72310105}{here}. Jupyter Notebook is also introduced \href{https://www.packtpub.com/books/content/getting-started-jupyter-notebook-part-1}{here} and \href{https://www.packtpub.com/books/content/getting-started-jupyter-notebook-part-2}{here} , while \href{http://blog.csdn.net/red_stone1/article/details/72858962}{this post} and \href{http://blog.csdn.net/red_stone1/article/details/72863749}{this post} are Chinese translations.
+
+IPython, an interactive and enhanced Python prompt is also useful when testing code snippets. IPython can be easily installed in Anaconda environment by \verb"conda install ipython", and is already installed if you have installed Jupyter Notebook. An introduction to IPython \href{https://ipython.readthedocs.io/en/stable/interactive/tutorial.html}{\emph{Introduction IPython}} is provided, while magic commands are mentioned in the section \emph{Magic functions}. These magic functions are also available in Jupyter Notebook, where two of the most important ones are \verb"%matplotlib notebook" (show interactive plots) and \verb"%matplotlib inline" (show inline static plots).
+
+Jupyter Notebook is a versatile tool for interactive Python programming, and further information can be found in \href{https://jupyter-notebook.readthedocs.io/en/stable/index.html}{Jupyter Notebook document} and \href{https://ipython.readthedocs.io/en/stable/index.html}{IPython document}.
+
+\section{Editors and IDEs}
+
+Some recommended editors and IDEs are listed below. Please help expand this section by making pulls and pull requests.
+
+Text editors:
+\begin{partlist}
+\item Vim, which is a text editors provided in most Unix-like systems, and therefore may be the unique text editor available in command lines. Vim are quite ``abstract'' and filled with shortcuts, which makes it hard to learn but efficient to use once learned.
+\item Nano, which is another command line text editor in Unix-like systems. Nano is more ``intuitive'' but less capable than Vim.
+\item Notepad++, which is a text editor in Windows system. Notepad++ is light-weighted, and useful in handling data files. However, Notepad++ users suffer from its auto completion, which makes it less capable for coding.
+\end{partlist}
+
+Integrated text editor for coding:
+\begin{partlist}
+\item Atom, which is based on open source community. Its plug-in features contributes to its functionality, which also caused a very slow loading speed. Atom have a great compatibility with Git.
+\item Visual Studio Code, which is also a open source community-based project with plug-ins. Developed by Microsoft, VS Code have great code completion and prompting mechanism to codes. However, because of the age, VS Code is more immature than Atom and suffers from complicated adaption process in different environments.
+\end{partlist}
+
+Integrated text editor for \TeX-ing:
+\begin{partlist}
+\item TeXworks, which is a \TeX editor shipped with TeX Live. TeXworks is light-weighted and capable for typesetting small documents. The documentation in English lies in the path \verb".../tlpkg/texworks/texworks-help/TeXworks-manual/en/TeXworks-manual-en.pdf", and information about spell check dictionaries can be found \href{https://github.com/TeXworks/texworks/wiki/SpellingDictionaries}{here}.
+\end{partlist}
+Note that some integrated editors, namely Atom and VS Code, both support \TeX plug-ins and provide a great environment to typeset with latex.
+
+\end{document}
