@@ -1,0 +1,55 @@
+% !TeX encoding = UTF-8 Unicode
+% !TeX program = XeLaTeX
+% !TeX spellcheck = XeLaTeX
+
+% Author : Yifei Wang
+% Description : Matetials: Python Standard Library -- Seminar on Selected Tools Week 1
+
+\documentclass[english]{pkupaper}
+
+\usepackage{lipsum}
+\usepackage{essay-def}
+
+\newcommand{\cuniversity}{}
+\newcommand{\cthesisname}{Matetials: Python Standard Library -- Seminar on Selected Tools Week 1}
+\newcommand{\titlemark}{Matetials: Python Standard Library}
+
+\title{\titlemark}
+\author{Yifei Wang}
+\date{\today}
+
+\begin{document}
+\raggedright
+
+\maketitle
+\tableofcontents
+\section{Brief introduction}
+The main purpose of this speech is to introduce several commonly used Python library. The standard library to Python is like the Webster Dictionary to English. Though reading the official document is the most recommended way to familiarize oneself with the standard library, using \textbf{help()} or \textbf{dir()} is a rather convenient option. It can deal with the majority of the problems that we meet. 
+
+\section{Resources}
+The official document of Python Standard Library is provided \href{https://docs.python.org/3.6/library/index.html}{here}. The index is provided \href{https://docs.python.org/3.6/py-modindex.html}{here}.  \href{http://python.usyiyi.cn/translate/python_352/library/index.html}{Python标准库} is the Chinese version. \href{https://pymotw.com/3/index.html}{Python 3 Module of the week} is a strong complementary material besides the official document. You can also access to a bunch of useful information in \href{https://www.zhihu.com/question/22100190}{应该怎样系统的学习Python标准库}.
+
+\section{Python Standard Library}
+\input{chap/datetime}
+\input{chap/math}
+\input{chap/random}
+\input{chap/serialization}
+\input{chap/collections}
+
+\section{Assignment}
+\begin{thmque}[Required]
+If you get the date and time input by the costumer, like \hl{2015-1-21 9:01:30} and the time zone information, like \hl{UTC+5:00}, all of which are \texttt{string} objects. Please devise a program to transform these given information to timestamp.
+\end{thmque}
+\begin{thmque}
+Devise a \hl{decorator}, which can affect any function and print the executing time of the function.
+\end{thmque}
+\begin{thmque}[Required]
+Use the \hl{deque} to realize a stack class.
+\end{thmque}
+\begin{thmque}
+Serialize an object from the stack class above to a \hl{\{\}} in JSON.
+\end{thmque}
+\begin{thmque}[Required]
+Use the \hl{OrderedDict} to realize a FIFO(first in first out) dict. When the dict is full, delete the Key added the ealiest.
+\end{thmque}
+\end{document}

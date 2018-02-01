@@ -1,6 +1,10 @@
 # Guidance and organization of the seminar
 
-Materials in the repository consist of three parts, namely `Outline` (a brief slide of outline to be presented, stressing the key points and framework), `Materials` (a list of materials on the topics, with an introduction of the assignment), `Assignment` (several exercises and small projects to be finished on the topic).
+Materials in the repository consist of three parts, namely `Outline`
+(a brief slide of outline to be presented, stressing the key points
+and framework), `Materials` (a list of materials on the topics, with
+an introduction of the assignment), `Assignment` (several exercises
+and small projects to be finished on the topic).
 
 Before the material due, person responsible for the topic should:
 - Upload, or say push, a source file of a slide of outline. The outline should
@@ -14,7 +18,8 @@ the topic. The list of materials should contain following parts:
     of several small, practical projects, and ``short questions'' emphasizing
     details should be avoided, especially multiple choices and blank filling.
     Background of required assignments should be explained. It is best to
-    attach the solution, with automatic testing tools if possible.
+    attach the solution, with automatic testing tools if possible. It is strongly
+    suggested that the assignment is published as several IPython Notebooks.
 - Set an issue in the original seminar repository to collect suggestions
 on the topics. The title should be `Week <#week> --- <title>`.
 

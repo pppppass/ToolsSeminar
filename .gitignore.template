@@ -25,6 +25,7 @@ nppBackup
 __pycache__
 .vscode
 *.tmp
+.ipynb_checkpoints
 
 # Binary files
 *.pdf

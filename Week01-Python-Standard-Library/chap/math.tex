@@ -1,0 +1,38 @@
+\subsection{math}
+Generally, \texttt{math} provides access to the mathematical functions defined by the C standard. It is efficient and with accuracy when calculating with float numbers. If you require support for complex number, use the functions of the same name from the \texttt{cmath}. Detailed descriptions about \texttt{math}, including $inf$ and $nan$ can be found in \href{https://pymotw.com/3/math/index.html#module-math}{here}.
+\begin{enumerate}
+\item Number-theoretic and representation functions
+\begin{itemize}
+\item \textbf{floor}$(x)$, \textbf{ceil}$(x)$ returns the floor(ceiling) of $x$.
+\item \textbf{fabs}$(x)$ returns $|x|$.
+\item \textbf{factorial}$(x)$ returns $x!$, raises \textit{ValueError} if x is not an integral or is negative.
+\item \textbf{fmod}$(x,y)$ returns  $x - n*y$ for some integer $n$ such that the result has the same sign as $x$ and magnitude less than $|y|$.
+\item \textbf{fsum} $($ \textit{iterable} $)$ returns an accurate floating point sum of values in the \textit{iterable} and avoids loss of precision by tracking multiple intermediate partial sums
+\item \textbf{gcd}$(a,b)$ Return the greatest common divisor of the integers $a$ and $b$.
+\item \textbf{isclose}$(a,b,*,rel$\_$tol=1e-09, abs$\_$tol=0.0)$ returns \textit{True} if the values a and b are close to each other and \textit{False} otherwise.
+\end{itemize}
+
+\item Power and logarithmic functions
+\begin{itemize}
+\item \textbf{exp}$(x)$ returns $e^x$
+\item \textbf{log}$(x[, a])$ With one argument, returns $ln(x)$. With two arguments, returns $log_ax$.
+\item \textbf{pow}$(x,y)$ returns $x^y$
+\end{itemize}
+
+\item Trigonometric and Hyperbolic functions
+\begin{itemize}
+\item \textbf{acos}$(x)$, \textbf{asin}$(x)$ \textbf{atan}$(x)$ return $arccos(x)$, $arcsin(x)$, $arctan(x)$, in radians.
+\item \textbf{cos}$(x)$, \textbf{sin}$(x)$, \textbf{tan}$(x)$ return $cos(x)$, $sin(x)$, $tan(x)$
+\item \textbf{hypot}$(x,y)$ returns the length of the vector from the origin to point $(x, y)$.
+\item \textbf{acosh}$(x)$, \textbf{asinh}$(x)$ \textbf{atanh}$(x)$ return $arccosh(x)$, $arcsinh(x)$, $arctanh(x)$, in radians.
+\item \textbf{cosh}$(x)$, \textbf{sinh}$(x)$, \textbf{tanh}$(x)$ return $cosh(x)$, $sinh(x)$, $tanh(x)$
+\end{itemize}
+
+\item Constants
+\begin{itemize}
+\item \textbf{pi} returns $\pi$.
+\item \textbf{e} returns $e$.
+\item \textbf{inf} returns a floating-point positive infinity.
+\item \textbf{nan} returns a floating-point “not a number” (NaN) value.
+\end{itemize}
+\end{enumerate}
