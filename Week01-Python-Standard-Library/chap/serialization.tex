@@ -1,0 +1,39 @@
+\subsection{serialization: pickle and json}
+You can get an enlightening introduction about how to use these two modules in \href{https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/00143192607210600a668b5112e4a979dd20e4661cc9c97000}{this page} .
+\subsubsection{pickle}
+\texttt{pickle} implement binary protocols for serializing and de-serializing a Python object structure. \textit{“Pickling”} is the process whereby a Python object hierarchy is converted into a byte stream, and \textit{“unpickling”} is the inverse operation, whereby a byte stream (from a binary file or bytes-like object) is converted back into an object hierarchy. 
+
+The pickle module provides the following functions to make the pickling process more convenient:
+\begin{itemize}
+\item \textbf{dump}(obj, file, protocol=None, *, fix\verb?_?imports=True) writes a pickled representation of \textit{obj} to the open file object file.
+\item \textbf{dumps}(obj, protocol=None, *, fix\verb?_?imports=True) returns the pickled representation of the object as a bytes object, instead of writing it to a file.
+\item \textbf{load}(file, *, fix\verb?_?imports=True, encoding="ASCII", errors="strict") reads a pickled object representation from the open file object file and return the reconstituted object hierarchy specified therein.
+\item \textbf{loads}(bytes\verb?_?object, *, fix\verb?_?imports=True, encoding="ASCII", errors="strict") reads a pickled object hierarchy from a bytes object and return the reconstituted object hierarchy specified therein.
+\end{itemize} 
+The pickle module exports two classes, Pickler and Unpickler:
+\begin{itemize}
+\item class \texttt{pickle}.\textbf{Pickler}(file, protocol=None, *, fix\verb?_?imports=True)
+
+This takes a binary file for writing a pickle data stream.
+
+\textbf{dump}$(obj)$ writes a pickled representation of obj to the open file object given in the constructor.
+
+\item class \texttt{pickle}.\textbf{Unpickler}(file, *, fix\verb?_?imports=True, encoding="ASCII", errors="strict")
+
+This takes a binary file for reading a pickle data stream.
+
+\textbf{load}() reads a pickled object representation from the open file object given in the constructor, and returns the reconstituted object hierarchy specified therein. Bytes past the pickled object’s representation are ignored.
+\end{itemize}
+The types that can be pickled can be found in \href{https://docs.python.org/3.6/library/pickle.html#what-can-be-pickled-and-unpickled}{this page}.
+
+\subsubsection{json}
+\texttt{json}  is a lightweight data interchange format inspired by JavaScript object literal syntax.
+
+basic usage:
+\begin{itemize}
+\item \textbf{dump}(obj, fp) serializes obj as a JSON formatted stream to fp (a .write()-supporting file-like object) using this \href{https://docs.python.org/3.6/library/json.html#py-to-json-table}{conversion table}.
+\item \textbf{dumps}(obj) serializes obj to a JSON formatted str.
+\item \textbf{load}(fp) deserializes fp (a .read()-supporting file-like object containing a JSON document) to a Python object.
+\item \textbf{loads}(s) deserializes s (a \textit{str, bytes} or \textit{bytearray} instance containing a JSON document) to a Python object
+\end{itemize}
+Besides, we can serialize a class object through utilizing other selective arguments in method \textit{dumps()}. Detailed instruction can be found in \href{https://docs.python.org/3/library/json.html#json.dumps}{here}.
