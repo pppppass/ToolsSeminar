@@ -1,0 +1,58 @@
+\subsection{collections}
+This module implements specialized container datatypes providing alternatives to Python’s general purpose built-in containers, \textit{dict, list, set,} and \textit{tuple}.
+\begin{enumerate}
+\item ChainMap objects
+
+A \textit{ChainMap} class is provided for quickly linking a number of mappings so they can be treated as a single unit. It is often much faster than creating a new dictionary and running multiple update() calls. The class can be used to simulate nested scopes and is useful in templating.
+
+All of the usual dictionary methods are supported. In addition, there is a \textit{maps} attribute, a method for creating new subcontexts, and a property for accessing all but the first mapping:
+\begin{itemize}
+\item \textbf{maps} A user updateable list of mappings. The list is ordered from first-searched to lastsearched. It is the only stored state and can be modified to change which mappings are searched. The list should always contain at least one mapping.
+\item \textbf{new}\verb?_?\textbf{child}$(m=None)$ returns a new \textit{ChainMap} containing a new map followed by all of the maps in the current instance.
+\item \textbf{parents} Property returning a new \textit{ChainMap} containing all of the maps in the current instance except the first one.
+\end{itemize}
+
+\item Counter objects
+
+A \textit{counter} tool is provided to support convenient and rapid tallies.
+
+Counter objects support three methods beyond those available for all dictionaries:
+\begin{itemize}
+\item \textbf{elements()} returns an iterator over elements repeating each as many times as its count. Elements are returned in arbitrary order.
+\item \textbf{most}\verb?_?\textbf{common}$([n])$ returns a list of the $n$ most common elements and their counts from the most common to the least. 
+\item \textbf{subtract}$([iterable-or-mapping])$ Elements are subtracted from an \textit{iterable} or from another \textit{mapping} (or \textit{counter}).
+\end{itemize}
+
+\item deque Objects
+
+Deques are a generalization of stacks and queues (the name is pronounced “deck” and is short for “double-ended queue”). Deques support thread-safe, memory efficient appends and pops from either side of the deque with approximately the same O(1) performance in either direction.
+
+Deque objects support the following methods:
+\begin{itemize}
+\item \textbf{append}$(x)$/\textbf{appendleft}$(x)$ adds $x$ to the right/left side of the deque.
+\item \textbf{clear()} removes all elements from the deque leaving it with length 0.
+\item \textbf{copy()} creates a shallow copy of the deque.
+\item \textbf{count}$(x)$ counts the number of deque elements equal to $x$.
+\item \textbf{extend}/\textbf{extendleft}($iterable$) extends the right/left side of the deque by appending elements from the $iterable$ argument.
+\item \textbf{index}$(x[, start[, stop]])$ returns the position of $x$ in the deque (at or after index $start$ and before index $stop$).
+\item \textbf{insert}$(i, x)$ inserts $x$ into the deque at position $i$.
+\item \textbf{pop()}/\textbf{popleft()} removes and returns an element from the right/left side of the deque.
+\item \textbf{remove}$(value)$ removes the first occurrence of $value$.
+\item \textbf{reverse()} reverse the elements of the deque in-place and then return None.
+\item \textbf{rotate}$(n)$ rotates the deque n steps to the right. If n is negative, rotate to the left.
+\end{itemize}
+
+\item defaultdict objects
+
+class \texttt{collections}.\textbf{defaultdict}$([default_factory[, ...]])$
+
+returns a new dictionary-like object. defaultdict is a subclass of the built-in \texttt{dict} class. It overrides one method and adds one writable instance variable. The remaining functionality is the same as for the \texttt{dict} class
+
+\item nametuple()
+
+Named tuples assign meaning to each position in a tuple and allow for more readable, self-documenting code. They can be used wherever regular tuples are used, and they add the ability to access fields by name instead of position index.
+
+\item OrderedDict()
+
+Ordered dictionaries are just like regular dictionaries but they remember the order that items were inserted. When iterating over an ordered dictionary, the items are returned in the order their keys were first added.
+\end{enumerate}

@@ -1,0 +1,70 @@
+\subsection{datetime}
+The \texttt{datetime} module supplies classes for manipulating dates and times in both simple and complex ways. While date and time arithmetic is supported, the focus of the implementation is on efficient attribute extraction for output formatting and manipulation.
+\begin{enumerate}
+\item Available types
+\begin{itemize}
+\item \textbf{date} An idealized naive date, assuming the current Gregorian calendar always was, and always will be, in effect. Attributes: \textit{year}, \textit{month}, and \textit{day}.
+\item \textbf{time} An idealized time, independent of any particular day, assuming that every day has exactly 24*60*60 seconds. Attributes: \textit{hour}, \textit{minute}, \textit{second}, \textit{microsecond}, and \textit{tzinfo}.
+\item \textbf{datetime} A combination of a date and a time, with all attributes that \textit{date} and \textit{time} have.
+\item \textbf{tzinfo} An abstract base class for time zone information objects. These are used by the \textit{datetime} and \textit{time} classes to provide a customizable notion of time adjustment (for example, to account for time zone and/or daylight saving time).
+\item \textbf{timezone} A class that implements the \textit{tzinfo} abstract base class as a fixed offset from the UTC.
+\end{itemize}
+
+\item \textit{timedelta} objects
+
+A \textit{timedelta} object represents a duration, the difference between two dates or times.
+
+class \texttt{datetime}.\textbf{timedalta}(\textit{days=0, seconds=0, microseconds=0, milliseconds=0, minutes=0, hours=0, weeks=0}) 
+
+All arguments are optional and default to 0. Arguments may be integers or floats, and may be positive or negative. 
+
+Only \textit{days}, \textit{seconds} and \textit{microseconds} are stored internally. The representation is unique, with:
+\begin{itemize}
+\item $0 \leq microseconds < 1000000$
+\item $0 \le seconds < 3600*24$
+\item $-999999999 \le days \le 999999999$
+\end{itemize}
+Special supported operation:
+\begin{itemize}
+\item \textbf{abs(t)} equivalent to $+t$ when $t.days \ge 0$, and to -t when $t.days < 0$.
+\item \textbf{str(t)} returns a \texttt{string} in the form \hl{[D day[s], ][H]H:MM:SS[.UUUUUU]}, where D is negative for negative t. 
+\end{itemize}
+
+\item \textit{date} Objects
+
+A \textit{date} object represents a date (year, month and day) in an idealized calendar, the current Gregorian calendar indefinitely extended in both directions.
+
+class \texttt{datetime}.\textbf{date}(\textit{year, month, day})
+
+All arguments are required. Arguments may be integers, in the following ranges:
+\begin{itemize}
+\item MINYEAR $\le year \le$ MAXYEAR
+\item $1 \le month \le 12$
+\item $1 \le day \le$ number of days in the given month and year
+\end{itemize}
+class methods:
+\begin{itemize}
+\item \textbf{today()} returns the current local date
+\item \textbf{fromtimestamp}(\textit{timestamp}) returns the local date corresponding to the POSIX timestamp, such as is returned by \textit{time.time()}.
+\item \textbf{fromordinal}(\textit{ordinal}) returns the date corresponding to the proleptic Gregorian ordinal, where January 1 of year 1 has ordinal 1.
+\end{itemize}
+instance methods:
+\begin{itemize}
+\item \textbf{replace}(\textit{year=self.year, month=self.month, day=self.day}) returns a date with the same value, except for those parameters given new values by whichever keyword arguments are specified.
+\item \textbf{toordinal()} returns the proleptic Gregorian ordinal of the date, where January 1 of year 1 has ordinal 1.
+\item \textbf{isoweekdat()} returns the day of the week as an integer, where Monday is 1 and Sunday is 7.
+\item \textbf{isocalendar()} returns a 3-tuple, (ISO year, ISO week number, ISO weekday).
+\item \textbf{isoformat()} returns a string representing the date in ISO 8601 format, ‘YYYY-MM-DD’.
+\end{itemize}
+
+\item \textit{time} Objects
+
+A time object represents a (local) time of day, independent of any particular day, and subject to adjustment via a \textit{tzinfo} object.
+
+class \texttt{datetime}.\textbf{time}(textit{hour=0, minute=0, second=0, microsecond=0, tzinfo=None, *, fold=0}) All arguments are optional.
+Instance methods:
+\begin{itemize}
+\item \textbf{replace}(\textit{hour=self.hour, minute=self.minute, second=self.second, microsecond=self.microsecond, tzinfo=self.tzinfo, * fold=0}) returns a \textit{time} with the same value, except for those attributes given new values by whichever keyword arguments are specified.
+\item \textbf{isoformat}(\textit{timespec='auto'}) returns a string representing the time in ISO 8601 format, HH:MM:SS.mmmmmm The optional argument \textit{timespec} specifies the number of additional components of the time to include (the default is 'auto').
+\end{itemize}
+\end{enumerate}
