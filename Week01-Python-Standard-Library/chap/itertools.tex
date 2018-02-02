@@ -1,0 +1,16 @@
+\subsection{itertools}
+The module standardizes a core set of fast, memory efficient tools that are useful by themselves or in combination. Together, they form an “iterator algebra” making it possible to construct specialized tools succinctly and efficiently in pure Python.
+
+Infinite iterators:
+\begin{itemize}
+\item \textbf{count}($start,[step]$) returns $start, start+step, start+2*step, …$
+\item \textbf{cycle}($p$) returns $p_0, p1, … plast, p0, p1, …$
+\item \textbf{repeat}($elem [, n]$) returns $elem, elem, elem, …$ endlessly or up to $n$ times
+\end{itemize}
+Itertool functions:
+\begin{itemize}
+\item \textbf{accumulate}($iterable[, func]$) makes an iterator that returns accumulated sums, or accumulated results of other binary functions (specified via the optional func argument). 
+\item \textbf{chain}($*iterables$) makes an iterator that returns elements from the first iterable until it is exhausted, then proceeds to the next iterable, until all of the iterables are exhausted.
+\item \textbf{groupby}($iterable, key=None$) makes an iterator that returns consecutive keys and groups from the iterable. The key is a function computing a key value for each element. If not specified or is None, key defaults to an identity function and returns the element unchanged. Generally, the iterable needs to already be sorted on the same key function.
+
+\end{itemize}
