@@ -23,13 +23,13 @@ Counter objects support three methods beyond those available for all dictionarie
 \item \textbf{subtract}$([iterable-or-mapping])$ Elements are subtracted from an \textit{iterable} or from another \textit{mapping} (or \textit{counter}).
 \end{itemize}
 
-\item deque Objects
+\item deque objects
 
 Deques are a generalization of stacks and queues (the name is pronounced “deck” and is short for “double-ended queue”). Deques support thread-safe, memory efficient appends and pops from either side of the deque with approximately the same O(1) performance in either direction.
 
 Deque objects support the following methods:
 \begin{itemize}
-\item \textbf{append}$(x)$/\textbf{appendleft}$(x)$ adds $x$ to the right/left side of the deque.
+\item \textbf{append}/\textbf{appendleft}$(x)$ adds $x$ to the right/left side of the deque.
 \item \textbf{clear()} removes all elements from the deque leaving it with length 0.
 \item \textbf{copy()} creates a shallow copy of the deque.
 \item \textbf{count}$(x)$ counts the number of deque elements equal to $x$.
@@ -52,7 +52,17 @@ returns a new dictionary-like object. defaultdict is a subclass of the built-in 
 
 Named tuples assign meaning to each position in a tuple and allow for more readable, self-documenting code. They can be used wherever regular tuples are used, and they add the ability to access fields by name instead of position index.
 
+\texttt{collections}.\textbf{namedtuple}(typename, field\_names, *, verbose=False, rename=False, module=None)
+
 \item OrderedDict()
 
 Ordered dictionaries are just like regular dictionaries but they remember the order that items were inserted. When iterating over an ordered dictionary, the items are returned in the order their keys were first added.
+
+class \texttt{collections}.\textbf{OrderedDict}($[items]$)
+
+An OrderedDict is a dict that remembers the order that keys were first inserted.
+
+\item UserDict/UserList/UserString
+
+They are wrapper around dictionary/list/string objects for easier dict subclassing
 \end{enumerate}

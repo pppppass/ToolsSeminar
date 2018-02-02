@@ -31,9 +31,17 @@ The types that can be pickled can be found in \href{https://docs.python.org/3.6/
 
 basic usage:
 \begin{itemize}
-\item \textbf{dump}(obj, fp) serializes obj as a JSON formatted stream to fp (a .write()-supporting file-like object) using this \href{https://docs.python.org/3.6/library/json.html#py-to-json-table}{conversion table}.
-\item \textbf{dumps}(obj) serializes obj to a JSON formatted str.
-\item \textbf{load}(fp) deserializes fp (a .read()-supporting file-like object containing a JSON document) to a Python object.
-\item \textbf{loads}(s) deserializes s (a \textit{str, bytes} or \textit{bytearray} instance containing a JSON document) to a Python object
+\item \textbf{dump}(obj, fp, *, skipkeys=False, ensure\_ascii=True, check\_circular=True, allow\_nan=True, cls=None, indent=None, separators=None, default=None, sort\_keys=False, **kw) serializes obj as a JSON formatted stream to fp (a .write()-supporting file-like object) using this \href{https://docs.python.org/3.6/library/json.html#py-to-json-table}{conversion table}.
+
+All optional parameters are now \textit{keyword-only}.
+\item \textbf{dumps}(obj, *, skipkeys=False, ensure\_ascii=True, check\_circular=True, allow\_nan=True, cls=None, indent=None, separators=None, default=None, sort\_keys=False, **kw) serializes obj to a JSON formatted str.
+
+The arguments have the same meaning as in \textit{dump()}.
+\item \textbf{load}(fp, *, cls=None, object\_hook=None, parse\_float=None, parse\_int=None, parse\_constant=None, object\_pairs\_hook=None, **kw) deserializes fp (a .read()-supporting file-like object containing a JSON document) to a Python object.
+
+All optional parameters are now \textit{keyword-only}.
+\item \textbf{loads}(s, *, encoding=None, cls=None, object\_hook=None, parse\_float=None, parse\_int=None, parse\_constant=None, object\_pairs\_hook=None, **kw) deserializes s (a \textit{str, bytes} or \textit{bytearray} instance containing a JSON document) to a Python object.
+
+The other arguments have the same meaning as in \text{load()}, except \textit{encoding} which is ignored and deprecated.
 \end{itemize}
 Besides, we can serialize a class object through utilizing other selective arguments in method \textit{dumps()}. Detailed instruction can be found in \href{https://docs.python.org/3/library/json.html#json.dumps}{here}.

@@ -1,0 +1,248 @@
+%-*- coding: UTF-8 -*-
+% !TeX program = XeLaTeX
+% !TeX spellcheck = XeLaTeX
+
+% Author : Yifei Wang
+% Description : Outline: Python Standard Library --- Seminar on Selected Tools Week 1
+
+\documentclass[xcolor=table]{mysld}
+\usepackage{graphics}
+
+\usepackage{mydef}
+
+% beamer 导言区
+\title{Outline: Python Standard Library}
+\subtitle{Seminar on Selected Tools Week 1}
+\author{Yifei Wang}
+\date{March 01, 2018}
+\subject{Outline: Python Standard Library --- Seminar on Selected Tools Week 1}
+\keywords{}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{Index}
+\tableofcontents
+\end{frame}
+
+\section{datetime}
+\begin{frame}[allowframebreaks]{datetime}
+\begin{enumerate}
+\item Available types
+\begin{itemize}
+\item date
+\item time
+\item datetime
+\item tzinfo
+\item timezone
+\end{itemize}
+\item \textbf{timedelta} objects
+\begin{itemize}
+\item class \texttt{datetime}.\textbf{timedalta}(\textit{days=0, seconds=0, microseconds=0, milliseconds=0, minutes=0, hours=0, weeks=0}) 
+\item Unique representation: \textit{days}, \textit{seconds} and \textit{microseconds}
+\item Special supported operation
+\begin{itemize}
+\item abs(t)
+\item str(t)
+\end{itemize}
+\end{itemize}
+\framebreak
+\item \textit{date} Objects
+\begin{itemize}
+\item class \texttt{datetime}.\textbf{date}(\textit{year, month, day})
+\item All arguments are required. 
+\item Class methods
+\begin{itemize}
+\item replace(year=self.year, month=self.month, day=self.day)
+\item toordinal()
+\item isoweekdat()
+\item isocalendar()
+\item isoformat()
+\end{itemize}
+\end{itemize}
+\framebreak
+\item \textit{time} Objects
+\begin{itemize}
+\item class \texttt{datetime}.\textbf{time}(textit{hour=0, minute=0, second=0, microsecond=0, tzinfo=None, *, fold=0})
+\item All arguments are optional.
+\item Instance methods:
+\begin{itemize}
+\item replace(hour=self.hour, minute=self.minute, second=self.second, microsecond=self.microsecond, tzinfo=self.tzinfo, * fold=0)
+\item isoformat(timespec='auto')
+\end{itemize}
+\end{itemize}
+\end{enumerate}
+\end{frame}
+
+\section{math}
+\begin{frame}[allowframebreaks]{math}
+\begin{enumerate}
+\item Number-theoretic and representation functions
+\begin{itemize}
+\item floor($x$)
+\item fabs($x$)
+\item factorial($x$)
+\item fmod($x,y$)
+\item fsum($iterable$)
+\item gcd($a,b$)
+\item isclose($a,b,*,rel$\_$tol=1e-09, abs$\_$tol=0.0$)
+\end{itemize}
+\item Power and logarithmic functions
+\begin{itemize}
+\item exp($x$)
+\item log($x[,a]$)
+\item pow($x,y$)
+\end{itemize}
+\framebreak
+\item Trigonometric and Hyperbolic functions
+\begin{itemize}
+\item acos($x$)
+\item cos($x$)
+\item hypot($x,y$)
+\item acosh($x$)
+\item cosh($x$)
+\end{itemize}
+\item Constants
+\begin{itemize}
+\item pi
+\item e
+\item inf
+\item nan
+\end{itemize}
+\end{enumerate}
+\end{frame}
+
+\section{random}
+\begin{frame}{random}
+\begin{itemize}
+\item random()
+\item randrange($m[,n,[d]]$)
+\item randint($m,n$)
+\item choice($s$)
+\item seed($[n]$)
+\item shuffle($x$)
+\item sample($popluation,k$)
+\end{itemize}
+\end{frame}
+
+\section{pickle}
+\begin{frame}{pickle}
+\begin{enumerate}
+\item Functions
+\begin{itemize}
+\item dump(obj, file, protocol=None, *, fix\_imports=True)
+\item dumps(obj, protocol=None, *, fix\_imports=True)
+\item load(file, *, fix\_imports=True, encoding="ASCII", errors="strict") 
+\item loads(bytes\_object, *, fix\_imports=True, encoding="ASCII", errors="strict") 
+\end{itemize}
+\item Classes
+\begin{itemize}
+\item class pickle.Pickler(file, protocol=None, *, fix\_imports=True)
+
+dump(obj)
+\item class pickle.Unpickler(file, *, fix\_imports=True, encoding="ASCII", errors="strict")
+
+load()
+\end{itemize}
+\end{enumerate}
+\end{frame}
+
+\section{json}
+\begin{frame}{json}
+\begin{enumerate}
+\item dump(obj,fp)(obj, fp, *, skipkeys=False, ensure\_ascii=True, check\_circular=True, allow\_nan=True, cls=None, indent=None, separators=None, default=None, sort\_keys=False, **kw) 
+\item dumps(obj, *, skipkeys=False, ensure\_ascii=True, check\_circular=True, allow\_nan=True, cls=None, indent=None, separators=None, default=None, sort\_keys=False, **kw) 
+\item load(fp, *, cls=None, object\_hook=None, parse\_float=None, parse\_int=None, parse\_constant=None, object\_pairs\_hook=None, **kw)
+\item loads(s, *, encoding=None, cls=None, object\_hook=None, parse\_float=None, parse\_int=None, parse\_constant=None, object\_pairs\_hook=None, **kw)
+\end{enumerate}
+\end{frame}
+
+\section{collections}
+\begin{frame}[allowframebreaks]{collections}
+\begin{enumerate}
+\item ChainMap objects
+\begin{itemize}
+\item maps
+\item new\_child($m=None$)
+\item parents
+\end{itemize}
+\item Counter objects
+\begin{itemize}
+\item elements()
+\item most
+\item subtract($[iterable]$)
+\end{itemize}
+\framebreak
+\item deque objects
+\begin{itemize}
+\item append/appendleft($x$)
+\item clear()
+\item copy()
+\item count($x$)
+\item extend/extendleft($iterable$)
+\item index($x[, start[, stop]]$)
+\item insert($i,x$)
+\item pop()/popleft()
+\item remove($value$)
+\item reverse()
+\item rotate($n$)
+\end{itemize}
+\framebreak
+\item defaultdict objects
+\item nametuple()
+\item OrderedDict()
+\end{enumerate}
+\end{frame}
+
+\section{re}
+\begin{frame}[allowframebreaks]{re}
+\begin{enumerate}
+\item Special characters:
+\begin{itemize}
+\item .
+\item +
+\item ?
+\item \{m\}
+\item \{m,n\}
+\item \textbackslash
+\begin{itemize}
+\item \textbackslash d
+\item \textbackslash s
+\item \textbackslash S
+\item \textbackslash w
+\item \textbackslash W
+\end{itemize}
+\item [ ]
+\end{itemize}
+\framebreak
+\item Module contents:
+\begin{itemize}
+\item compile($pattern, flags=0$)
+\item search($pattern, string, flags=0$)
+\item match($pattern, string, flags=0$)
+\item split($pattern, string, maxsplit=0, flags=0$)
+\end{itemize}
+\end{enumerate}
+\end{frame}
+
+\section{itertools}
+\begin{frame}{itertools}
+\begin{enumerate}
+\item Infinite iterators:
+\begin{itemize}
+\item count($start,[step]$)
+\item cycle($p$)
+\item repeat($elem [, n]$)
+\end{itemize}
+\item Itertool functions:
+\begin{itemize}
+\item accumulate($iterable[, func]$)
+\item chain($*iterables$)
+\item groupby($iterable, key=None$)
+\end{itemize}
+\end{enumerate}
+\end{frame}
+\end{document}
