@@ -1,0 +1,29 @@
+\subsection{re}
+This module provides regular expression matching operations similar to those found in Perl. Generally, we use Python’s raw string notation for regular expression patterns. Backslashes are not handled in any special way in a string literal prefixed with 'r'. For instance, r"\verb?\?n" is a two-character string containing '\verb?\?' and 'n', while "\verb?\?n" is a one-character string containing a newline.
+
+A regular expression (or RE) specifies a set of strings that matches it; the functions in this module let you check if a particular string matches a given regular expression (or if a given regular expression matches a particular string, which comes down to the same thing).
+
+Certain special characters:
+\begin{itemize}
+\item \hl{.} In the default mode, this matches any character except a newline.
+\item \hl{+} causes the resulting RE to match 1 or more repetitions of the preceding RE.
+\item \hl{?} causes the resulting RE to match 0 or 1 repetitions of the preceding RE. 
+\item \hl{\{m\}} specifies that exactly m copies of the previous RE should be matched; fewer matches cause the entire RE not to match. 
+\item \hl{\{m,n\}} causes the resulting RE to match from m to n repetitions of the preceding RE, attempting to match as many repetitions as possible.
+\item \hl{\textbackslash} Either escapes special characters, or signals a special sequence.
+\begin{itemize}
+\item \hl{\textbackslash d} matches any Unicode decimal digit.
+\item \hl{\textbackslash s} matches Unicode whitespace characters.
+\item \hl{\textbackslash S} matches any character which is not a whitespace character.
+\item \hl{\textbackslash w} matches Unicode word characters; this includes most characters that can be part of a word in any language, as well as numbers and the underscore.
+\item \hl{\textbackslash W} matches any character which is not a word character.
+\end{itemize}
+\item \hl{[ ]} is used to indicate a set of characters.
+\end{itemize}
+Module Contents:
+\begin{itemize}
+\item \textbf{compile}($pattern, flags=0$) compiles a regular expression pattern into a regular expression object, which can be used for matching using its \textit{match(), search()} and other methods, described below.
+\item \textbf{search}($pattern, string, flags=0$) scans through string looking for the first location where the regular expression pattern produces a match, and returns a corresponding match object. Return None if no position in the string matches the pattern; note that this is different from finding a zero-length match at some point in the string.
+\item \textbf{match}($pattern, string, flags=0$) If zero or more characters at the beginning of string match the regular expression pattern, return a corresponding match object. Return None if the string does not match the pattern; note that this is different from a zero-length match.
+\item \textbf{split}($pattern, string, maxsplit=0, flags=0$) splits string by the occurrences of pattern. If capturing parentheses are used in pattern, then the text of all groups in the pattern are also returned as part of the resulting list. If maxsplit is nonzero, at most maxsplit splits occur, and the remainder of the string is returned as the final element of the list.
+\end{itemize}

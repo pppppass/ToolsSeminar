@@ -1,0 +1,31 @@
+%中文环境
+\usepackage[UTF8, noindent, heading, nofonts]{ctex}
+
+%重设字体，主字体为仿宋
+\setCJKmainfont{Adobe Fangsong Std}
+\setCJKsansfont{Adobe Kaiti Std}
+\setCJKmonofont{PingFang SC}
+\setCJKfamilyfont{hei}{Adobe Heiti Std}
+\setCJKfamilyfont{fs}{FangSong}
+\setCJKfamilyfont{st}{Songti SC}
+\setCJKfamilyfont{huawenlishu}{STLiti}
+
+ %修改引用字体和字号，改用myquote
+\newenvironment{myquote}
+ {\begin{quote}\CJKfamily{kai}\zihao{-5}}
+ {\end{quote}}
+ 
+\newcommand\Cu{\CJKfamily{hei}}
+\newcommand\Kai{\CJKfamily{kai}}
+\newcommand\Fs{\CJKfamily{fs}}
+\newcommand\St{\CJKfamily{st}}
+\newcommand\Hwlt{\CJKfamily{huawenlishu}}
+
+%简单提供作者年代引用
+\bibliographystyle{apalike}
+ 
+%汉化定理环境和证明环境
+\newtheorem{thm}{定理}
+\renewcommand\proofname{证明}
+
+\newcommand*{\True}{true}
