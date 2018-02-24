@@ -18,6 +18,7 @@
 *.toc
 *.vrb
 *.thm
+*.fdb_latexmk
 
 # Other temporary files
 *.log
