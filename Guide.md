@@ -28,7 +28,7 @@ and framework), *Materials* (a list of materials on the topics, with
 an introduction of the assignment), *Assignment* (several exercises
 and small projects to be finished on the topic).
 
-Materials should be put in the the folder `Week<#week>-<topic>` in the repository. Spaces in the topic should be substituted with `_`. An article of *Materials* and a slide of *Outline* should be provided in the the folder as TeX source files.
+Materials should be put in the the folder `Week<#week>-<topic>` in the repository. Spaces in the topic should be stripped and **UpperCaseCamel** convention should be used. (Note that nrelated words should be joined by `-`) An article of *Materials* and a slide of *Outline* should be provided in the the folder as TeX source files.
 
 Assignments should be placed separatedly in the `Assignment` folder right in the repository folder `ToolsSeminar`. Each piece of assignment should be placed in a specific folder named `<topic>-<title>`, where the topic and title should both follow the **UpperCaseCamel** convention. A `main.ipynb` and/or `main.tex` should be provided to discribe the problem. (And maybe with some C++ source) Remember to clean the output when uploading Jupyter Notebooks.
 
