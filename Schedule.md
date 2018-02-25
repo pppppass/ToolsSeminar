@@ -3,7 +3,7 @@
 The schedule of the seminar is planned as the following.
 
 | | Responsible | Topic | Material due | Material updated | Seminar date |
-| - | - | - | - | - | - | - |
+| - | - | - | - | - | - |
 | Week 0 | pppppass | Python, LaTeX and Git | Dec 1 | Feb 24 | Nov 30 |
 | Week 1 | wyf | Python Standard Library | Feb 1 | Feb 24 | Mar 4 (W1) |
 | Week 2 | wyx | NumPy | Feb 8 | Feb 24 | Mar 11 (W2) |
