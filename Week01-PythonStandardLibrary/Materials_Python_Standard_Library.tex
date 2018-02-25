@@ -5,7 +5,7 @@
 % Author : Yifei Wang
 % Description : Matetials: Python Standard Library -- Seminar on Selected Tools Week 1
 
-\documentclass[english]{pkupaper}
+\documentclass[english]{../TeXTemplate/pkupaper}
 
 \usepackage{lipsum}
 \usepackage{essay-def}
@@ -38,18 +38,30 @@ The official document of Python Standard Library is provided \href{https://docs.
 
 \section{Assignment}
 \begin{thmque}[Required]
-If you get the date and time input by the costumer, like \hl{2015-1-21 9:01:30} and the time zone information, like \hl{UTC+5:00}, all of which are \texttt{string} objects. Please devise a program to transform these given information to timestamp.
+String to Timestamp: If you get the date and time input by the costumer, like \hl{2015-1-21 9:01:30} and the time zone information, like \hl{UTC+5:00}, all of which are \texttt{string} objects. Please devise a program to transform these given information to timestamp. See \verb"Assignment/StandardLibrary-StringToTimestamp" for details.
 \end{thmque}
 \begin{thmque}
-Devise a \hl{decorator}, which can affect any function and print the executing time of the function.
+Timing Decorator: Devise a \hl{decorator}, which can affect any function and print the executing time of the function. See \verb"Assignment/StandardLibrary-TimingDecorator" for details.
 \end{thmque}
 \begin{thmque}[Required]
-Use the \hl{deque} to realize a stack class.
+Stack: Use the \hl{deque} to realize a stack class. See \verb"Assignment/StandardLibrary-Stack" for details.
 \end{thmque}
 \begin{thmque}
-Serialize an object from the stack class above to a \hl{\{\}} in JSON.
+Stack and JSON: Serialize an object from the stack class above to a \hl{\{\}} in JSON. See \verb"Assignment/StandardLibrary-StackJSON" for details.
 \end{thmque}
 \begin{thmque}[Required]
-Use the \hl{OrderedDict} to realize a FIFO(first in first out) dict. When the dict is full, delete the Key added the ealiest.
+FIFO Dict: Use the \hl{OrderedDict} to realize a FIFO (first in first out) dict. When the dict is full, delete the Key added the ealiest. See \verb"Assignment/StandardLibrary-FIFODict" for details.
+\end{thmque}
+\begin{thmque}[Required]
+EMail Address: Write a regular expression to examine Email address. It should examine \verb"someone@gmail.com" and \verb"bill.gates@microsoft.com". See \verb"Assignment/StandardLibrary-EMailAddress" for details.
+\end{thmque}
+\begin{thmque}
+EMail Name: Write a regular expression to examine Email address and get the name in it. For example, \verb"<Tom Paris> tom@voyager.org" $\implies$ \verb"Tom Paris", \verb"bob@example.com" $\implies$ \verb"bob". See \verb"Assignment/StandardLibrary-EMailName" for details.
+\end{thmque}
+\begin{thmque}
+$\pi$: Use the \verb"itertools.count" to calculate the value of $\pi$, using the formula
+\begin{equation}
+\frac{\pi}{4} = \sum_{i=0}^{\infty}{ \frac{(-1)^n }{ 2 n + 1 } }.
+\end{equation}
 \end{thmque}
 \end{document}
