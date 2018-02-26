@@ -2,8 +2,8 @@
 % !TeX program = XeLaTeX
 % !TeX spellcheck = XeLaTeX
 
-% Author : Yifei Wang
-% Description : Matetials: Python Standard Library -- Seminar on Selected Tools Week 1
+% Author : Yifei Wang, pppppass
+% Description : Matetials: Python Standard Library --- Seminar on Selected Tools Week 1
 
 \documentclass[english]{../TeXTemplate/pkupaper}
 
@@ -11,12 +11,12 @@
 \usepackage{essay-def}
 
 \newcommand{\cuniversity}{}
-\newcommand{\cthesisname}{Matetials: Python Standard Library -- Seminar on Selected Tools Week 1}
+\newcommand{\cthesisname}{Matetials: Python Standard Library --- Seminar on Selected Tools Week 1}
 \newcommand{\titlemark}{Matetials: Python Standard Library}
 
 \title{\titlemark}
-\author{Yifei Wang}
-\date{\today}
+\author{Yifei Wang\quad pppppass}
+\date{February 26, 2018}
 
 \begin{document}
 \raggedright
@@ -37,6 +37,22 @@ The official document of Python Standard Library is provided \href{https://docs.
 \input{chap/collections}
 \input{chap/re}
 \input{chap/itertools}
+
+\subsection{\texttt{abc}}
+
+The module \verb"abc" is introduced in \href{https://docs.python.org/3/library/abc.html}{\texttt{abc}} in Python Standard Library Reference. See \href{https://segmentfault.com/a/1190000007921371}{this article} and \href{https://www.jianshu.com/p/19ed49293168}{this article} for comprehensive explanation. Note that the usage in latter article is obsolete and may lead to errors.
+
+\subsection{\texttt{decimal} and \texttt{fractions}}
+
+The module \verb"decimal" and \verb"fractions" are introduced in \href{https://docs.python.org/3/library/decimal.html}{\texttt{decimal}} and \href{https://docs.python.org/3/library/fractions.html} in Python Standard Library Reference. Note that these two articles may be too detailed for first reading.
+
+\subsection{\texttt{argparse}}
+
+The module \verb"argparse" is introduced in \href{https://docs.python.org/3/library/argparse.html}{\texttt{argparse}} in Python Standard Library Reference. There are tons of options for this module, but simple skeleton can be found in the first example.
+
+\subsection{\texttt{logging}}
+
+The module \verb"logging" is introduced in \href{https://docs.python.org/3/library/logging.html}{\texttt{logging}} in Python Standard Library Reference. Note that \href{http://python.jobbole.com/86887/}{this article} provides an introduction.
 
 \section{Assignment}
 \begin{thmque}[Required]
@@ -65,5 +81,20 @@ $\pi$: Use the \verb"itertools.count" to calculate the value of $\pi$, using the
 \begin{equation}
 \frac{\pi}{4} = \sum_{i=0}^{\infty}{ \frac{(-1)^n }{ 2 n + 1 } }.
 \end{equation}
+\end{thmque}
+\begin{thmque}
+Abstract Base Class: Implement an abstract base class \verb"AbstractBaseClass", from which \verb"DerivedClass" is derived. See \verb"Assignment/StandardLibrary-AbstractBaseClass" for details.
+\end{thmque}
+\begin{thmque}
+Data Loader: Use \verb"random.shuffle" to construct a class \verb"DataLoader" for SGD. See \verb"Assignment/StandardLibrary-DataLoader" for details.
+\end{thmque}
+\begin{thmque}
+Numbers: Use \verb"decimal" and \verb"fractions" module to accomplish two high precision tasks. See \verb"Assignment/StandardLibrary-Numbers" for details.
+\end{thmque}
+\begin{thmque}
+Implement \verb"prog.py" in the first code block in \href{https://docs.python.org/3/library/argparse.html}{argparse} in Python Standard Library Reference.
+\end{thmque}
+\begin{thmque}
+Implement the first example about \verb"logging" module in \href{http://python.jobbole.com/86887/}{this article}.
 \end{thmque}
 \end{document}
