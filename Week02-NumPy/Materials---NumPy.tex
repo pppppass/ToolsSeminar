@@ -2,7 +2,7 @@
 % !TeX program = LuaLaTeX
 % !TeX spellcheck = en_US
 
-% Author : Yixuan Wang
+% Author : Yixuan Wang, pppppass
 % Description : Materials: Seminar on Selected Tools Week 2 --- NumPy
 
 \documentclass[english]{../TeXTemplate/pkupaper}
@@ -14,14 +14,14 @@
 \newcommand{\titlemark}{Materials: NumPy}
 
 \title{\titlemark}
-\author{Yixuan Wang}
-\date{\today}
+\author{Yixuan Wang\quad ppppass}
+\date{Update on March 4, 2018}
 
 \begin{document}
 
 \maketitle
 
-The information is updated on February 1, 2018
+The information is updated on March 4, 2018.
 
 \section{Installation and configuration}
 
@@ -30,7 +30,7 @@ To install NumPy, it is suggested that you should use the distribution of Python
 \section{Resources}
 For beginners, it is strongly recommended to visit this website of \href{https://docs.scipy.org/doc/numpy/user/quickstart.html}{\emph{quickstart tutorial of NumPy}}. It is easy to read and comprehend, in the meantime would prepare sufficient knowledge for you to handle preliminary tasks of NumPy.
 
-However, for a thorough understanding of how NumPy functions, you'd better go through the \href{https://docs.scipy.org/doc/numpy/index.html}{\emph{NumPy v1.14 Manual}}. In particular, you could use \href{https://docs.scipy.org/doc/numpy/user/basics.html}{\emph{NumPy basics}} for advanced knowledge of NumPy.
+However, for a thorough understanding of how NumPy functions, you'd better go through the \href{https://docs.scipy.org/doc/numpy/index.html}{\emph{NumPy v1.14 Manual}}. In particular, you could use \href{https://docs.scipy.org/doc/numpy/user/basics.html}{\emph{NumPy basics}} for advanced knowledge of NumPy, and \href{https://docs.scipy.org/doc/numpy/reference/index.html}{\emph{NumPy Reference}} in search of NumPy functions.
 
 A Chinese documentation, \href{https://blog.csdn.net/chen_shiqiang/article/details/51868115}{\emph{NumPy的详细教程}} is also listed here. In fact, it is simply a Chinese version of the official documentation \href{https://docs.scipy.org/doc/numpy/user/quickstart.html}{\emph{quickstart tutorial of NumPy}}.
 
@@ -48,8 +48,12 @@ The assignment for week 2 is listed below.
 
 \begin{partlist}
 \item \textbf{(Required)} Polar Coordinates: Consider a random 10$\times $2 matrix representing cartesian coordinates, convert them to polar coordinates. See \verb"Assignment/NumPy-PolarCoordinates" for details.
-\item \textbf{(Required)} Rank Computation: Compute the matrix rank of a random 10$\times $10 matrix (without invoking the 'rank' method). See \verb"Assignment/NumPy-RankComputation" for details.
+\item \textbf{(Optional)} Rank Computation: Compute the matrix rank of a random 10$\times $10 matrix without invoking the \verb"rank"(\verb"numpy.linalg.matrix_rank()") method. See \verb"Assignment/NumPy-RankComputation" for details. (Hint: use SVD)
 \item \textbf{(Optional)} Extracting Submatrix: Extract all the contiguous 3$\times $3 blocks from a random 10$\times $10 matrix. See \verb"Assignment/NumPy-ExtractingSubmatrix" for details.
+\item \textbf{(Optional)} Intensive Broadcasting: Solve a system using intensive boardcasting. See \verb"Assignment/NumPy-IntensiveBroadcasting" for details.
+\item \textbf{(Optional)} From Function: Use \verb"numpy.fromfunction()" and \verb"numpy.indices()" to create two Laplacian matrices and \emph{explain how} \verb"numpy.fromfunction()" \emph{works and the relation between} \verb"numpy.fromfunction()" \emph{and} \verb"numpy.index()"\emph{.} See \verb"Assignment/NumPy-FromFunction" for details.
+\item \textbf{(Optional)} Random Choice: Use Boolean slice and \verb"numpy.random.choice()" respectively to perform random choice over a given matrix. See \verb"Assignment/NumPy-RandomChoice" for details.
+\item \textbf{(Required)} Expectation Maximization: Use Expectation Maximization Algorithm to handle a Gauss Mixture Model. See \verb"Assignment/NumPy-ExpectationMaximization" for details.
 \end{partlist}
 
 \end{document}
