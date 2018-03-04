@@ -2,7 +2,7 @@
 % !TeX program = XeLaTeX
 % !TeX spellcheck = XeLaTeX
 
-% Author : Yifei Wang
+% Author : Yifei Wang, pppppass
 % Description : Outline: Python Standard Library --- Seminar on Selected Tools Week 1
 
 \documentclass[xcolor=table]{mysld}
@@ -13,8 +13,8 @@
 % beamer 导言区
 \title{Outline: Python Standard Library}
 \subtitle{Seminar on Selected Tools Week 1}
-\author{Yifei Wang}
-\date{March 01, 2018}
+\author{Yifei Wang\quad pppppass}
+\date{February 26, 2018}
 \subject{Outline: Python Standard Library --- Seminar on Selected Tools Week 1}
 \keywords{}
 
@@ -245,4 +245,43 @@ load()
 \end{itemize}
 \end{enumerate}
 \end{frame}
+
+\section{\texttt{abc}}
+\begin{frame}[fragile]{\texttt{abc}}
+\begin{itemize}
+\item Declaration: \verb"def AbstractBaseClass(object, metaclass=ABCMeta)"
+\item Register as an abstract method: \verb"@abstractmethod"
+\end{itemize}
+\end{frame}
+
+\section{\texttt{decimal} and \texttt{fractions}}
+\begin{frame}[fragile]{\texttt{abc}}
+\begin{itemize}
+\item Class \verb"Decimal" and class \verb"Fraction"
+\item Many operators and functions are implemented
+\item Can be used for high precision (maybe symbolic) computation \\
+(And maybe for OI problems)
+\end{itemize}
+\end{frame}
+
+\section{\texttt{argparse}}
+\begin{frame}[fragile]{\texttt{argparse}}
+\begin{itemize}
+\item Basic usage: \verb"ArgumentParser", \verb"add_argument", \verb"parse_args"
+\item Key options: \verb"key", \verb"nargs"
+\item Default options: \verb"default", \verb"const"
+\end{itemize}
+\end{frame}
+
+\section{\texttt{logging}}
+\begin{frame}[fragile]{\texttt{logging}}
+\begin{itemize}
+\item Get \verb"logger" instance: \verb"getLogger", root logger
+\item Log formatter: \verb"Formatter", \verb"setFormatter"
+\item Log handlers: \verb"FileHandler", \verb"StreamHandler"
+\item Manipulate handlers: \verb"addHandler", \verb"removeHandler"
+\item Several levels: \verb"debug", \verb"info", \verb"warning", \verb"error", \verb"critical"
+\end{itemize}
+\end{frame}
+
 \end{document}
