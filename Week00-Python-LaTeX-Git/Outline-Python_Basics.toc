@@ -1,0 +1,11 @@
+\beamer@sectionintoc {1}{Basic topics}{4}{0}{1}
+\beamer@subsectionintoc {1}{1}{Introduction}{5}{0}{1}
+\beamer@subsectionintoc {1}{2}{Data structures}{6}{0}{1}
+\beamer@subsectionintoc {1}{3}{Flow control}{8}{0}{1}
+\beamer@sectionintoc {2}{Further topics}{11}{0}{2}
+\beamer@subsectionintoc {2}{1}{Object-oriented Programming}{12}{0}{2}
+\beamer@subsectionintoc {2}{2}{Functional Programming}{15}{0}{2}
+\beamer@sectionintoc {3}{Miscellaneous topics}{17}{0}{3}
+\beamer@sectionintoc {4}{Related resources}{20}{0}{4}
+\beamer@subsectionintoc {4}{1}{Coding style guidlines}{21}{0}{4}
+\beamer@subsectionintoc {4}{2}{Related tools}{24}{0}{4}
