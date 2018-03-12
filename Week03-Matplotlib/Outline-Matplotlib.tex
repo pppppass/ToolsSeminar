@@ -1,0 +1,100 @@
+% !TeX encoding = UTF-8
+% !TeX program = LuaLaTeX
+% !TeX spellcheck = en_US
+
+% Author : pppppass
+% Description : Outline: Matplotlib --- Seminar on Selected Tools Week 3
+
+\documentclass[english, nochinese]{../TeXTemplate/pkuslide}
+
+\usepackage{../TeXTemplate/def}
+
+\title{Outline: Matplotlib}
+\subtitle{Seminar on Selected Tools Week 3 --- Matplotlib}
+
+\author{pppppass}
+\date{Updated on March 12, 2018}
+
+\subject{Outline: Matplotlib --- Seminar on Selected Tools Week 3}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\tableofcontents[subsectionstyle=show]
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}
+\sectionpage
+\end{frame}
+
+\begin{frame}[fragile]{Basic Usage}
+\begin{enumerate}
+\item Module \verb"matplotlib.pyplot"
+\item Function \verb"pyplot.plot()", \verb"pyplot.show()"
+\item Arguments control plot styles, like \verb"cm", \verb"title", \verb"xlim"
+\item Other functions: \verb"fill()", \verb"scatter()", \verb"contour()"
+\item Auxiliary plot components: \verb"legend()", \verb"colorbar()", \verb"text()"
+\item Additional control: \verb"set_aspect()", \verb"set_xlim()"
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Concepts}
+\begin{enumerate}
+\item Figure, subplot, axes and axis
+\item Backend
+\item Colormap, mappable and colorbar
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Minimal example}
+\begin{enumerate}
+\item \verb"pyplot.figure()"
+\item \verb"fig.add_subplot()" or \verb"fig.add_axes()"
+\item \verb"ax.plot()", \verb"ax.fill() or \verb"ax.scatter()": plotting commands
+\item \verb"ax.set_aspect()", \verb"ax.set_xlime()": customizing commands
+\item \verb"pyplot.savefig()"
+\item \verb"pyplot.show()"
+\item \verb"pyplot.close()"
+\end{enumerate}
+\end{frame}
+
+\section{Examples}
+
+\begin{frame}
+\sectionpage
+\end{frame}
+
+\begin{frame}[fragile]{Popular plots}
+\begin{enumerate}
+\item Graph or lines: \verb"plot()"
+\item Scatter plots: \verb"scatter()"
+\item Contour: \verb"contour()"
+\item Vector field: \verb"quiver()"
+\item Images and matrices: \verb"imshow()" and \verb"matshow()"
+\item Histogram: \verb"hist()"
+\item Surfaces: \verb"plot_surface()"
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Other components}
+\begin{enumerate}
+\item Colorbar: \verb"colorbar()"
+\item Legend: \verb"legend()"
+\item Grids: \verb"grid()"
+\item Aspect: \verb"set_aspect()"
+\item Viewport: \verb"set_xlim()" and \verb"set_ylim()"
+\item Title: \verb"title()"
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Further examples}
+See the official \href{https://matplotlib.org/gallery.html}{Gallary} for examples with figures.
+\end{frame}
+
+\end{document}

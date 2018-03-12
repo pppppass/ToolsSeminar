@@ -1,0 +1,58 @@
+% !TeX encoding = UTF-8
+% !TeX program = LuaLaTeX
+% !TeX spellcheck = en_US
+
+% Author : pppppass
+% Description : Materials: Matplotlib --- Seminar on Selected Tools Week 3
+
+\documentclass[english]{../TeXTemplate/pkupaper}
+
+\usepackage[paper]{../TeXTemplate/def}
+
+\newcommand{\cuniversity}{}
+\newcommand{\cthesisname}{Materials: Matplotlib --- Seminar on Selected Tools Week 3}
+\newcommand{\titlemark}{Materials: Matplotlib}
+
+\title{\titlemark}
+\author{pppppass}
+\date{Updated on March 12, 2018}
+
+\begin{document}
+
+\maketitle
+
+\section{Installation and configuration}
+
+As popular library, Matplotlib can be installed in may ways, including using Anaconda (recommended) or \verb"pip". If you insist on building from source, see \href{https://matplotlib.org/users/installing.html}{\emph{Installing}} for further details.
+
+Note that Matplotlib behaves differently under different backend engines. It is possible to use Matplotlib standalone in a Linux (or possibly macOS and Windows) machine with pop-up plot windows, which is somehow similar to MATLAB, but assignment assumes the environment to be Jupyter Notebook. Therefore, it is recommended to install Jupyter Notebook. In addition, Jupyter Notebook and Matplotlib benefits each other when working together for data analysis, and this worth a trial.
+
+\section{Resources}
+
+Matplotlib is a large and capable library, which is exactly Swiss knife when ploting in Python. Meanwhile, good functionality means long documentation, which should be warned for first reading.
+
+Matplotlib actually does not provide very detailed and comprehensive tutorial to beginners, partly because the key function is \verb"pyplot.plot" and is very easy to understand. However, discovering relationship between modules is non-trivial.
+
+There are lots of tutorials already collected by search engines, like \href{https://liam0205.me/2014/09/11/matplotlib-tutorial-zh-cn/}{this article}, \href{https://www.jianshu.com/p/7fbecf5255f0}{this article} and \href{http://codingpy.com/article/a-quick-intro-to-matplotlib/}{this article}.
+
+The article \href{https://matplotlib.org/tutorials/introductory/pyplot.html}{\emph{Pyplot Tutorial}} \href{https://matplotlib.org/tutorials/introductory/images.html}{\emph{Image Tutorial}} worth going through. The article \href{https://matplotlib.org/tutorials/introductory/usage.html}{\emph{Usage Guide}} explains how Matplotlib works.
+
+The concept ``figure'' and ``axis'' and ``axes'' and ``subplot'' are confusing and there is no easy explanation in much tutorial. However, \href{https://www.zhihu.com/question/51745620/answer/231113561}{this answer} in Zhihu explains these concepts comprehensive and is \textbf{highly recommended}.
+
+For detailed plots, please refer to \href{https://matplotlib.org/gallery.html}{\emph{Gallery}} and \href{https://matplotlib.org/gallery/index.html}{\emph{Gallery Index}} for detailed usage. For detailed usage, one may search \href{https://matplotlib.org/contents.html}{\emph{Overview}} (of documentation), or directly search Google with the function name.
+
+\section{Assignment}
+
+The assignment is listed below.
+
+\begin{partlist}
+\item \textbf{(Required)} Simple plots: Utilize Matplotlib to create some simple plots. See \verb"Assignments/Matplotlib-SimplePlots" for information.
+\item \textbf{(Required)} Surface: Plot a surface in four different methods. See \verb"Assignments/Matplotlib-Surface" for information.
+\item \textbf{(Optional)} Vector Image: Use Matplotlib to plot a 3D surface with axis label typeset by \LaTeX. See \verb"Assignment/Matplotlib-VectorImage" for files.
+\item \textbf{(Optional)} Transport Plot: Plot the transport plan (some links, or say edges of a directed graph) between two set of points. See \verb"Assignments/Matplotlib-Transport" for detailed information.
+\item \textbf{(Optional)} Try \href{https://matplotlib.org/examples/api/barchart_demo.html}{\texttt{barchart\_demo.py}}.
+\item \textbf{(Optional)} Try \href{https://matplotlib.org/examples/pylab_examples/scatter_hist.html}{\texttt{scatter\_hist.py}}.
+\item \textbf{(Optional)} Try \href{https://matplotlib.org/examples/mplot3d/contourf3d_demo2.html}{\texttt{contourf3d\_Demo2.py}}.
+\end{partlist}
+
+\end{document}
