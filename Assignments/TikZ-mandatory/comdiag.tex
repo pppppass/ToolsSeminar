@@ -1,0 +1,21 @@
+% !TeX encoding = UTF-8
+% !TeX program = XeLaTeX
+% !TeX spellcheck = en_US
+
+% Author : Shlw
+% Description : TikZ Assignment
+\documentclass{standalone}
+
+\usepackage{tikz,tikz-cd}
+\usepackage{amsmath}
+
+\begin{document}
+
+\begin{tikzcd}
+\bigoplus_i M_i \arrow{rd}{\alpha}\arrow{d}[swap]{p_i} &\\
+M_i \arrow[densely dotted]{r}{\exists! \alpha_i}\arrow{d}[swap]{\varphi_i} & N\\
+S^{-1} M_i\arrow[densely dotted]{ur}{\exists ! \beta_i}\arrow[hookrightarrow]{r}
+& \bigoplus_i S^{-1} M_i \arrow[densely dotted]{u}[swap]{\exists ! \gamma}
+\end{tikzcd}
+
+\end{document}
