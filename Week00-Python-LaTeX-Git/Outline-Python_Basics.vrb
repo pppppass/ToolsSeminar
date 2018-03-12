@@ -1,0 +1,7 @@
+\frametitle{Related tool chains}
+\begin{enumerate}
+\item Anaconda: a package and environment manager of Python
+\item Package \verb"venv": a virtual environment manager
+\item Program \texttt{pip} and PyPI: python package manager
+\item Jupyter notebook: Web interactive Python application, especially live code demonstration and visualization
+\end{enumerate}

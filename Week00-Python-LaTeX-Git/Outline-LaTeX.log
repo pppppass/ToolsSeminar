@@ -1,0 +1,85 @@
+This is TeX, Version 3.14159265 (TeX Live 2017/Debian) (preloaded format=tex 2017.11.28)  24 FEB 2018 11:21
+**Outline-LaTeX.tex
+(./Outline-LaTeX.tex
+! Undefined control sequence.
+l.8 \documentclass
+                  [english, nochinese]{../TeXTemplate/pkuslide}
+? 
+! Undefined control sequence.
+l.10 \usepackage
+                {../TeXTemplate/def}
+? 
+! Undefined control sequence.
+l.12 \title
+           {Outline: \texorpdfstring{\LaTeX}{LaTeX}}
+? 
+! Undefined control sequence.
+l.12 \title{Outline: \texorpdfstring
+                                    {\LaTeX}{LaTeX}}
+? 
+! Undefined control sequence.
+l.12 \title{Outline: \texorpdfstring{\LaTeX
+                                           }{LaTeX}}
+? 
+! Undefined control sequence.
+l.13 \subtitle
+              {Seminar on Selected Tools Week 0 --- Python, \texorpdfstring{...
+
+? 
+! Undefined control sequence.
+l.13 ...d Tools Week 0 --- Python, \texorpdfstring
+                                                  {\LaTeX}{LaTeX} and Git}
+? 
+! Undefined control sequence.
+l.13 ... Week 0 --- Python, \texorpdfstring{\LaTeX
+                                                  }{LaTeX} and Git}
+? 
+! Undefined control sequence.
+l.15 \author
+            {pppppass}
+? 
+! Undefined control sequence.
+l.16 \date
+          {January 23, 2018}
+? 
+! Undefined control sequence.
+l.18 \subject
+             {Outline: \texorpdfstring{\LaTeX}{LaTeX} --- Seminar on Selecte...
+
+? 
+! Undefined control sequence.
+l.18 \subject{Outline: \texorpdfstring
+                                      {\LaTeX}{LaTeX} --- Seminar on Selecte...
+
+? 
+! Undefined control sequence.
+l.18 \subject{Outline: \texorpdfstring{\LaTeX
+                                             }{LaTeX} --- Seminar on Selecte...
+
+? 
+! Undefined control sequence.
+l.18 ...d Tools Week 0 --- Python, \texorpdfstring
+                                                  {\LaTeX}{LaTeX} and Git}
+? 
+! Undefined control sequence.
+l.18 ... Week 0 --- Python, \texorpdfstring{\LaTeX
+                                                  }{LaTeX} and Git}
+? 
+! Undefined control sequence.
+l.19 \keywords
+              {}
+? 
+! Undefined control sequence.
+l.21 \begin
+           {document}
+? 
+! Undefined control sequence.
+l.23 \begin
+           {frame}
+? 
+! Undefined control sequence.
+l.24 \titlepage
+               
+? 
+[1] )
+Output written on Outline-LaTeX.dvi (1 page, 560 bytes).

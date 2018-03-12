@@ -1,0 +1,203 @@
+%!TeX encoding = UTF-8
+
+
+\documentclass[english, nochinese]{beamer}
+
+\usepackage{amsfonts,amsmath}
+\usetheme{Berkeley}
+
+\title{Outline: SciPy}
+\subtitle{*}
+
+\author{Alisomia}
+\date{Mar. 9, 2018}
+
+\keywords{Python}
+
+\begin{document}
+
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+
+\begin{frame}
+\tableofcontents
+\end{frame}
+
+
+\section{What is SciPy}
+
+
+\begin{frame}
+
+\end{frame}
+
+
+\section{Integrate}
+
+
+\begin{frame}
+\frametitle{scipy.integrate}
+
+\begin{itemize}
+
+\item quad(func, a, b, args=(), weight=None, wvar=None, wopts=None)
+\item  dblquad(func, a, b, gfun, hfun, args=()) 
+\item tplquad(func, a, b, gfun, hfun, qfun, rfun, args=())
+
+\end{itemize}
+About \textbf{dblquad} and \textbf{tplquad}, pay  attention to the position of args: e.g. func(z, y, x) from $x \in [a,b], y \in [gfun(x), hfun(x)], z \in [qfun(x, y), rfun(x, y)] $
+\end{frame}
+
+\begin{frame}
+\frametitle{scipy.integrate}
+\begin{itemize}
+\item odeint(func, y0, t, args=())
+\item ode(f, jac)
+\end{itemize}
+the input of \textbf{odeint} is func(y0, t), and jac in \textbf{ode(f,jac)} is df/dy\\
+the difference between \textbf{ode} and \textbf{odeint} is \textbf{odeint} solves the ODE directly but \textbf{ode} returns a class
+\end{frame}
+
+
+\section{Optimization}
+\begin{frame}
+\frametitle{scipy.optimize}
+\begin{itemize}
+\item curve\_ fit(f, x, y)
+\item  fsolve(func, x0, args=(), fprime=None)
+\item  fmin(func, x0, args=())
+\item linprog({c, A\_ ub=None, b\_ ub=None, A\_ eq=None, b\_ eq=None)})
+\end{itemize}
+Minimize:     $c^T * x$
+
+Subject to:  $ A_ub * x <= b_ub, A_eq * x == b_eq$
+
+In \textbf{curve\_ fit}, 'f' should be defined like `f(x,*args)`
+
+\end{frame}
+
+\section{Matrix Operation}
+\begin{frame}
+\frametitle{scipy.linalg}
+\begin{itemize}
+\item inv(X)
+\item solve(A, b)
+\item solve\_ banded(A, b)
+\item det(X)
+\item norm(X)
+\item pinv(X)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{scipy.linalg}
+\begin{itemize}
+\item eig(X)
+\item svd(X)
+\item suchr(X)
+\item qr(X)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{scipy.sparse.linalg}
+\begin{itemize}
+\item cg(A, b)
+\item gmres(A, b)
+\item minres(A, b)
+\item eigs(A, k)
+\end{itemize}
+\end{frame}
+
+\section{Sparse Matrix}
+\begin{frame}
+\frametitle{scipy.sparse}
+\begin{block}{Construction and Basic Operations}
+use "csr\_ matrix(array\_ like)" or "csr\_ matrix((data, (row\_ ind, col\_ ind)) to construct a sparse matrix.
+
+\textbf{Attrs:}
+
+nnz : the number of non-zero elements.
+
+data : the non-zero elements.
+
+indices : the indices of non-zero elements.
+
+
+\textbf{Methods:}
+
+toarray() : return the array which this sparse matrix represents.
+
+
+
+\end{block}
+\end{frame}
+
+
+
+\section{Graph Algorithms}
+\begin{frame}
+\frametitle{scipy.sparse.csgraph}
+\begin{itemize}
+\item connect\_ components
+\item laplacian
+\item shortest\_ path
+\item dijkstra
+\item floyd\_ warshall
+\item bellman\_ ford
+\item johnson
+
+\end{itemize}
+\end{frame}
+\section{Fast Fourier Transform}
+\begin{frame}
+\frametitle{scipy.fftpack}
+\begin{itemize}
+\item fft(x)
+\item ifft(x)
+\item fft2(x)
+\item ifft2(x)
+\item dct(x)
+\item idct(x)
+\item dst(x)
+\item idst(x)
+\end{itemize}
+\end{frame}
+
+
+\section{Image Processing}
+\begin{frame}
+\frametitle{scipy.ndimage}
+\begin{itemize}
+\item convolve(input, weight)
+\item gaussian\_ filter(input, sigma)
+\item affine\_ transform(input, matrix)
+\item rotate(input, angle)
+\end{itemize}
+\end{frame}
+
+\section{I/O}
+\begin{frame}
+\frametitle{scipy.io}
+\begin{itemize}
+\item loadmat(filename)
+\item savemat(filename, mdict)
+\end{itemize}
+\end{frame}
+
+\section{More About SciPy}
+\begin{frame}
+\frametitle{This outline does not include}
+\begin{itemize}
+\item scipy.constant
+\item scipy.special
+\item scipy.spatial
+\item scipt.stat
+\end{itemize}
+Please check the material. qwq
+\end{frame}
+\end{document}
+\
