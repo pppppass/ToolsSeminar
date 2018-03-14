@@ -1,0 +1,164 @@
+% !TeX encoding = UTF-8
+% !TeX program = XeLaTeX
+% !TeX spellcheck = en_US
+
+% Author : Jason Jia and Narsil Zhang
+% Description : Outline: PyTorch --- Seminar on Selected Tools Week 5
+
+\documentclass[english, nochinese]{../TeXTemplate/pkuslide}
+
+\usepackage{../TeXTemplate/def}
+
+\title{Outline: PyTorch}
+\subtitle{Seminar on Selected Tools Week 5 --- PyTorch}
+
+\author{Jason Jia\qquad Narsil Zhang}
+\date{\today}
+
+\subject{Outline: PyTorch --- Seminar on Selected Tools Week 5}
+\keywords{}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\tableofcontents[subsectionstyle=show]
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}
+\sectionpage
+\end{frame}
+
+\begin{frame}{Introduction}
+PyTorch is a python package that provides two high-level features:
+\begin{itemize}
+\item Tensor computation (like numpy) with strong GPU acceleration
+\item Deep Neural Networks built on a tape-based autograd system
+\end{itemize}
+For more information, you can visit \url{http://pytorch.org/}
+\end{frame}
+
+\section{Tensor}
+
+\begin{frame}
+\sectionpage
+\end{frame}
+
+\begin{frame}{Construction}
+\begin{enumerate}
+    \item torch.Tensor(2,3)
+    \item torch.ones(2,3)
+    \item torch.zeros(2,3)
+    \item torch.eye(2,3)
+    \item torch.rand(2,3)
+    \item torch.range(6)
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Common Operation}
+\begin{enumerate}
+    \item view
+	\item unsqueeze
+	\item squeeze
+	\item expand
+	\item sum/mean/median/mode
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Type}
+\begin{enumerate}
+    \item FloatTensor
+	\item DoubleTensor
+	\item ByteTensor
+	\item CharTensor
+	\item ShortTensor
+	\item IntTensor
+	\item LongTensor
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Transfer from and to NumPy}
+\begin{enumerate}
+	\item t = torch.from\_numpy(n): Transfer a PyTorch Tensor from a NumPy array
+	\item t = torch.Tensor(n): Transfer a NumPy array into a PyTorch Tensor
+	\item n = t.numpy(): Transfer a PyTorch Tensor from a NumPy array
+\end{enumerate}
+\end{frame}
+
+\section{Autograd}
+
+\begin{frame}
+\sectionpage
+\end{frame}
+
+
+\begin{frame}{Variable}
+\begin{itemize}
+	\item Method to import: "from torch.autograd import Variable"
+	\item Obtain Data from Variables: (Variable).data
+	\item requires\_grad = True/False
+	\item Back Propagation: (Variable).backward()
+	\item Calculating the Graph
+\end{itemize}
+\end{frame}
+
+\section{Neural Networks: torch.nn}
+
+\begin{frame}
+\sectionpage
+\end{frame}
+
+\begin{frame}{Layers}
+\begin{itemize}
+	\item Convolutional Layers: nn.Conv1d/Conv2d/Conv3d
+	\item Pooling Layers: nn.MaxPool2d
+	\item Linear Layers: nn.Linear
+	\item ReLU (type of non-linear function) Layers: nn.ReLU
+	\item Batch Normalization Layers: nn.BatchNorm1d
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Loss Functions}
+\begin{itemize}
+	\item Cross Entropy Loss: nn.CrossEntropyLoss
+	\item Mean Squared Error: nn.MSELoss
+	\item KL Divergence: nn.KLDivLoss
+\end{itemize}
+\end{frame}
+
+\section{Optimizer: torch.optim}
+
+\begin{frame}
+\sectionpage
+\end{frame}
+
+\begin{frame}{Optimizer}
+\begin{itemize}
+	\item Stochastic Gradient Descent (Momentum): optim.SGD
+	\item RMSProp: optim.Rprop
+	\item Adadelta: optim.Adadelta
+	\item Adagrad: optim.Adagrad
+	\item Adam: optm.Adam
+\end{itemize}
+\end{frame}
+	
+\section{Date Import and Management}
+
+\begin{frame}
+\sectionpage
+\end{frame}
+
+\begin{frame}{Constructing Datasets}
+\begin{itemize}
+	\item torch.utils.DateLoader
+	\item torchversion.datasets
+	\item torchversion.transforms
+\end{itemize}
+\end{frame}
+
+\end{document}
