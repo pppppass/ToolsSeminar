@@ -27,6 +27,7 @@ __pycache__
 .vscode
 *.tmp
 .ipynb_checkpoints/
+data/
 
 # Binary files
 *.pdf
