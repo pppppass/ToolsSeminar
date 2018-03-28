@@ -1,0 +1,132 @@
+% !TeX encoding = UTF-8
+% !TeX program = XeLaTeX
+% !TeX spellcheck = en_US
+
+% Author : 2prime
+% Description : Outline: MxNet --- Seminar on Selected Tools Week 8
+
+\documentclass[english, nochinese]{../TeXTemplate/pkuslide}
+
+\usepackage{../TeXTemplate/def}
+
+\title{Outline: PyTorch}
+\subtitle{Seminar on Selected Tools Week 8 --- MxNet}
+
+\author{Jason Jia\qquad Narsil Zhang}
+\date{March 28}
+
+\subject{Outline: MxNet --- Seminar on Selected Tools Week 8}
+\keywords{}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\tableofcontents[subsectionstyle=show]
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}
+\sectionpage
+\end{frame}
+
+\begin{frame}{Introduction}
+Mxnet is a python package that provides two high-level features:
+\begin{itemize}
+\item Tensors On GPU!
+\item A flexible and efficient library for deep learning.\textbf{both symbolic(based on computational graph like tensorflow) and command programming(like pytorch)}
+\item High performance.
+\item Opensource and full of meterials!
+\end{itemize}
+For more information, you can visit \url{http://mxnet.incubator.apache.org/}
+\end{frame}
+
+\section{Ndarray}
+
+\begin{frame}
+\sectionpage
+\end{frame}
+
+\begin{frame}{Ndarray}
+\begin{enumerate}
+\item mx.nd.empty((2, 3)) 
+\item mx.nd.empty((2, 3), mx.gpu()) 
+\item mx.nd.empty((2, 3), mx.gpu(2)) 
+\item b = mx.nd.ones((2, 3))
+\item a.copyto(b) (can do on different gpu/cpus)
+\item b = a.asnumpy() 
+\item a[:] = np.random.uniform(-0.1, 0.1, a.shape)  
+\end{enumerate}
+
+Understand \textbf{ctx=mx.gpu}
+\end{frame}
+
+\begin{frame}{Common Operation}
+\begin{enumerate}
+    \item  c = a.copyto(mx.gpu()) * b
+    \item mx.nd.save('mydata.bin', [a, b])  
+    \item c = mx.nd.load('mydata.bin') 
+    
+\end{enumerate}
+\end{frame}
+
+
+\section{Symbol}
+
+\begin{frame}{Atuograd}
+
+Invoking via \textbf{x.attach_grad()}, and placing code in with autograd.record().
+
+head\_gradient
+
+MxNet.Symbol
+
+\end{frame}
+
+\begin{frame}{New Layer}
+
+mx.operator.CustomOp : foward, backward
+
+@mx.operator.register("dense")  
+
+mx.operator.CustomOpProp
+
+create_operator, infer_type, infer_shape, list_arguments, list_output
+
+fc1 = mx.symbol.Custom(data, name='fc1', op_type='dense', num_hidden=128)
+
+\end{frame}
+
+\section{Gluon}
+
+\begin{frame}{Gluon}
+
+Initialization via net = gluon.nn.Sequential() and adding layer in with net.name_scope() by net.add()
+
+net.collect_params().initialize(mx.init.Xavier(magnitude=2.24), ctx=ctx)
+
+softmax_cross_entropy = gluon.loss.SoftmaxCrossEntropyLoss()
+
+
+trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': .1})
+
+RK. Remember to with autograd.record()
+
+\textbf{HybridBlock}
+\end{frame}
+
+\begin{frame}{Iteract With C/C++/Cuda Code}
+\textbf{src/operator} is the dictionary of the definitions of operators in Symbol. You can add \textbf{-inl.h,.cc,.cu} three files and then complied the MxNet again.
+\end{frame}
+
+\section{Dataloader}
+\begin{frame}{dataloader}
+\textbf{mxnet.io.DataIter} provides a base class for you to define your own data loader. You need to define a \textbf{next} function and use the following function to return a batch \textbf{mxnet.io.DataBatch}
+
+\end{frame}
+
+\end{document}
