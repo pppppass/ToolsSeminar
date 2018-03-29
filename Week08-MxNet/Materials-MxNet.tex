@@ -1,0 +1,108 @@
+% !TeX encoding = UTF-8
+% !TeX program = XeLaTeX
+% !TeX spellcheck = en_US
+
+% Author : 2prime
+% Description : MxNet --- Seminar on Selected Tools Week 8
+
+\documentclass[english]{../TeXTemplate/pkupaper}
+
+\usepackage[paper]{../TeXTemplate/def}
+
+\newcommand{\cuniversity}{}
+\newcommand{\cthesisname}{Materials: MxNet --- Seminar on Selected Tools Week 8}
+\newcommand{\titlemark}{Materials: MxNet}
+
+\title{\titlemark}
+\author{Yiping Lu}
+\date{ March 28}
+
+\begin{document}
+
+\maketitle
+\section{Introduction To MxNet}
+
+
+MxNet (supported by Amazon) can both symbolic(based on computational graph like tensorflow) and command programming(like pytorch) and is claimed as the fastest framework. The advance of MxNet can be found here \url{https://blog.csdn.net/u012556077/article/details/50409842} and \url{https://www.jianshu.com/p/1c7ef1ce5540}.
+
+
+\subsection{Related Material}
+
+
+
+Tutorial: \url{https://mxnet.incubator.apache.org/tutorials/index.html}
+
+A course by Mu Li: \url{https://github.com/mli/gluon-tutorials-zh}
+
+The course material: \url{http://gluon.mxnet.io}
+
+API List:
+\url{https://mxnet.incubator.apache.org/api/python/}
+
+Examples of MxNet: \url{https://github.com/apache/incubator-mxnet/tree/master/example}
+
+Pretrained Models: \url{https://mxnet.incubator.apache.org/api/python/gluon/model_zoo.html}
+
+\section{MxNet Deep Learning}
+
+\subsection{Ndarray}
+
+\textbf{Ndarray} is the basic math module in MxNet. It is simliar to \textbf{numpy} and you can find introduction of it at \url{https://blog.csdn.net/richard_che/article/details/73695593}.
+
+The C++ code implementation of Ndarray is called \textbf{MShadow}. If you want to read the source code of MxNet don't forget to begin with it!(A guide for reading mxnet's source code:\url{https://www.zhihu.com/question/35924234/answer/198732847})
+
+\subsection{DataLoader}
+
+\textbf{mxnet.io.DataIter} provides a base class for you to define your own data loader. You need to define a \textbf{next} function and use the following function to return a batch \textbf{mxnet.io.DataBatch}
+
+
+
+\subsection{Symbol \& Module}
+
+
+The introduction of autograd in MxNet is introduced at \url{http://gluon.mxnet.io/chapter01_crashcourse/autograd.html}. Pay attention to the \textbf{head\_gradient} part. You can define the foward process and then the backward process can be dealed by the autograd!
+
+Defining the forward process is painful? MxNet.Symbol will help(reference:\url{https://blog.csdn.net/qq_25491201/article/details/51277817}) and you can define your own layer (refenerce:\url{https://blog.csdn.net/a350203223/article/details/77449630})
+
+It's a sad story that you need to write your own optimizer. The example is here \url{http://gluon.mxnet.io/chapter06_optimization/gd-sgd-scratch.html}.
+
+\subsection{Gulon}
+
+\textbf{Attention:} The size of the parameters in each layer is unknown until you pass your data in the first time! You can see the initialization here \url{http://gluon.mxnet.io/chapter02_supervised-learning/linear-regression-gluon.html}.
+
+
+
+Gulon is very easy to learn, the API is like \textbf{keras}. Reference is here: \url{http://gluon.mxnet.io/chapter04_convolutional-neural-networks/cnn-gluon.html}, it is great to only need to net.add to add a layer. How to write the repeating blocks easily? \url{http://gluon.mxnet.io/chapter04_convolutional-neural-networks/very-deep-nets-vgg.html}
+
+Then you can define your own CNN. It's not difficult to utilize the Gulon and Symbol at the same time. The answer is \textbf{HybridBlock}, reference: \url{https://www.jianshu.com/p/ce14b6381dfe} It can change Gulon code to symbol based code.
+
+A lot of optimization method is implemented in Gulon, you can use \textbf{gluon.Trainer} instead of writing your own optimizer.
+
+
+
+\subsection{Iteract With C/C++/Cuda Code}
+
+\textbf{Attention:} MxNet's C++ Code utilize a lot of C++11 characteristic, make sure you are familiar with them!
+
+\textbf{src/operator} is the dictionary of the definitions of operators in Symbol. You can add \textbf{-inl.h,.cc,.cu} three files and then complied the MxNet again.
+\subsection{Advanced Topics}
+
+Training on Multi-GPUs: \url{http://gluon.mxnet.io/chapter07_distributed-learning/multiple-gpus-gluon.html}
+
+Make your CNN faster?: \url{http://gluon.mxnet.io/chapter07_distributed-learning/hybridize.html}
+
+Sparse Matrix In MxNet:\url{http://mxnet.incubator.apache.org/tutorials/sparse/csr.html} and \url{http://mxnet.incubator.apache.org/tutorials/sparse/train.html}
+
+
+\section{Homework}
+
+1. Write a dataloader for the KITTI dataset(\url{http://www.cvlibs.net/datasets/kitti/eval_object.php}) \textbf{Attention:} The pictures in KITTI dataset doesn't share the same size.
+
+2. Implement any of cv/nlp tasks introduced in \url{http://gluon.mxnet.io} or \url{https://github.com/apache/incubator-mxnet/tree/1.1.0/example}.(The introduction and answer is also given on the website.)
+
+3. (Optional) Implement a small FCN(utilizing a pretrain classification network) for the dataset(choise one task like stereo matching). \textbf{Remember to initialize the upsampling layer by bilinear interpolation. This step is what I want you to implement!} (Reference:Long J, Shelhamer E, Darrell T. Fully convolutional networks for semantic segmentation[C] CVPR2015.\url{http://www.cv-foundation.org/openaccess/content_cvpr_2015/app/2B_011_ext.pdf}) The data you need in this problem is implemented in Hw1.
+
+4.(Optional) MaskRCNN in MxNet. (Reference:\url{https://arxiv.org/abs/1703.06870} and \url{https://github.com/TuSimple/mx-maskrcnn})
+
+
+\end{document}
