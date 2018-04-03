@@ -7,12 +7,9 @@
 \usetheme{Berkeley}
 
 \title{Outline: SciPy}
-\subtitle{*}
 
 \author{Alisomia}
-\date{Mar. 9, 2018}
-
-\keywords{Python}
+\date{Updated on April 3, 2018}
 
 \begin{document}
 
@@ -66,16 +63,16 @@ the difference between \textbf{ode} and \textbf{odeint} is \textbf{odeint} solve
 \begin{frame}
 \frametitle{scipy.optimize}
 \begin{itemize}
-\item curve\_ fit(f, x, y)
+\item curve\_fit(f, x, y)
 \item  fsolve(func, x0, args=(), fprime=None)
 \item  fmin(func, x0, args=())
-\item linprog({c, A\_ ub=None, b\_ ub=None, A\_ eq=None, b\_ eq=None)})
+\item linprog({c, A\_ub=None, b\_ub=None, A\_eq=None, b\_eq=None)})
 \end{itemize}
 Minimize:     $c^T * x$
 
 Subject to:  $ A_ub * x <= b_ub, A_eq * x == b_eq$
 
-In \textbf{curve\_ fit}, 'f' should be defined like `f(x,*args)`
+In \textbf{curve\_fit}, 'f' should be defined like `f(x,*args)`
 
 \end{frame}
 
@@ -85,7 +82,7 @@ In \textbf{curve\_ fit}, 'f' should be defined like `f(x,*args)`
 \begin{itemize}
 \item inv(X)
 \item solve(A, b)
-\item solve\_ banded(A, b)
+\item solve\_banded(A, b)
 \item det(X)
 \item norm(X)
 \item pinv(X)
@@ -116,7 +113,7 @@ In \textbf{curve\_ fit}, 'f' should be defined like `f(x,*args)`
 \begin{frame}
 \frametitle{scipy.sparse}
 \begin{block}{Construction and Basic Operations}
-use "csr\_ matrix(array\_ like)" or "csr\_ matrix((data, (row\_ ind, col\_ ind)) to construct a sparse matrix.
+use "csr\_matrix(array\_like)" or "csr\_matrix((data, (row\_ind, col\_ind)) to construct a sparse matrix.
 
 \textbf{Attrs:}
 
@@ -142,12 +139,12 @@ toarray() : return the array which this sparse matrix represents.
 \begin{frame}
 \frametitle{scipy.sparse.csgraph}
 \begin{itemize}
-\item connect\_ components
+\item connect\_components
 \item laplacian
-\item shortest\_ path
+\item shortest\_path
 \item dijkstra
-\item floyd\_ warshall
-\item bellman\_ ford
+\item floyd\_warshall
+\item bellman\_ford
 \item johnson
 
 \end{itemize}
@@ -173,8 +170,8 @@ toarray() : return the array which this sparse matrix represents.
 \frametitle{scipy.ndimage}
 \begin{itemize}
 \item convolve(input, weight)
-\item gaussian\_ filter(input, sigma)
-\item affine\_ transform(input, matrix)
+\item gaussian\_filter(input, sigma)
+\item affine\_transform(input, matrix)
 \item rotate(input, angle)
 \end{itemize}
 \end{frame}

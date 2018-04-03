@@ -10,7 +10,7 @@ The schedule of the seminar is planned as the following.
 | Week 3 | pppppass | Matpoltlib | Feb 15 | Mar 18 | Mar 18 (W3) |
 | | | None | | | Mar 25 (W4) |
 | Week 4 | jzy, zdh | PyTorch | Mar 1 | March 27 | Apr 1 (W5) |
-| Week 5 | lt | SciPy | Mar 8 | Mar 4 | Apr 8 (W6) |
+| Week 5 | lt | SciPy | Mar 8 | Apr 4 | Apr 8 (W6) |
 | Week 6 | mx | SymPy | Mar 15 | Mar 5 | Apr 15 (W7) |
 | | | None | | | Apr 22 (W8) |
 | | | None | | | Apr 29 (W9) |

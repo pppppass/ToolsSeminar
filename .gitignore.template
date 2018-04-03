@@ -1,6 +1,7 @@
 # Backup files
 *~
 *.bak
+*~/
 
 # .gitignore itself
 .gitignore
@@ -28,6 +29,7 @@ __pycache__
 *.tmp
 .ipynb_checkpoints/
 data/
+*.swp
 
 # Binary files
 *.pdf
