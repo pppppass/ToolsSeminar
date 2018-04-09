@@ -1,20 +1,22 @@
 % !TeX encoding = UTF-8
+% !TeX program = XeLaTeX
+% !TeX spellcheck = en_US
 
 % Author : Xiang Meng
-% Description : Outline: Seminar on Selected Tools Week 7 --- Sympy
+% Description : Outline: Seminar on Selected Tools Week 6 --- SymPy
 
 \documentclass[english, nochinese]{../TeXTemplate/pkuslide}
 
 \usepackage{../TeXTemplate/def}
 
-\title{Outline: Sympy}
-\subtitle{Tools Seminar Week 7 --- Sympy}
+\title{Outline: SymPy}
+\subtitle{Tools Seminar Week 6 --- SymPy}
 
 \author{Xiang Meng}
-\date{\today}
+\date{Updated on April 9}
 
-\subject{Outline: Seminar on Selected Tools Week 7 --- Sympy}
-\keywords{Python, Sympy}
+\subject{Outline: Seminar on Selected Tools Week 6 --- SymPy}
+\keywords{Python, SymPy}
 \begin{document}
 \begin{frame}
 \titlepage
@@ -38,29 +40,29 @@
 \end{enumerate}
 \end{frame}
 
-\section{basic syntax}
+\section{Basic syntax}
 
 \begin{frame}
 \sectionpage
 \end{frame}
 
-\begin{frame}{syntax}
+\begin{frame}[fragile]{Syntax}
 \begin{enumerate}
-\item from sympy import * (may cause override)
-\item x=symblos('x'), f=Function('f')
-\item subs(),evalf(),simplify()
-\item Eq(a,b) represents the equation a=b
-\item Matrix()
+\item \verb"from sympy import *" (may cause override)
+\item \verb"x = symbols('x')", \verb"f = Function('f')"
+\item \verb"subs()", \verb"evalf()", \verb"simplify()"
+\item \verb"Eq(a, b)" represents the equation $ \verb"a" = \verb"b" $
+\item \verb"Matrix()"
 \end{enumerate}
 \end{frame}
 
-\section{applications}
+\section{Applications}
 
 \begin{frame}
 \sectionpage
 \end{frame}
 
-\begin{frame}{advanced}
+\begin{frame}{Advanced}
 \begin{enumerate}
 \item expression tree
 \item calculus and limit
@@ -76,6 +78,5 @@
 \begin{frame}
 \sectionpage
 \end{frame}
-
 
 \end{document}

@@ -1,0 +1,42 @@
+% !Tex encoding = UTF-8
+% !TeX program = XeLaTeX
+% Author : Xiang Meng
+%Description : Materials : Seminar on Selected Tools Week 6 --- SymPy
+
+\documentclass[english]{../TeXTemplate/pkupaper}
+
+\usepackage[paper]{../TeXTemplate/def}
+
+\newcommand{\cuniversity}{}
+\newcommand{\cthesisname}{Materials: Seminar on Selected Tools Week 6 --- SymPy}
+\newcommand{\titlemark}{Materials : SymPy}
+
+\title{\titlemark}
+\author{Xiang Meng}
+\date{Updated on April 9}
+
+\begin{document}
+
+\maketitle
+
+\section{Installation and configuration}
+The SymPy CAS can be installed on virtually any computer with Python 2.7 or above. SymPy does require mpmath Python library to be installed first, so it is recommended to use Anaconda as it already includes mpmath and
+other useful packages which could extend SymPy's utilities. An alternative choice is to use \verb"git clone git://github.com/sympy/sympy.git" from the command line if you want to get the latest updates as they come.
+Besides, an installation executable (.exe) is available for Windows users at the \href{https://github.com/sympy/sympy/releases}{downloads site}.
+
+\section{Resources}
+The official documentation is provided \href{http://docs.sympy.org/latest/tutorial/index.html}{here}. To get more
+details, view the \href{http://docs.sympy.org/latest/modules/index.html}{SymPy Modules Reference}. There is also
+\href{http://ju.outofmemory.cn/entry/80895}{a simple chinese version} of SymPy tutorial if you think the official tutorial is too cumbersome. 
+
+\section{Assignment}
+
+Because the snippets are relative short, all four problems are packed into a unique Jupyter Notebook file, which is in the folder \verb"SymPy-All".
+
+\begin{partlist}
+\item \textbf{(Required)} Set the printer of the interactive environment you are using (especially, Jupyter Notebook) to print $\int_{0}^{\infty} \frac{e^{-ax^2}-1}{x^2}dx\,\,(a\ge 0)$ in LaTeX and then compute this integral.
+\item \textbf{(Required)} Apply recurrence formula $I_{n}=1 - n I_{n-1}$ to calculate $I_{20}=\frac{1}{e}\int_{0}^{1}x^{20}e^x dx$ with pure Python and SymPy, and explain the difference between the answers.
+\item \textbf{(Required)} Use SymPy to solve ODE $y' = (1-\frac{y}{10000}) y$, and then plot the solution with $C=-1000, -10000, 0.3, 0.7$. (C is the constant in the solution)
+\item \textbf{(Optional)} Find the minimum point for function $f(x,y)=x^3+y^3-3x-12y$.
+\end{partlist}
+\end{document}
