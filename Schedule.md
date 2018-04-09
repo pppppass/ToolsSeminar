@@ -11,11 +11,11 @@ The schedule of the seminar is planned as the following.
 | | | None | | | Mar 25 (W4) |
 | Week 4 | jzy, zdh | PyTorch | Mar 1 | March 27 | Apr 1 (W5) |
 | Week 5 | lt | SciPy | Mar 8 | Apr 4 | Apr 8 (W6) |
-| Week 6 | mx | SymPy | Mar 15 | Mar 5 | Apr 15 (W7) |
+| Week 6 | mx | SymPy | Mar 15 | Apr 9 | Apr 15 (W7) |
 | | | None | | | Apr 22 (W8) |
 | | | None | | | Apr 29 (W9) |
 | Week 7 | Shlw | tikz | Apr 5 | Mar 12 | May 6 (W10) |
-| Week 8 | 2prime | MXNet and Gluon | Apr 12 | | May 13 (W11) |
+| Week 8 | 2prime | MXNet and Gluon | Apr 12 | Mar 28 | May 13 (W11) |
 | Week 9 | dzh | scikit-learn | Apr 19 | | May 20 (W12) |
 | Week 10 | ShellyWhen | Visualization | Apr 26 | | May 27 (W13) |
 | Week 11 | whn | Parallel Computing | May 3 | | Jun 3 (W14) |
