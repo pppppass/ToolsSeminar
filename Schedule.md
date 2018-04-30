@@ -14,7 +14,7 @@ The schedule of the seminar is planned as the following.
 | Week 6 | mx | SymPy | Mar 15 | Apr 9 | Apr 15 (W7) |
 | | | None | | | Apr 22 (W8) |
 | | | None | | | Apr 29 (W9) |
-| Week 7 | Shlw | tikz | Apr 5 | Mar 12 | May 6 (W10) |
+| Week 7 | Shlw | tikz | Apr 5 | Apr 30 | May 6 (W10) |
 | Week 8 | 2prime | MXNet and Gluon | Apr 12 | Mar 28 | May 13 (W11) |
 | Week 9 | dzh | scikit-learn | Apr 19 | | May 20 (W12) |
 | Week 10 | ShellyWhen | Visualization | Apr 26 | | May 27 (W13) |
