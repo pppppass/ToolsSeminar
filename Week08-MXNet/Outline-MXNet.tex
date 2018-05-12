@@ -3,19 +3,19 @@
 % !TeX spellcheck = en_US
 
 % Author : 2prime
-% Description : Outline: MxNet --- Seminar on Selected Tools Week 8
+% Description : Outline: MXNet --- Seminar on Selected Tools Week 8
 
 \documentclass[english, nochinese]{../TeXTemplate/pkuslide}
 
 \usepackage{../TeXTemplate/def}
 
 \title{Outline: PyTorch}
-\subtitle{Seminar on Selected Tools Week 8 --- MxNet}
+\subtitle{Seminar on Selected Tools Week 8 --- MXNet}
 
-\author{Jason Jia\qquad Narsil Zhang}
-\date{March 28}
+\author{Yiping Lu}
+\date{Updated on May 12}
 
-\subject{Outline: MxNet --- Seminar on Selected Tools Week 8}
+\subject{Outline: MXNet --- Seminar on Selected Tools Week 8}
 \keywords{}
 
 \begin{document}
@@ -79,11 +79,11 @@ Understand \textbf{ctx=mx.gpu}
 
 \begin{frame}{Atuograd}
 
-Invoking via \textbf{x.attach_grad()}, and placing code in with autograd.record().
+Invoking via \textbf{x.attach\_grad()}, and placing code in with autograd.record().
 
 head\_gradient
 
-MxNet.Symbol
+MXNet.Symbol
 
 \end{frame}
 
@@ -95,9 +95,9 @@ mx.operator.CustomOp : foward, backward
 
 mx.operator.CustomOpProp
 
-create_operator, infer_type, infer_shape, list_arguments, list_output
+create\_operator, infer\_type, infer\_shape, list\_arguments, list\_output
 
-fc1 = mx.symbol.Custom(data, name='fc1', op_type='dense', num_hidden=128)
+fc1 = mx.symbol.Custom(data, name='fc1', op\_type='dense', num\_hidden=128)
 
 \end{frame}
 
@@ -105,14 +105,14 @@ fc1 = mx.symbol.Custom(data, name='fc1', op_type='dense', num_hidden=128)
 
 \begin{frame}{Gluon}
 
-Initialization via net = gluon.nn.Sequential() and adding layer in with net.name_scope() by net.add()
+Initialization via net = gluon.nn.Sequential() and adding layer in with net.name\_scope() by net.add()
 
-net.collect_params().initialize(mx.init.Xavier(magnitude=2.24), ctx=ctx)
+net.collect\_params().initialize(mx.init.Xavier(magnitude=2.24), ctx=ctx)
 
-softmax_cross_entropy = gluon.loss.SoftmaxCrossEntropyLoss()
+softmax\_cross\_entropy = gluon.loss.SoftmaxCrossEntropyLoss()
 
 
-trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': .1})
+trainer = gluon.Trainer(net.collect\_params(), 'sgd', {'learning\_rate': .1})
 
 RK. Remember to with autograd.record()
 
@@ -120,7 +120,7 @@ RK. Remember to with autograd.record()
 \end{frame}
 
 \begin{frame}{Iteract With C/C++/Cuda Code}
-\textbf{src/operator} is the dictionary of the definitions of operators in Symbol. You can add \textbf{-inl.h,.cc,.cu} three files and then complied the MxNet again.
+\textbf{src/operator} is the dictionary of the definitions of operators in Symbol. You can add \textbf{-inl.h,.cc,.cu} three files and then complied the MXNet again.
 \end{frame}
 
 \section{Dataloader}
